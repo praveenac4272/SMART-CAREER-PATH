@@ -70,68 +70,67 @@ jobs:
           profile: pixel_6
           emulator-options: -no-window -gpu swiftshader_indirect -no-audio -no-snapshot -no-boot-anim
           script: |
-            #!/usr/bin/env bash
-            set -e
+            bash <<'BASH'
+            set -euo pipefail
 
-            echo "========== Stage 7 =========="
-            echo "Starting ADB..."
-
+            echo "========== Stage 7: Verifying Emulator Readiness =========="
+            echo "Starting ADB Server..."
+            adb kill-server || true
             adb start-server
-            adb wait-for-device
-
             adb devices
 
-            echo "Waiting for emulator boot..."
-
-            i=1
-            while [ $i -le 60 ]; do
-
-              boot=$(adb shell getprop sys.boot_completed | tr -d '\r')
-
-              echo "Boot Check $i : $boot"
-
-              if [ "$boot" = "1" ]; then
-                echo "Android Emulator Boot Completed"
+            EMULATOR_ID="emulator-5554"
+            echo "Waiting for emulator ${EMULATOR_ID} to show up as ONLINE..."
+            for i in $(seq 1 60); do
+              if adb devices | grep -E "${EMULATOR_ID}\s+device" >/dev/null 2>&1; then
+                echo "Emulator ${EMULATOR_ID} is online!"
                 break
               fi
-
+              echo "Attempt $i: emulator not ready yet..."
+              adb devices || true
               sleep 5
-              i=$((i + 1))
             done
 
-            echo "Disabling animations..."
+            echo "Waiting for Android boot_completed..."
+            for i in $(seq 1 60); do
+              boot=$(adb -s ${EMULATOR_ID} shell getprop sys.boot_completed 2>/dev/null | tr -d '\r' || true)
+              echo "Boot Check $i: '$boot'"
+              if [ "$boot" = "1" ]; then
+                echo "Android Emulator Boot Completed Successfully!"
+                break
+              fi
+              sleep 5
+            done
 
-            adb shell settings put global window_animation_scale 0
-            adb shell settings put global transition_animation_scale 0
-            adb shell settings put global animator_duration_scale 0
+            if [ "$(adb devices | awk 'NR>1{print $2}' | grep -c device || true)" -eq 0 ]; then
+              echo "Emulator did not come up in time. Current adb devices:"
+              adb devices || true
+              exit 1
+            fi
 
-            echo "========== Stage 8 =========="
+            echo "Disabling window animations..."
+            adb -s ${EMULATOR_ID} shell settings put global window_animation_scale 0 || true
+            adb -s ${EMULATOR_ID} shell settings put global transition_animation_scale 0 || true
+            adb -s ${EMULATOR_ID} shell settings put global animator_duration_scale 0 || true
 
-            adb install -r app/build/outputs/apk/debug/app-debug.apk
+            echo "========== Stage 8: Installing Built APK =========="
+            adb -s ${EMULATOR_ID} install -r app/build/outputs/apk/debug/app-debug.apk
 
-            echo "========== Stage 9 =========="
-
+            echo "========== Stage 9: Starting Appium Server =========="
             npm install -g appium
-
             appium driver install uiautomator2 || true
 
-            echo "Starting Appium..."
-
+            echo "Launching Appium in background..."
             appium --log appium_server.log > appium_console.log 2>&1 &
-
             sleep 15
+            curl -s --fail http://127.0.0.1:4723/status || (echo "Appium health check failed"; tail -n 50 appium_console.log || true)
 
-            curl http://127.0.0.1:4723/status
-
-            echo "========== Stage 10 =========="
-
+            echo "========== Stage 10-17: Executing E2E Tests & Generating Reports =========="
             cd automation
-
             npm install
-
             npm test
+            BASH
 
-            wait
 
       # Stage 18
       - name: Upload Test Results Artifacts
