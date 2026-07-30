@@ -32,7 +32,8 @@ jobs:
 
       # Stage 3: Setup Android SDK
       - name: Setup Android SDK
-        uses: actions/setup-android@v3
+        uses: android-actions/setup-android@v3
+
 
       # Stage 4: Install Node.js & Dependencies
       - name: Setup Node.js Environment
