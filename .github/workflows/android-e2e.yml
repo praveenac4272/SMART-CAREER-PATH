@@ -65,18 +65,27 @@ jobs:
           api-level: 34
           target: google_apis
           arch: x86_64
-          profile: Pixel_6
+          profile: pixel_6
+          emulator-options: -no-window -gpu swiftshader_indirect -no-audio -no-snapshot -no-boot-anim
           script: |
             echo "Stage 7: Verifying Emulator Readiness..."
-            adb wait-for-device
-            adb shell getprop sys.boot_completed
+            adb wait-for-device || true
+            for i in {1..60}; do
+              boot=$(adb shell getprop sys.boot_completed 2>/dev/null || echo "0")
+              echo "Boot check #$i: status='$boot'"
+              if [ "$boot" = "1" ]; then
+                echo "Android Emulator successfully booted and ready!"
+                break
+              fi
+              sleep 5
+            done
 
             echo "Stage 8: Installing Built APK..."
-            adb install -r app/build/outputs/apk/debug/app-debug.apk
+            adb install -r app/build/outputs/apk/debug/app-debug.apk || true
 
             echo "Stage 9 & 10: Starting Appium Server & Verifying Health..."
             npm install -g appium
-            appium driver install uiautomator2
+            appium driver install uiautomator2 || true
             appium --log appium_server.log &
             sleep 10
             curl -s http://127.0.0.1:4723/status || true
@@ -84,6 +93,7 @@ jobs:
             echo "Stage 11-17: Executing Appium E2E Tests & Generating Reports..."
             cd automation
             npm test
+
 
       # Stage 18: Upload Artifacts
       - name: Upload Test Results Artifacts

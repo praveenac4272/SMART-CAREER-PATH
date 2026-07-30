@@ -7,7 +7,7 @@
     "skipped": 0,
     "blocked": 0,
     "passPercentage": 100,
-    "timestamp": "2026-07-30T11:33:41.563Z"
+    "timestamp": "2026-07-30T11:46:03.181Z"
   },
   "testCases": [
     {
@@ -26,7 +26,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 106
+      "executionTimeMs": 253
     },
     {
       "id": "TC_AUTH_002",
@@ -44,7 +44,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 208
+      "executionTimeMs": 89
     },
     {
       "id": "TC_AUTH_003",
@@ -62,7 +62,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 245
+      "executionTimeMs": 191
     },
     {
       "id": "TC_AUTH_004",
@@ -80,7 +80,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 258
+      "executionTimeMs": 140
     },
     {
       "id": "TC_AUTH_005",
@@ -98,7 +98,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 157
+      "executionTimeMs": 109
     },
     {
       "id": "TC_AUTH_006",
@@ -116,7 +116,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 247
+      "executionTimeMs": 200
     },
     {
       "id": "TC_AUTH_007",
@@ -134,7 +134,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 247
+      "executionTimeMs": 166
     },
     {
       "id": "TC_AUTH_008",
@@ -152,7 +152,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 156
+      "executionTimeMs": 212
     },
     {
       "id": "TC_AUTH_009",
@@ -170,7 +170,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 145
+      "executionTimeMs": 118
     },
     {
       "id": "TC_AUTH_010",
@@ -188,7 +188,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 196,
+      "executionTimeMs": 44,
       "screenshot": "TC_AUTH_010_failure.png"
     },
     {
@@ -207,7 +207,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 106
+      "executionTimeMs": 217
     },
     {
       "id": "TC_AUTH_012",
@@ -225,7 +225,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 82
+      "executionTimeMs": 98
     },
     {
       "id": "TC_AUTH_013",
@@ -243,7 +243,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 85
+      "executionTimeMs": 280
     },
     {
       "id": "TC_AUTH_014",
@@ -261,7 +261,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 97
+      "executionTimeMs": 155
     },
     {
       "id": "TC_AUTH_015",
@@ -279,7 +279,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 102
+      "executionTimeMs": 136
     },
     {
       "id": "TC_AUTH_016",
@@ -297,7 +297,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 131
+      "executionTimeMs": 168
     },
     {
       "id": "TC_AUTH_017",
@@ -315,7 +315,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 191
+      "executionTimeMs": 55
     },
     {
       "id": "TC_AUTH_018",
@@ -333,7 +333,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 285
+      "executionTimeMs": 246
     },
     {
       "id": "TC_AUTH_019",
@@ -351,7 +351,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 51
+      "executionTimeMs": 278
     },
     {
       "id": "TC_AUTH_020",
@@ -369,7 +369,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 262
+      "executionTimeMs": 278
     },
     {
       "id": "TC_AUTH_021",
@@ -387,7 +387,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 21. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 107
+      "executionTimeMs": 60
     },
     {
       "id": "TC_AUTH_022",
@@ -405,7 +405,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 22. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 148
+      "executionTimeMs": 226
     },
     {
       "id": "TC_AUTH_023",
@@ -423,7 +423,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 23. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 125
+      "executionTimeMs": 197
     },
     {
       "id": "TC_AUTH_024",
@@ -441,7 +441,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 24. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 196
+      "executionTimeMs": 204
     },
     {
       "id": "TC_AUTH_025",
@@ -459,7 +459,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 25. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 102
+      "executionTimeMs": 284
     },
     {
       "id": "TC_AUTH_026",
@@ -477,7 +477,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 26. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 168
+      "executionTimeMs": 286
     },
     {
       "id": "TC_AUTH_027",
@@ -495,7 +495,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 27. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 40
+      "executionTimeMs": 74
     },
     {
       "id": "TC_AUTH_028",
@@ -513,7 +513,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 28. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 41
+      "executionTimeMs": 172
     },
     {
       "id": "TC_AUTH_029",
@@ -531,7 +531,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 29. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 96
+      "executionTimeMs": 253
     },
     {
       "id": "TC_AUTH_030",
@@ -549,7 +549,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 30. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 218
+      "executionTimeMs": 268
     },
     {
       "id": "TC_AUTH_031",
@@ -567,7 +567,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 31. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 181
+      "executionTimeMs": 289
     },
     {
       "id": "TC_AUTH_032",
@@ -585,7 +585,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 32. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 237
+      "executionTimeMs": 40
     },
     {
       "id": "TC_AUTH_033",
@@ -603,7 +603,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 33. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 93
+      "executionTimeMs": 199
     },
     {
       "id": "TC_AUTH_034",
@@ -621,7 +621,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 34. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 237
+      "executionTimeMs": 77
     },
     {
       "id": "TC_AUTH_035",
@@ -639,7 +639,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 35. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 207
+      "executionTimeMs": 142
     },
     {
       "id": "TC_AUTH_036",
@@ -657,7 +657,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 36. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 101
+      "executionTimeMs": 75
     },
     {
       "id": "TC_AUTH_037",
@@ -675,7 +675,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 37. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 210
+      "executionTimeMs": 154
     },
     {
       "id": "TC_AUTH_038",
@@ -693,7 +693,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 38. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 74
+      "executionTimeMs": 147
     },
     {
       "id": "TC_AUTH_039",
@@ -711,7 +711,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 39. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 239
+      "executionTimeMs": 165
     },
     {
       "id": "TC_AUTH_040",
@@ -729,7 +729,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authentication verification step 40. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 232
+      "executionTimeMs": 133
     },
     {
       "id": "TC_AUTHZ_001",
@@ -747,7 +747,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 213
+      "executionTimeMs": 141
     },
     {
       "id": "TC_AUTHZ_002",
@@ -765,7 +765,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 153
+      "executionTimeMs": 155
     },
     {
       "id": "TC_AUTHZ_003",
@@ -783,7 +783,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 235
+      "executionTimeMs": 79
     },
     {
       "id": "TC_AUTHZ_004",
@@ -801,7 +801,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 234
+      "executionTimeMs": 111
     },
     {
       "id": "TC_AUTHZ_005",
@@ -819,7 +819,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 189
+      "executionTimeMs": 92
     },
     {
       "id": "TC_AUTHZ_006",
@@ -837,7 +837,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 91
+      "executionTimeMs": 114
     },
     {
       "id": "TC_AUTHZ_007",
@@ -855,7 +855,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 53
+      "executionTimeMs": 112
     },
     {
       "id": "TC_AUTHZ_008",
@@ -873,7 +873,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 204
+      "executionTimeMs": 155
     },
     {
       "id": "TC_AUTHZ_009",
@@ -891,7 +891,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 141
+      "executionTimeMs": 203
     },
     {
       "id": "TC_AUTHZ_010",
@@ -909,7 +909,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 121
+      "executionTimeMs": 200
     },
     {
       "id": "TC_AUTHZ_011",
@@ -927,7 +927,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 82
+      "executionTimeMs": 105
     },
     {
       "id": "TC_AUTHZ_012",
@@ -945,7 +945,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 129
+      "executionTimeMs": 276
     },
     {
       "id": "TC_AUTHZ_013",
@@ -963,7 +963,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 110
+      "executionTimeMs": 279
     },
     {
       "id": "TC_AUTHZ_014",
@@ -981,7 +981,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 125
+      "executionTimeMs": 130
     },
     {
       "id": "TC_AUTHZ_015",
@@ -999,7 +999,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 224
+      "executionTimeMs": 107
     },
     {
       "id": "TC_AUTHZ_016",
@@ -1017,7 +1017,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 122
+      "executionTimeMs": 124
     },
     {
       "id": "TC_AUTHZ_017",
@@ -1035,7 +1035,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 127
+      "executionTimeMs": 270
     },
     {
       "id": "TC_AUTHZ_018",
@@ -1053,7 +1053,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 40
+      "executionTimeMs": 43
     },
     {
       "id": "TC_AUTHZ_019",
@@ -1071,7 +1071,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 213
+      "executionTimeMs": 256
     },
     {
       "id": "TC_AUTHZ_020",
@@ -1089,7 +1089,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 166
+      "executionTimeMs": 207
     },
     {
       "id": "TC_AUTHZ_021",
@@ -1107,7 +1107,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 21. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 213
+      "executionTimeMs": 83
     },
     {
       "id": "TC_AUTHZ_022",
@@ -1125,7 +1125,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 22. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 157
+      "executionTimeMs": 178
     },
     {
       "id": "TC_AUTHZ_023",
@@ -1143,7 +1143,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 23. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 94
+      "executionTimeMs": 162
     },
     {
       "id": "TC_AUTHZ_024",
@@ -1161,7 +1161,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 24. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 41
+      "executionTimeMs": 220
     },
     {
       "id": "TC_AUTHZ_025",
@@ -1179,7 +1179,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 25. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 204
+      "executionTimeMs": 40
     },
     {
       "id": "TC_AUTHZ_026",
@@ -1197,7 +1197,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 26. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 110
+      "executionTimeMs": 288
     },
     {
       "id": "TC_AUTHZ_027",
@@ -1215,7 +1215,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 27. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 266
+      "executionTimeMs": 168
     },
     {
       "id": "TC_AUTHZ_028",
@@ -1233,7 +1233,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 28. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 137
+      "executionTimeMs": 59
     },
     {
       "id": "TC_AUTHZ_029",
@@ -1251,7 +1251,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 29. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 245
+      "executionTimeMs": 266
     },
     {
       "id": "TC_AUTHZ_030",
@@ -1269,7 +1269,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Authorization verification step 30. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 41
+      "executionTimeMs": 102
     },
     {
       "id": "TC_REG_001",
@@ -1287,7 +1287,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 109
+      "executionTimeMs": 143
     },
     {
       "id": "TC_REG_002",
@@ -1305,7 +1305,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 263
+      "executionTimeMs": 116
     },
     {
       "id": "TC_REG_003",
@@ -1323,7 +1323,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 266
+      "executionTimeMs": 239
     },
     {
       "id": "TC_REG_004",
@@ -1341,7 +1341,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 170
+      "executionTimeMs": 256
     },
     {
       "id": "TC_REG_005",
@@ -1359,7 +1359,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 95
+      "executionTimeMs": 123
     },
     {
       "id": "TC_REG_006",
@@ -1377,7 +1377,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 112
+      "executionTimeMs": 275
     },
     {
       "id": "TC_REG_007",
@@ -1395,7 +1395,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 108
+      "executionTimeMs": 71
     },
     {
       "id": "TC_REG_008",
@@ -1413,7 +1413,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 252
+      "executionTimeMs": 129
     },
     {
       "id": "TC_REG_009",
@@ -1431,7 +1431,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 58
+      "executionTimeMs": 156
     },
     {
       "id": "TC_REG_010",
@@ -1449,7 +1449,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 206
+      "executionTimeMs": 41
     },
     {
       "id": "TC_REG_011",
@@ -1467,7 +1467,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 289
+      "executionTimeMs": 195
     },
     {
       "id": "TC_REG_012",
@@ -1485,7 +1485,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 94
+      "executionTimeMs": 70
     },
     {
       "id": "TC_REG_013",
@@ -1503,7 +1503,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 114
+      "executionTimeMs": 205
     },
     {
       "id": "TC_REG_014",
@@ -1521,7 +1521,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 277
+      "executionTimeMs": 127
     },
     {
       "id": "TC_REG_015",
@@ -1539,7 +1539,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 211
+      "executionTimeMs": 267
     },
     {
       "id": "TC_REG_016",
@@ -1557,7 +1557,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 87
+      "executionTimeMs": 220
     },
     {
       "id": "TC_REG_017",
@@ -1575,7 +1575,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 227
+      "executionTimeMs": 285
     },
     {
       "id": "TC_REG_018",
@@ -1593,7 +1593,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 268
+      "executionTimeMs": 248
     },
     {
       "id": "TC_REG_019",
@@ -1611,7 +1611,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 232
+      "executionTimeMs": 118
     },
     {
       "id": "TC_REG_020",
@@ -1629,7 +1629,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Registration verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 189
+      "executionTimeMs": 235
     },
     {
       "id": "TC_PROF_001",
@@ -1647,7 +1647,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 143
+      "executionTimeMs": 242
     },
     {
       "id": "TC_PROF_002",
@@ -1665,7 +1665,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 211
+      "executionTimeMs": 241
     },
     {
       "id": "TC_PROF_003",
@@ -1683,7 +1683,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 95
+      "executionTimeMs": 135
     },
     {
       "id": "TC_PROF_004",
@@ -1701,7 +1701,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 250
+      "executionTimeMs": 54
     },
     {
       "id": "TC_PROF_005",
@@ -1719,7 +1719,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 201
+      "executionTimeMs": 103
     },
     {
       "id": "TC_PROF_006",
@@ -1737,7 +1737,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 213
+      "executionTimeMs": 263
     },
     {
       "id": "TC_PROF_007",
@@ -1755,7 +1755,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 106
+      "executionTimeMs": 247
     },
     {
       "id": "TC_PROF_008",
@@ -1773,7 +1773,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 216
+      "executionTimeMs": 171
     },
     {
       "id": "TC_PROF_009",
@@ -1791,7 +1791,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 263
+      "executionTimeMs": 130
     },
     {
       "id": "TC_PROF_010",
@@ -1809,7 +1809,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 270
+      "executionTimeMs": 144
     },
     {
       "id": "TC_PROF_011",
@@ -1827,7 +1827,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 282
+      "executionTimeMs": 178
     },
     {
       "id": "TC_PROF_012",
@@ -1845,7 +1845,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 197
+      "executionTimeMs": 266
     },
     {
       "id": "TC_PROF_013",
@@ -1863,7 +1863,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 180
+      "executionTimeMs": 209
     },
     {
       "id": "TC_PROF_014",
@@ -1881,7 +1881,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 265
+      "executionTimeMs": 276
     },
     {
       "id": "TC_PROF_015",
@@ -1899,7 +1899,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 129
+      "executionTimeMs": 280
     },
     {
       "id": "TC_PROF_016",
@@ -1917,7 +1917,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 226
+      "executionTimeMs": 168
     },
     {
       "id": "TC_PROF_017",
@@ -1935,7 +1935,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 242
+      "executionTimeMs": 212
     },
     {
       "id": "TC_PROF_018",
@@ -1953,7 +1953,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 194
+      "executionTimeMs": 122
     },
     {
       "id": "TC_PROF_019",
@@ -1971,7 +1971,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 238
+      "executionTimeMs": 60
     },
     {
       "id": "TC_PROF_020",
@@ -1989,7 +1989,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Profile Management verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 253
+      "executionTimeMs": 178
     },
     {
       "id": "TC_NAV_001",
@@ -2007,7 +2007,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 68
+      "executionTimeMs": 122
     },
     {
       "id": "TC_NAV_002",
@@ -2025,7 +2025,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 137
+      "executionTimeMs": 277
     },
     {
       "id": "TC_NAV_003",
@@ -2043,7 +2043,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 259
+      "executionTimeMs": 137
     },
     {
       "id": "TC_NAV_004",
@@ -2061,7 +2061,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 125
+      "executionTimeMs": 216
     },
     {
       "id": "TC_NAV_005",
@@ -2079,7 +2079,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 56
+      "executionTimeMs": 129
     },
     {
       "id": "TC_NAV_006",
@@ -2097,7 +2097,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 50
+      "executionTimeMs": 215
     },
     {
       "id": "TC_NAV_007",
@@ -2115,7 +2115,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 51
+      "executionTimeMs": 142
     },
     {
       "id": "TC_NAV_008",
@@ -2133,7 +2133,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 105
+      "executionTimeMs": 243
     },
     {
       "id": "TC_NAV_009",
@@ -2151,7 +2151,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 242
+      "executionTimeMs": 210
     },
     {
       "id": "TC_NAV_010",
@@ -2169,7 +2169,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 103
+      "executionTimeMs": 72
     },
     {
       "id": "TC_NAV_011",
@@ -2187,7 +2187,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 156
+      "executionTimeMs": 209
     },
     {
       "id": "TC_NAV_012",
@@ -2205,7 +2205,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 41
+      "executionTimeMs": 106
     },
     {
       "id": "TC_NAV_013",
@@ -2223,7 +2223,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 153
+      "executionTimeMs": 171
     },
     {
       "id": "TC_NAV_014",
@@ -2241,7 +2241,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 142
+      "executionTimeMs": 271
     },
     {
       "id": "TC_NAV_015",
@@ -2259,7 +2259,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 161
+      "executionTimeMs": 250
     },
     {
       "id": "TC_NAV_016",
@@ -2277,7 +2277,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 152
+      "executionTimeMs": 203
     },
     {
       "id": "TC_NAV_017",
@@ -2295,7 +2295,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 108
+      "executionTimeMs": 154
     },
     {
       "id": "TC_NAV_018",
@@ -2313,7 +2313,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 99
+      "executionTimeMs": 267
     },
     {
       "id": "TC_NAV_019",
@@ -2331,7 +2331,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 170
+      "executionTimeMs": 246
     },
     {
       "id": "TC_NAV_020",
@@ -2349,7 +2349,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 227
+      "executionTimeMs": 254
     },
     {
       "id": "TC_NAV_021",
@@ -2367,7 +2367,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 21. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 158
+      "executionTimeMs": 128
     },
     {
       "id": "TC_NAV_022",
@@ -2385,7 +2385,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 22. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 46
+      "executionTimeMs": 127
     },
     {
       "id": "TC_NAV_023",
@@ -2403,7 +2403,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 23. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 187
+      "executionTimeMs": 116
     },
     {
       "id": "TC_NAV_024",
@@ -2421,7 +2421,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 24. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 201
+      "executionTimeMs": 58
     },
     {
       "id": "TC_NAV_025",
@@ -2439,7 +2439,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 25. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 197
+      "executionTimeMs": 157
     },
     {
       "id": "TC_NAV_026",
@@ -2457,7 +2457,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 26. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 141
+      "executionTimeMs": 139
     },
     {
       "id": "TC_NAV_027",
@@ -2475,7 +2475,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 27. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 220
+      "executionTimeMs": 80
     },
     {
       "id": "TC_NAV_028",
@@ -2493,7 +2493,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 28. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 65
+      "executionTimeMs": 66
     },
     {
       "id": "TC_NAV_029",
@@ -2511,7 +2511,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 29. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 47
+      "executionTimeMs": 103
     },
     {
       "id": "TC_NAV_030",
@@ -2529,7 +2529,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Navigation verification step 30. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 244
+      "executionTimeMs": 284
     },
     {
       "id": "TC_DASH_001",
@@ -2547,7 +2547,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 192
+      "executionTimeMs": 245
     },
     {
       "id": "TC_DASH_002",
@@ -2565,7 +2565,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 275
+      "executionTimeMs": 146
     },
     {
       "id": "TC_DASH_003",
@@ -2583,7 +2583,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 100
+      "executionTimeMs": 287
     },
     {
       "id": "TC_DASH_004",
@@ -2601,7 +2601,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 171
+      "executionTimeMs": 185
     },
     {
       "id": "TC_DASH_005",
@@ -2619,7 +2619,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 255
+      "executionTimeMs": 56
     },
     {
       "id": "TC_DASH_006",
@@ -2637,7 +2637,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 255
+      "executionTimeMs": 152
     },
     {
       "id": "TC_DASH_007",
@@ -2655,7 +2655,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 287
+      "executionTimeMs": 122
     },
     {
       "id": "TC_DASH_008",
@@ -2673,7 +2673,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 109
+      "executionTimeMs": 282
     },
     {
       "id": "TC_DASH_009",
@@ -2691,7 +2691,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 231
+      "executionTimeMs": 86
     },
     {
       "id": "TC_DASH_010",
@@ -2709,7 +2709,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 265
+      "executionTimeMs": 276
     },
     {
       "id": "TC_DASH_011",
@@ -2727,7 +2727,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 129
+      "executionTimeMs": 140
     },
     {
       "id": "TC_DASH_012",
@@ -2745,7 +2745,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 247
+      "executionTimeMs": 246
     },
     {
       "id": "TC_DASH_013",
@@ -2763,7 +2763,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 88
+      "executionTimeMs": 50
     },
     {
       "id": "TC_DASH_014",
@@ -2781,7 +2781,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 227
+      "executionTimeMs": 284
     },
     {
       "id": "TC_DASH_015",
@@ -2799,7 +2799,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 193
+      "executionTimeMs": 82
     },
     {
       "id": "TC_DASH_016",
@@ -2817,7 +2817,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 208
+      "executionTimeMs": 112
     },
     {
       "id": "TC_DASH_017",
@@ -2835,7 +2835,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 85
+      "executionTimeMs": 102
     },
     {
       "id": "TC_DASH_018",
@@ -2853,7 +2853,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 235
+      "executionTimeMs": 269
     },
     {
       "id": "TC_DASH_019",
@@ -2871,7 +2871,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 177
+      "executionTimeMs": 263
     },
     {
       "id": "TC_DASH_020",
@@ -2889,7 +2889,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Dashboard verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 220
+      "executionTimeMs": 40
     },
     {
       "id": "TC_FORM_001",
@@ -2907,7 +2907,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 83
+      "executionTimeMs": 193
     },
     {
       "id": "TC_FORM_002",
@@ -2925,7 +2925,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 93
+      "executionTimeMs": 146
     },
     {
       "id": "TC_FORM_003",
@@ -2943,7 +2943,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 195
+      "executionTimeMs": 228
     },
     {
       "id": "TC_FORM_004",
@@ -2961,7 +2961,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 229
+      "executionTimeMs": 194
     },
     {
       "id": "TC_FORM_005",
@@ -2979,7 +2979,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 172
+      "executionTimeMs": 181
     },
     {
       "id": "TC_FORM_006",
@@ -2997,7 +2997,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 164
+      "executionTimeMs": 51
     },
     {
       "id": "TC_FORM_007",
@@ -3015,7 +3015,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 58
+      "executionTimeMs": 87
     },
     {
       "id": "TC_FORM_008",
@@ -3033,7 +3033,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 207,
+      "executionTimeMs": 173,
       "screenshot": "TC_FORM_008_failure.png"
     },
     {
@@ -3052,7 +3052,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 62
+      "executionTimeMs": 105
     },
     {
       "id": "TC_FORM_010",
@@ -3070,7 +3070,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 87
+      "executionTimeMs": 239
     },
     {
       "id": "TC_FORM_011",
@@ -3088,7 +3088,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 198
+      "executionTimeMs": 276
     },
     {
       "id": "TC_FORM_012",
@@ -3106,7 +3106,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 232
+      "executionTimeMs": 238
     },
     {
       "id": "TC_FORM_013",
@@ -3124,7 +3124,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 67
+      "executionTimeMs": 114
     },
     {
       "id": "TC_FORM_014",
@@ -3142,7 +3142,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 182
+      "executionTimeMs": 144
     },
     {
       "id": "TC_FORM_015",
@@ -3160,7 +3160,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 197
+      "executionTimeMs": 43
     },
     {
       "id": "TC_FORM_016",
@@ -3178,7 +3178,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 110
+      "executionTimeMs": 158
     },
     {
       "id": "TC_FORM_017",
@@ -3196,7 +3196,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 188
+      "executionTimeMs": 60
     },
     {
       "id": "TC_FORM_018",
@@ -3214,7 +3214,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 196
+      "executionTimeMs": 201
     },
     {
       "id": "TC_FORM_019",
@@ -3232,7 +3232,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 281
+      "executionTimeMs": 113
     },
     {
       "id": "TC_FORM_020",
@@ -3250,7 +3250,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 104
+      "executionTimeMs": 60
     },
     {
       "id": "TC_FORM_021",
@@ -3268,7 +3268,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 21. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 207
+      "executionTimeMs": 129
     },
     {
       "id": "TC_FORM_022",
@@ -3286,7 +3286,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 22. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 270
+      "executionTimeMs": 86
     },
     {
       "id": "TC_FORM_023",
@@ -3304,7 +3304,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 23. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 70
+      "executionTimeMs": 264
     },
     {
       "id": "TC_FORM_024",
@@ -3322,7 +3322,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 24. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 185
+      "executionTimeMs": 170
     },
     {
       "id": "TC_FORM_025",
@@ -3340,7 +3340,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 25. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 117
+      "executionTimeMs": 258
     },
     {
       "id": "TC_FORM_026",
@@ -3358,7 +3358,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 26. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 202
+      "executionTimeMs": 279
     },
     {
       "id": "TC_FORM_027",
@@ -3376,7 +3376,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 27. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 218
+      "executionTimeMs": 253
     },
     {
       "id": "TC_FORM_028",
@@ -3394,7 +3394,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 28. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 88
+      "executionTimeMs": 287
     },
     {
       "id": "TC_FORM_029",
@@ -3412,7 +3412,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 29. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 205
+      "executionTimeMs": 283
     },
     {
       "id": "TC_FORM_030",
@@ -3430,7 +3430,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 30. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 207
+      "executionTimeMs": 135
     },
     {
       "id": "TC_FORM_031",
@@ -3448,7 +3448,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 31. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 50
+      "executionTimeMs": 275
     },
     {
       "id": "TC_FORM_032",
@@ -3466,7 +3466,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 32. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 227
+      "executionTimeMs": 96
     },
     {
       "id": "TC_FORM_033",
@@ -3484,7 +3484,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 33. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 67
+      "executionTimeMs": 76
     },
     {
       "id": "TC_FORM_034",
@@ -3502,7 +3502,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 34. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 69
+      "executionTimeMs": 250
     },
     {
       "id": "TC_FORM_035",
@@ -3520,7 +3520,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 35. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 186
+      "executionTimeMs": 133
     },
     {
       "id": "TC_FORM_036",
@@ -3538,7 +3538,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 36. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 254
+      "executionTimeMs": 74
     },
     {
       "id": "TC_FORM_037",
@@ -3556,7 +3556,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 37. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 100
+      "executionTimeMs": 289
     },
     {
       "id": "TC_FORM_038",
@@ -3574,7 +3574,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 38. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 178
+      "executionTimeMs": 84
     },
     {
       "id": "TC_FORM_039",
@@ -3592,7 +3592,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 39. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 162
+      "executionTimeMs": 45
     },
     {
       "id": "TC_FORM_040",
@@ -3610,7 +3610,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Forms verification step 40. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 275
+      "executionTimeMs": 46
     },
     {
       "id": "TC_CRUD_001",
@@ -3628,7 +3628,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 211
+      "executionTimeMs": 285
     },
     {
       "id": "TC_CRUD_002",
@@ -3646,7 +3646,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 100
+      "executionTimeMs": 236
     },
     {
       "id": "TC_CRUD_003",
@@ -3664,7 +3664,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 202
+      "executionTimeMs": 111
     },
     {
       "id": "TC_CRUD_004",
@@ -3682,7 +3682,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 188
+      "executionTimeMs": 73
     },
     {
       "id": "TC_CRUD_005",
@@ -3700,7 +3700,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 136
+      "executionTimeMs": 156
     },
     {
       "id": "TC_CRUD_006",
@@ -3718,7 +3718,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 155
+      "executionTimeMs": 49
     },
     {
       "id": "TC_CRUD_007",
@@ -3736,7 +3736,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 244
+      "executionTimeMs": 79
     },
     {
       "id": "TC_CRUD_008",
@@ -3754,7 +3754,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 193
+      "executionTimeMs": 185
     },
     {
       "id": "TC_CRUD_009",
@@ -3772,7 +3772,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 286
+      "executionTimeMs": 98
     },
     {
       "id": "TC_CRUD_010",
@@ -3790,7 +3790,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 245
+      "executionTimeMs": 234
     },
     {
       "id": "TC_CRUD_011",
@@ -3808,7 +3808,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 68
+      "executionTimeMs": 181
     },
     {
       "id": "TC_CRUD_012",
@@ -3826,7 +3826,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 92
+      "executionTimeMs": 199
     },
     {
       "id": "TC_CRUD_013",
@@ -3844,7 +3844,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 117
+      "executionTimeMs": 163
     },
     {
       "id": "TC_CRUD_014",
@@ -3862,7 +3862,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 218
+      "executionTimeMs": 129
     },
     {
       "id": "TC_CRUD_015",
@@ -3880,7 +3880,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 144
+      "executionTimeMs": 47
     },
     {
       "id": "TC_CRUD_016",
@@ -3898,7 +3898,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 257
+      "executionTimeMs": 164
     },
     {
       "id": "TC_CRUD_017",
@@ -3916,7 +3916,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 233
+      "executionTimeMs": 152
     },
     {
       "id": "TC_CRUD_018",
@@ -3934,7 +3934,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 194
+      "executionTimeMs": 155
     },
     {
       "id": "TC_CRUD_019",
@@ -3952,7 +3952,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 240
+      "executionTimeMs": 170
     },
     {
       "id": "TC_CRUD_020",
@@ -3970,7 +3970,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 169
+      "executionTimeMs": 268
     },
     {
       "id": "TC_CRUD_021",
@@ -3988,7 +3988,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 21. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 58
+      "executionTimeMs": 243
     },
     {
       "id": "TC_CRUD_022",
@@ -4006,7 +4006,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 22. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 63
+      "executionTimeMs": 170
     },
     {
       "id": "TC_CRUD_023",
@@ -4024,7 +4024,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 23. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 224
+      "executionTimeMs": 179
     },
     {
       "id": "TC_CRUD_024",
@@ -4042,7 +4042,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 24. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 283
+      "executionTimeMs": 186
     },
     {
       "id": "TC_CRUD_025",
@@ -4060,7 +4060,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 25. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 115
+      "executionTimeMs": 47
     },
     {
       "id": "TC_CRUD_026",
@@ -4078,7 +4078,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 26. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 113
+      "executionTimeMs": 178
     },
     {
       "id": "TC_CRUD_027",
@@ -4096,7 +4096,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 27. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 230
+      "executionTimeMs": 246
     },
     {
       "id": "TC_CRUD_028",
@@ -4114,7 +4114,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 28. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 133
+      "executionTimeMs": 75
     },
     {
       "id": "TC_CRUD_029",
@@ -4132,7 +4132,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 29. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 124
+      "executionTimeMs": 183
     },
     {
       "id": "TC_CRUD_030",
@@ -4150,7 +4150,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 30. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 88
+      "executionTimeMs": 100
     },
     {
       "id": "TC_CRUD_031",
@@ -4168,7 +4168,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 31. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 51
+      "executionTimeMs": 247
     },
     {
       "id": "TC_CRUD_032",
@@ -4186,7 +4186,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 32. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 196
+      "executionTimeMs": 139
     },
     {
       "id": "TC_CRUD_033",
@@ -4204,7 +4204,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 33. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 200
+      "executionTimeMs": 112
     },
     {
       "id": "TC_CRUD_034",
@@ -4222,7 +4222,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 34. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 91
+      "executionTimeMs": 92
     },
     {
       "id": "TC_CRUD_035",
@@ -4240,7 +4240,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 35. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 86
+      "executionTimeMs": 126
     },
     {
       "id": "TC_CRUD_036",
@@ -4258,7 +4258,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 36. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 104
+      "executionTimeMs": 169
     },
     {
       "id": "TC_CRUD_037",
@@ -4276,7 +4276,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 37. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 264
+      "executionTimeMs": 227
     },
     {
       "id": "TC_CRUD_038",
@@ -4294,7 +4294,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 38. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 187
+      "executionTimeMs": 98
     },
     {
       "id": "TC_CRUD_039",
@@ -4312,7 +4312,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 39. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 273
+      "executionTimeMs": 134
     },
     {
       "id": "TC_CRUD_040",
@@ -4330,7 +4330,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed CRUD Operations verification step 40. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 55
+      "executionTimeMs": 92
     },
     {
       "id": "TC_SRCH_001",
@@ -4348,7 +4348,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 234
+      "executionTimeMs": 110
     },
     {
       "id": "TC_SRCH_002",
@@ -4366,7 +4366,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 119
+      "executionTimeMs": 99
     },
     {
       "id": "TC_SRCH_003",
@@ -4384,7 +4384,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 229
+      "executionTimeMs": 264
     },
     {
       "id": "TC_SRCH_004",
@@ -4402,7 +4402,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 85
+      "executionTimeMs": 41
     },
     {
       "id": "TC_SRCH_005",
@@ -4420,7 +4420,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 229
+      "executionTimeMs": 41
     },
     {
       "id": "TC_SRCH_006",
@@ -4438,7 +4438,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 44
+      "executionTimeMs": 46
     },
     {
       "id": "TC_SRCH_007",
@@ -4456,7 +4456,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 72
+      "executionTimeMs": 236
     },
     {
       "id": "TC_SRCH_008",
@@ -4474,7 +4474,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 93
+      "executionTimeMs": 196
     },
     {
       "id": "TC_SRCH_009",
@@ -4492,7 +4492,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 240
+      "executionTimeMs": 281
     },
     {
       "id": "TC_SRCH_010",
@@ -4510,7 +4510,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 244
+      "executionTimeMs": 208
     },
     {
       "id": "TC_SRCH_011",
@@ -4528,7 +4528,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 182
+      "executionTimeMs": 166
     },
     {
       "id": "TC_SRCH_012",
@@ -4546,7 +4546,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 196
+      "executionTimeMs": 259
     },
     {
       "id": "TC_SRCH_013",
@@ -4564,7 +4564,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 218
+      "executionTimeMs": 156
     },
     {
       "id": "TC_SRCH_014",
@@ -4582,7 +4582,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 148
+      "executionTimeMs": 158
     },
     {
       "id": "TC_SRCH_015",
@@ -4600,7 +4600,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 184
+      "executionTimeMs": 280
     },
     {
       "id": "TC_SRCH_016",
@@ -4618,7 +4618,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 191
+      "executionTimeMs": 214
     },
     {
       "id": "TC_SRCH_017",
@@ -4636,7 +4636,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 82
+      "executionTimeMs": 223
     },
     {
       "id": "TC_SRCH_018",
@@ -4654,7 +4654,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 80
+      "executionTimeMs": 188
     },
     {
       "id": "TC_SRCH_019",
@@ -4672,7 +4672,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 54
+      "executionTimeMs": 112
     },
     {
       "id": "TC_SRCH_020",
@@ -4690,7 +4690,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Search verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 65
+      "executionTimeMs": 75
     },
     {
       "id": "TC_FLTR_001",
@@ -4708,7 +4708,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 204
+      "executionTimeMs": 137
     },
     {
       "id": "TC_FLTR_002",
@@ -4726,7 +4726,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 48
+      "executionTimeMs": 70
     },
     {
       "id": "TC_FLTR_003",
@@ -4744,7 +4744,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 288
+      "executionTimeMs": 58
     },
     {
       "id": "TC_FLTR_004",
@@ -4762,7 +4762,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 257
+      "executionTimeMs": 84
     },
     {
       "id": "TC_FLTR_005",
@@ -4780,7 +4780,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 183
+      "executionTimeMs": 273
     },
     {
       "id": "TC_FLTR_006",
@@ -4798,7 +4798,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 60
+      "executionTimeMs": 279
     },
     {
       "id": "TC_FLTR_007",
@@ -4816,7 +4816,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 126
+      "executionTimeMs": 260
     },
     {
       "id": "TC_FLTR_008",
@@ -4834,7 +4834,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 47
+      "executionTimeMs": 258
     },
     {
       "id": "TC_FLTR_009",
@@ -4852,7 +4852,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 123
+      "executionTimeMs": 80
     },
     {
       "id": "TC_FLTR_010",
@@ -4870,7 +4870,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 192
+      "executionTimeMs": 249
     },
     {
       "id": "TC_FLTR_011",
@@ -4888,7 +4888,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 115
+      "executionTimeMs": 122
     },
     {
       "id": "TC_FLTR_012",
@@ -4906,7 +4906,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 242
+      "executionTimeMs": 202
     },
     {
       "id": "TC_FLTR_013",
@@ -4924,7 +4924,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 154
+      "executionTimeMs": 286
     },
     {
       "id": "TC_FLTR_014",
@@ -4942,7 +4942,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 77
+      "executionTimeMs": 278
     },
     {
       "id": "TC_FLTR_015",
@@ -4960,7 +4960,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 262
+      "executionTimeMs": 91
     },
     {
       "id": "TC_FLTR_016",
@@ -4978,7 +4978,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 79
+      "executionTimeMs": 137
     },
     {
       "id": "TC_FLTR_017",
@@ -4996,7 +4996,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 159
+      "executionTimeMs": 132
     },
     {
       "id": "TC_FLTR_018",
@@ -5014,7 +5014,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 223
+      "executionTimeMs": 127
     },
     {
       "id": "TC_FLTR_019",
@@ -5032,7 +5032,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 59
+      "executionTimeMs": 259
     },
     {
       "id": "TC_FLTR_020",
@@ -5050,7 +5050,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Filters verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 111
+      "executionTimeMs": 158
     },
     {
       "id": "TC_VAL_001",
@@ -5068,7 +5068,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 256
+      "executionTimeMs": 166
     },
     {
       "id": "TC_VAL_002",
@@ -5086,7 +5086,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 195
+      "executionTimeMs": 279
     },
     {
       "id": "TC_VAL_003",
@@ -5104,7 +5104,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 268
+      "executionTimeMs": 155
     },
     {
       "id": "TC_VAL_004",
@@ -5122,7 +5122,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 221
+      "executionTimeMs": 92
     },
     {
       "id": "TC_VAL_005",
@@ -5140,7 +5140,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 93
+      "executionTimeMs": 118
     },
     {
       "id": "TC_VAL_006",
@@ -5158,7 +5158,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 154
+      "executionTimeMs": 284
     },
     {
       "id": "TC_VAL_007",
@@ -5176,7 +5176,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 229
+      "executionTimeMs": 148
     },
     {
       "id": "TC_VAL_008",
@@ -5194,7 +5194,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 273
+      "executionTimeMs": 67
     },
     {
       "id": "TC_VAL_009",
@@ -5212,7 +5212,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 270
+      "executionTimeMs": 222
     },
     {
       "id": "TC_VAL_010",
@@ -5230,7 +5230,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 219
+      "executionTimeMs": 251
     },
     {
       "id": "TC_VAL_011",
@@ -5248,7 +5248,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 186
+      "executionTimeMs": 264
     },
     {
       "id": "TC_VAL_012",
@@ -5266,7 +5266,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 206
+      "executionTimeMs": 247
     },
     {
       "id": "TC_VAL_013",
@@ -5284,7 +5284,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 170
+      "executionTimeMs": 183
     },
     {
       "id": "TC_VAL_014",
@@ -5302,7 +5302,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 147
+      "executionTimeMs": 266
     },
     {
       "id": "TC_VAL_015",
@@ -5320,7 +5320,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 138
+      "executionTimeMs": 196
     },
     {
       "id": "TC_VAL_016",
@@ -5338,7 +5338,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 57
+      "executionTimeMs": 189
     },
     {
       "id": "TC_VAL_017",
@@ -5356,7 +5356,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 88
+      "executionTimeMs": 180
     },
     {
       "id": "TC_VAL_018",
@@ -5374,7 +5374,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 234
+      "executionTimeMs": 183
     },
     {
       "id": "TC_VAL_019",
@@ -5392,7 +5392,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 101
+      "executionTimeMs": 250
     },
     {
       "id": "TC_VAL_020",
@@ -5410,7 +5410,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 119
+      "executionTimeMs": 251
     },
     {
       "id": "TC_VAL_021",
@@ -5428,7 +5428,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 21. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 280
+      "executionTimeMs": 54
     },
     {
       "id": "TC_VAL_022",
@@ -5446,7 +5446,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 22. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 149
+      "executionTimeMs": 173
     },
     {
       "id": "TC_VAL_023",
@@ -5464,7 +5464,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 23. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 286
+      "executionTimeMs": 145
     },
     {
       "id": "TC_VAL_024",
@@ -5482,7 +5482,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 24. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 110
+      "executionTimeMs": 91
     },
     {
       "id": "TC_VAL_025",
@@ -5500,7 +5500,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 25. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 171
+      "executionTimeMs": 82
     },
     {
       "id": "TC_VAL_026",
@@ -5518,7 +5518,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 26. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 178
+      "executionTimeMs": 246
     },
     {
       "id": "TC_VAL_027",
@@ -5536,7 +5536,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 27. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 201
+      "executionTimeMs": 108
     },
     {
       "id": "TC_VAL_028",
@@ -5554,7 +5554,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 28. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 121
+      "executionTimeMs": 84
     },
     {
       "id": "TC_VAL_029",
@@ -5572,7 +5572,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 29. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 277
+      "executionTimeMs": 40
     },
     {
       "id": "TC_VAL_030",
@@ -5590,7 +5590,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 30. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 154
+      "executionTimeMs": 178
     },
     {
       "id": "TC_VAL_031",
@@ -5608,7 +5608,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 31. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 181
+      "executionTimeMs": 57
     },
     {
       "id": "TC_VAL_032",
@@ -5626,7 +5626,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 32. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 116
+      "executionTimeMs": 190
     },
     {
       "id": "TC_VAL_033",
@@ -5644,7 +5644,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 33. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 249
+      "executionTimeMs": 147
     },
     {
       "id": "TC_VAL_034",
@@ -5662,7 +5662,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 34. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 252
+      "executionTimeMs": 229
     },
     {
       "id": "TC_VAL_035",
@@ -5680,7 +5680,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 35. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 286
+      "executionTimeMs": 115
     },
     {
       "id": "TC_VAL_036",
@@ -5698,7 +5698,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 36. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 212
+      "executionTimeMs": 238
     },
     {
       "id": "TC_VAL_037",
@@ -5716,7 +5716,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 37. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 225
+      "executionTimeMs": 189
     },
     {
       "id": "TC_VAL_038",
@@ -5734,7 +5734,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 38. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 158
+      "executionTimeMs": 196
     },
     {
       "id": "TC_VAL_039",
@@ -5752,7 +5752,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 39. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 248
+      "executionTimeMs": 76
     },
     {
       "id": "TC_VAL_040",
@@ -5770,7 +5770,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Input Validation verification step 40. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 215
+      "executionTimeMs": 138
     },
     {
       "id": "TC_ERR_001",
@@ -5788,7 +5788,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 251
+      "executionTimeMs": 195
     },
     {
       "id": "TC_ERR_002",
@@ -5806,7 +5806,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 263
+      "executionTimeMs": 70
     },
     {
       "id": "TC_ERR_003",
@@ -5824,7 +5824,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 199
+      "executionTimeMs": 282
     },
     {
       "id": "TC_ERR_004",
@@ -5842,7 +5842,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 146
+      "executionTimeMs": 115
     },
     {
       "id": "TC_ERR_005",
@@ -5860,7 +5860,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 162
+      "executionTimeMs": 256
     },
     {
       "id": "TC_ERR_006",
@@ -5878,7 +5878,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 147
+      "executionTimeMs": 278
     },
     {
       "id": "TC_ERR_007",
@@ -5896,7 +5896,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 142
+      "executionTimeMs": 250
     },
     {
       "id": "TC_ERR_008",
@@ -5914,7 +5914,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 260
+      "executionTimeMs": 178
     },
     {
       "id": "TC_ERR_009",
@@ -5932,7 +5932,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 161
+      "executionTimeMs": 254
     },
     {
       "id": "TC_ERR_010",
@@ -5950,7 +5950,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 238
+      "executionTimeMs": 92
     },
     {
       "id": "TC_ERR_011",
@@ -5968,7 +5968,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 197
+      "executionTimeMs": 277
     },
     {
       "id": "TC_ERR_012",
@@ -5986,7 +5986,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 178
+      "executionTimeMs": 77
     },
     {
       "id": "TC_ERR_013",
@@ -6004,7 +6004,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 89
+      "executionTimeMs": 86
     },
     {
       "id": "TC_ERR_014",
@@ -6022,7 +6022,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 91
+      "executionTimeMs": 127
     },
     {
       "id": "TC_ERR_015",
@@ -6040,7 +6040,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 85
+      "executionTimeMs": 256
     },
     {
       "id": "TC_ERR_016",
@@ -6058,7 +6058,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 184
+      "executionTimeMs": 56
     },
     {
       "id": "TC_ERR_017",
@@ -6076,7 +6076,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 257
+      "executionTimeMs": 179
     },
     {
       "id": "TC_ERR_018",
@@ -6094,7 +6094,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 202
+      "executionTimeMs": 216
     },
     {
       "id": "TC_ERR_019",
@@ -6112,7 +6112,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 126
+      "executionTimeMs": 235
     },
     {
       "id": "TC_ERR_020",
@@ -6130,7 +6130,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Error Handling verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 88
+      "executionTimeMs": 93
     },
     {
       "id": "TC_SESS_001",
@@ -6148,7 +6148,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 201
+      "executionTimeMs": 80
     },
     {
       "id": "TC_SESS_002",
@@ -6166,7 +6166,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 95
+      "executionTimeMs": 59
     },
     {
       "id": "TC_SESS_003",
@@ -6184,7 +6184,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 238
+      "executionTimeMs": 276
     },
     {
       "id": "TC_SESS_004",
@@ -6202,7 +6202,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 130
+      "executionTimeMs": 166
     },
     {
       "id": "TC_SESS_005",
@@ -6220,7 +6220,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 263
+      "executionTimeMs": 189
     },
     {
       "id": "TC_SESS_006",
@@ -6238,7 +6238,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 162
+      "executionTimeMs": 98
     },
     {
       "id": "TC_SESS_007",
@@ -6256,7 +6256,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 179
+      "executionTimeMs": 212
     },
     {
       "id": "TC_SESS_008",
@@ -6274,7 +6274,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 216
+      "executionTimeMs": 187
     },
     {
       "id": "TC_SESS_009",
@@ -6292,7 +6292,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 216
+      "executionTimeMs": 126
     },
     {
       "id": "TC_SESS_010",
@@ -6310,7 +6310,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 243
+      "executionTimeMs": 171
     },
     {
       "id": "TC_SESS_011",
@@ -6328,7 +6328,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 182
+      "executionTimeMs": 199
     },
     {
       "id": "TC_SESS_012",
@@ -6346,7 +6346,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 88
+      "executionTimeMs": 185
     },
     {
       "id": "TC_SESS_013",
@@ -6364,7 +6364,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 247
+      "executionTimeMs": 188
     },
     {
       "id": "TC_SESS_014",
@@ -6382,7 +6382,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 133
+      "executionTimeMs": 138
     },
     {
       "id": "TC_SESS_015",
@@ -6400,7 +6400,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 113
+      "executionTimeMs": 236
     },
     {
       "id": "TC_SESS_016",
@@ -6418,7 +6418,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 140
+      "executionTimeMs": 214
     },
     {
       "id": "TC_SESS_017",
@@ -6436,7 +6436,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 66
+      "executionTimeMs": 140
     },
     {
       "id": "TC_SESS_018",
@@ -6454,7 +6454,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 149
+      "executionTimeMs": 184
     },
     {
       "id": "TC_SESS_019",
@@ -6472,7 +6472,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 198
+      "executionTimeMs": 153
     },
     {
       "id": "TC_SESS_020",
@@ -6490,7 +6490,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Session Management verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 253
+      "executionTimeMs": 154
     },
     {
       "id": "TC_NOTIF_001",
@@ -6508,7 +6508,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 273
+      "executionTimeMs": 255
     },
     {
       "id": "TC_NOTIF_002",
@@ -6526,7 +6526,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 190
+      "executionTimeMs": 210
     },
     {
       "id": "TC_NOTIF_003",
@@ -6544,7 +6544,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 82
+      "executionTimeMs": 173
     },
     {
       "id": "TC_NOTIF_004",
@@ -6562,7 +6562,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 239
+      "executionTimeMs": 143
     },
     {
       "id": "TC_NOTIF_005",
@@ -6580,7 +6580,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 164
+      "executionTimeMs": 221
     },
     {
       "id": "TC_NOTIF_006",
@@ -6598,7 +6598,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 108
+      "executionTimeMs": 177
     },
     {
       "id": "TC_NOTIF_007",
@@ -6616,7 +6616,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 94
+      "executionTimeMs": 214
     },
     {
       "id": "TC_NOTIF_008",
@@ -6634,7 +6634,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 98
+      "executionTimeMs": 279
     },
     {
       "id": "TC_NOTIF_009",
@@ -6652,7 +6652,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 170
+      "executionTimeMs": 203
     },
     {
       "id": "TC_NOTIF_010",
@@ -6670,7 +6670,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 141
+      "executionTimeMs": 69
     },
     {
       "id": "TC_NOTIF_011",
@@ -6688,7 +6688,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 70
+      "executionTimeMs": 86
     },
     {
       "id": "TC_NOTIF_012",
@@ -6706,7 +6706,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 206
+      "executionTimeMs": 199
     },
     {
       "id": "TC_NOTIF_013",
@@ -6724,7 +6724,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 248
+      "executionTimeMs": 226
     },
     {
       "id": "TC_NOTIF_014",
@@ -6742,7 +6742,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 129
+      "executionTimeMs": 195
     },
     {
       "id": "TC_NOTIF_015",
@@ -6760,7 +6760,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 262
+      "executionTimeMs": 205
     },
     {
       "id": "TC_NOTIF_016",
@@ -6778,7 +6778,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 106
+      "executionTimeMs": 279
     },
     {
       "id": "TC_NOTIF_017",
@@ -6796,7 +6796,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 125
+      "executionTimeMs": 203
     },
     {
       "id": "TC_NOTIF_018",
@@ -6814,7 +6814,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 229
+      "executionTimeMs": 47
     },
     {
       "id": "TC_NOTIF_019",
@@ -6832,7 +6832,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 67
+      "executionTimeMs": 120
     },
     {
       "id": "TC_NOTIF_020",
@@ -6850,7 +6850,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Notifications verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 206
+      "executionTimeMs": 233
     },
     {
       "id": "TC_UPLD_001",
@@ -6868,7 +6868,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 286
+      "executionTimeMs": 78
     },
     {
       "id": "TC_UPLD_002",
@@ -6886,7 +6886,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 263,
+      "executionTimeMs": 204,
       "screenshot": "TC_UPLD_002_failure.png"
     },
     {
@@ -6905,7 +6905,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 197
+      "executionTimeMs": 244
     },
     {
       "id": "TC_UPLD_004",
@@ -6923,7 +6923,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 68
+      "executionTimeMs": 128
     },
     {
       "id": "TC_UPLD_005",
@@ -6941,7 +6941,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 283
+      "executionTimeMs": 168
     },
     {
       "id": "TC_UPLD_006",
@@ -6959,7 +6959,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 253
+      "executionTimeMs": 208
     },
     {
       "id": "TC_UPLD_007",
@@ -6977,7 +6977,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 135
+      "executionTimeMs": 261
     },
     {
       "id": "TC_UPLD_008",
@@ -6995,7 +6995,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 203
+      "executionTimeMs": 275
     },
     {
       "id": "TC_UPLD_009",
@@ -7013,7 +7013,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 183
+      "executionTimeMs": 104
     },
     {
       "id": "TC_UPLD_010",
@@ -7031,7 +7031,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 210
+      "executionTimeMs": 148
     },
     {
       "id": "TC_UPLD_011",
@@ -7049,7 +7049,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 41
+      "executionTimeMs": 74
     },
     {
       "id": "TC_UPLD_012",
@@ -7067,7 +7067,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 70
+      "executionTimeMs": 112
     },
     {
       "id": "TC_UPLD_013",
@@ -7085,7 +7085,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 144
+      "executionTimeMs": 222
     },
     {
       "id": "TC_UPLD_014",
@@ -7103,7 +7103,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 165
+      "executionTimeMs": 132
     },
     {
       "id": "TC_UPLD_015",
@@ -7121,7 +7121,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 134
+      "executionTimeMs": 83
     },
     {
       "id": "TC_UPLD_016",
@@ -7139,7 +7139,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 180
+      "executionTimeMs": 240
     },
     {
       "id": "TC_UPLD_017",
@@ -7157,7 +7157,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 264
+      "executionTimeMs": 155
     },
     {
       "id": "TC_UPLD_018",
@@ -7175,7 +7175,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 158
+      "executionTimeMs": 105
     },
     {
       "id": "TC_UPLD_019",
@@ -7193,7 +7193,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 210
+      "executionTimeMs": 134
     },
     {
       "id": "TC_UPLD_020",
@@ -7211,7 +7211,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed File Upload verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 56
+      "executionTimeMs": 106
     },
     {
       "id": "TC_OFF_001",
@@ -7229,7 +7229,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Offline Handling verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 215
+      "executionTimeMs": 195
     },
     {
       "id": "TC_OFF_002",
@@ -7247,7 +7247,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Offline Handling verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 281
+      "executionTimeMs": 215
     },
     {
       "id": "TC_OFF_003",
@@ -7265,7 +7265,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Offline Handling verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 128
+      "executionTimeMs": 91
     },
     {
       "id": "TC_OFF_004",
@@ -7283,7 +7283,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Offline Handling verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 188
+      "executionTimeMs": 150
     },
     {
       "id": "TC_OFF_005",
@@ -7301,7 +7301,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Offline Handling verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 222
+      "executionTimeMs": 244
     },
     {
       "id": "TC_OFF_006",
@@ -7319,7 +7319,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Offline Handling verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 205
+      "executionTimeMs": 128
     },
     {
       "id": "TC_OFF_007",
@@ -7337,7 +7337,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Offline Handling verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 193
+      "executionTimeMs": 243
     },
     {
       "id": "TC_OFF_008",
@@ -7355,7 +7355,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Offline Handling verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 230
+      "executionTimeMs": 146
     },
     {
       "id": "TC_OFF_009",
@@ -7373,7 +7373,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Offline Handling verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 68
+      "executionTimeMs": 81
     },
     {
       "id": "TC_OFF_010",
@@ -7391,7 +7391,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Offline Handling verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 65
+      "executionTimeMs": 169
     },
     {
       "id": "TC_A11Y_001",
@@ -7409,7 +7409,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 129
+      "executionTimeMs": 98
     },
     {
       "id": "TC_A11Y_002",
@@ -7427,7 +7427,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 65
+      "executionTimeMs": 275
     },
     {
       "id": "TC_A11Y_003",
@@ -7445,7 +7445,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 231
+      "executionTimeMs": 250
     },
     {
       "id": "TC_A11Y_004",
@@ -7463,7 +7463,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 274
+      "executionTimeMs": 83
     },
     {
       "id": "TC_A11Y_005",
@@ -7481,7 +7481,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 279
+      "executionTimeMs": 222
     },
     {
       "id": "TC_A11Y_006",
@@ -7499,7 +7499,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 249
+      "executionTimeMs": 194
     },
     {
       "id": "TC_A11Y_007",
@@ -7517,7 +7517,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 168
+      "executionTimeMs": 213
     },
     {
       "id": "TC_A11Y_008",
@@ -7535,7 +7535,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 121
+      "executionTimeMs": 90
     },
     {
       "id": "TC_A11Y_009",
@@ -7553,7 +7553,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 195
+      "executionTimeMs": 109
     },
     {
       "id": "TC_A11Y_010",
@@ -7571,7 +7571,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 86
+      "executionTimeMs": 117
     },
     {
       "id": "TC_A11Y_011",
@@ -7589,7 +7589,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 143
+      "executionTimeMs": 265
     },
     {
       "id": "TC_A11Y_012",
@@ -7607,7 +7607,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 129
+      "executionTimeMs": 276
     },
     {
       "id": "TC_A11Y_013",
@@ -7625,7 +7625,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 219
+      "executionTimeMs": 99
     },
     {
       "id": "TC_A11Y_014",
@@ -7643,7 +7643,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 190
+      "executionTimeMs": 275
     },
     {
       "id": "TC_A11Y_015",
@@ -7661,7 +7661,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 59
+      "executionTimeMs": 112
     },
     {
       "id": "TC_A11Y_016",
@@ -7679,7 +7679,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 93
+      "executionTimeMs": 50
     },
     {
       "id": "TC_A11Y_017",
@@ -7697,7 +7697,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 46
+      "executionTimeMs": 157
     },
     {
       "id": "TC_A11Y_018",
@@ -7715,7 +7715,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 63
+      "executionTimeMs": 198
     },
     {
       "id": "TC_A11Y_019",
@@ -7733,7 +7733,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 49
+      "executionTimeMs": 46
     },
     {
       "id": "TC_A11Y_020",
@@ -7751,7 +7751,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Accessibility verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 98
+      "executionTimeMs": 136
     },
     {
       "id": "TC_RESP_001",
@@ -7769,7 +7769,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Responsive UI verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 110
+      "executionTimeMs": 278
     },
     {
       "id": "TC_RESP_002",
@@ -7787,7 +7787,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Responsive UI verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 198
+      "executionTimeMs": 209
     },
     {
       "id": "TC_RESP_003",
@@ -7805,7 +7805,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Responsive UI verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 127
+      "executionTimeMs": 192
     },
     {
       "id": "TC_RESP_004",
@@ -7823,7 +7823,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Responsive UI verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 202
+      "executionTimeMs": 153
     },
     {
       "id": "TC_RESP_005",
@@ -7841,7 +7841,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Responsive UI verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 74
+      "executionTimeMs": 52
     },
     {
       "id": "TC_RESP_006",
@@ -7859,7 +7859,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Responsive UI verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 64
+      "executionTimeMs": 215
     },
     {
       "id": "TC_RESP_007",
@@ -7877,7 +7877,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Responsive UI verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 53
+      "executionTimeMs": 262
     },
     {
       "id": "TC_RESP_008",
@@ -7895,7 +7895,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Responsive UI verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 146
+      "executionTimeMs": 276
     },
     {
       "id": "TC_RESP_009",
@@ -7913,7 +7913,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Responsive UI verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 260
+      "executionTimeMs": 145
     },
     {
       "id": "TC_RESP_010",
@@ -7931,7 +7931,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Responsive UI verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 276
+      "executionTimeMs": 103
     },
     {
       "id": "TC_PERF_001",
@@ -7949,7 +7949,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 178
+      "executionTimeMs": 186
     },
     {
       "id": "TC_PERF_002",
@@ -7967,7 +7967,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 154
+      "executionTimeMs": 210
     },
     {
       "id": "TC_PERF_003",
@@ -7985,7 +7985,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 284
+      "executionTimeMs": 200
     },
     {
       "id": "TC_PERF_004",
@@ -8003,7 +8003,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 135
+      "executionTimeMs": 123
     },
     {
       "id": "TC_PERF_005",
@@ -8021,7 +8021,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 166
+      "executionTimeMs": 241
     },
     {
       "id": "TC_PERF_006",
@@ -8039,7 +8039,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 67
+      "executionTimeMs": 91
     },
     {
       "id": "TC_PERF_007",
@@ -8057,7 +8057,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 115
+      "executionTimeMs": 196
     },
     {
       "id": "TC_PERF_008",
@@ -8075,7 +8075,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 107
+      "executionTimeMs": 153
     },
     {
       "id": "TC_PERF_009",
@@ -8093,7 +8093,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 123
+      "executionTimeMs": 104
     },
     {
       "id": "TC_PERF_010",
@@ -8111,7 +8111,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 287
+      "executionTimeMs": 75
     },
     {
       "id": "TC_PERF_011",
@@ -8129,7 +8129,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 182
+      "executionTimeMs": 198
     },
     {
       "id": "TC_PERF_012",
@@ -8147,7 +8147,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 280
+      "executionTimeMs": 160
     },
     {
       "id": "TC_PERF_013",
@@ -8165,7 +8165,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 86
+      "executionTimeMs": 100
     },
     {
       "id": "TC_PERF_014",
@@ -8183,7 +8183,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 186
+      "executionTimeMs": 130
     },
     {
       "id": "TC_PERF_015",
@@ -8201,7 +8201,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 63
+      "executionTimeMs": 287
     },
     {
       "id": "TC_PERF_016",
@@ -8219,7 +8219,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 41
+      "executionTimeMs": 101
     },
     {
       "id": "TC_PERF_017",
@@ -8237,7 +8237,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 168
+      "executionTimeMs": 75
     },
     {
       "id": "TC_PERF_018",
@@ -8255,7 +8255,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 197
+      "executionTimeMs": 48
     },
     {
       "id": "TC_PERF_019",
@@ -8273,7 +8273,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 182
+      "executionTimeMs": 213
     },
     {
       "id": "TC_PERF_020",
@@ -8291,7 +8291,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Performance Smoke Tests verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 203
+      "executionTimeMs": 40
     },
     {
       "id": "TC_REG_S_001",
@@ -8309,7 +8309,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 1. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 239
+      "executionTimeMs": 101
     },
     {
       "id": "TC_REG_S_002",
@@ -8327,7 +8327,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 2. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 164
+      "executionTimeMs": 224
     },
     {
       "id": "TC_REG_S_003",
@@ -8345,7 +8345,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 3. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 276
+      "executionTimeMs": 77
     },
     {
       "id": "TC_REG_S_004",
@@ -8363,7 +8363,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 4. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 134
+      "executionTimeMs": 247
     },
     {
       "id": "TC_REG_S_005",
@@ -8381,7 +8381,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 5. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 52
+      "executionTimeMs": 253
     },
     {
       "id": "TC_REG_S_006",
@@ -8399,7 +8399,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 6. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 119
+      "executionTimeMs": 273
     },
     {
       "id": "TC_REG_S_007",
@@ -8417,7 +8417,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 7. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 272
+      "executionTimeMs": 175
     },
     {
       "id": "TC_REG_S_008",
@@ -8435,7 +8435,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 8. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 104
+      "executionTimeMs": 193
     },
     {
       "id": "TC_REG_S_009",
@@ -8453,7 +8453,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 9. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 72
+      "executionTimeMs": 65
     },
     {
       "id": "TC_REG_S_010",
@@ -8471,7 +8471,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 10. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 261
+      "executionTimeMs": 242
     },
     {
       "id": "TC_REG_S_011",
@@ -8489,7 +8489,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 11. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 156
+      "executionTimeMs": 169
     },
     {
       "id": "TC_REG_S_012",
@@ -8507,7 +8507,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 12. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 42
+      "executionTimeMs": 204
     },
     {
       "id": "TC_REG_S_013",
@@ -8525,7 +8525,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 13. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 172
+      "executionTimeMs": 152
     },
     {
       "id": "TC_REG_S_014",
@@ -8543,7 +8543,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 14. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 180
+      "executionTimeMs": 278
     },
     {
       "id": "TC_REG_S_015",
@@ -8561,7 +8561,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 15. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 185
+      "executionTimeMs": 252
     },
     {
       "id": "TC_REG_S_016",
@@ -8579,7 +8579,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 16. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 165
+      "executionTimeMs": 231
     },
     {
       "id": "TC_REG_S_017",
@@ -8597,7 +8597,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 17. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 215
+      "executionTimeMs": 178
     },
     {
       "id": "TC_REG_S_018",
@@ -8615,7 +8615,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 18. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 186
+      "executionTimeMs": 92
     },
     {
       "id": "TC_REG_S_019",
@@ -8633,7 +8633,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 19. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 266
+      "executionTimeMs": 48
     },
     {
       "id": "TC_REG_S_020",
@@ -8651,7 +8651,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 20. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 75
+      "executionTimeMs": 114
     },
     {
       "id": "TC_REG_S_021",
@@ -8669,7 +8669,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 21. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 223
+      "executionTimeMs": 119
     },
     {
       "id": "TC_REG_S_022",
@@ -8687,7 +8687,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 22. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 174
+      "executionTimeMs": 222
     },
     {
       "id": "TC_REG_S_023",
@@ -8705,7 +8705,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 23. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 124
+      "executionTimeMs": 126
     },
     {
       "id": "TC_REG_S_024",
@@ -8723,7 +8723,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 24. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 105
+      "executionTimeMs": 193
     },
     {
       "id": "TC_REG_S_025",
@@ -8741,7 +8741,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 25. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 185
+      "executionTimeMs": 174
     },
     {
       "id": "TC_REG_S_026",
@@ -8759,7 +8759,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 26. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 106
+      "executionTimeMs": 175
     },
     {
       "id": "TC_REG_S_027",
@@ -8777,7 +8777,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 27. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 161
+      "executionTimeMs": 195
     },
     {
       "id": "TC_REG_S_028",
@@ -8795,7 +8795,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 28. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 123
+      "executionTimeMs": 233
     },
     {
       "id": "TC_REG_S_029",
@@ -8813,7 +8813,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 29. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 120
+      "executionTimeMs": 259
     },
     {
       "id": "TC_REG_S_030",
@@ -8831,7 +8831,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 30. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 258
+      "executionTimeMs": 115
     },
     {
       "id": "TC_REG_S_031",
@@ -8849,7 +8849,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 31. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 217
+      "executionTimeMs": 158
     },
     {
       "id": "TC_REG_S_032",
@@ -8867,7 +8867,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 32. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 58
+      "executionTimeMs": 224
     },
     {
       "id": "TC_REG_S_033",
@@ -8885,7 +8885,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 33. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 192
+      "executionTimeMs": 204
     },
     {
       "id": "TC_REG_S_034",
@@ -8903,7 +8903,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 34. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 179
+      "executionTimeMs": 121
     },
     {
       "id": "TC_REG_S_035",
@@ -8921,7 +8921,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 35. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 48
+      "executionTimeMs": 59
     },
     {
       "id": "TC_REG_S_036",
@@ -8939,7 +8939,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 36. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 149
+      "executionTimeMs": 217
     },
     {
       "id": "TC_REG_S_037",
@@ -8957,7 +8957,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 37. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 121
+      "executionTimeMs": 227
     },
     {
       "id": "TC_REG_S_038",
@@ -8975,7 +8975,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 38. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 116
+      "executionTimeMs": 146
     },
     {
       "id": "TC_REG_S_039",
@@ -8993,7 +8993,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 39. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 119
+      "executionTimeMs": 60
     },
     {
       "id": "TC_REG_S_040",
@@ -9011,7 +9011,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 40. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 52
+      "executionTimeMs": 86
     },
     {
       "id": "TC_REG_S_041",
@@ -9029,7 +9029,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 41. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 275
+      "executionTimeMs": 236
     },
     {
       "id": "TC_REG_S_042",
@@ -9047,7 +9047,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 42. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 192
+      "executionTimeMs": 71
     },
     {
       "id": "TC_REG_S_043",
@@ -9065,7 +9065,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 43. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 84
+      "executionTimeMs": 125
     },
     {
       "id": "TC_REG_S_044",
@@ -9083,7 +9083,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 44. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 112
+      "executionTimeMs": 88
     },
     {
       "id": "TC_REG_S_045",
@@ -9101,7 +9101,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 45. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 267
+      "executionTimeMs": 191
     },
     {
       "id": "TC_REG_S_046",
@@ -9119,7 +9119,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 46. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 158
+      "executionTimeMs": 103
     },
     {
       "id": "TC_REG_S_047",
@@ -9137,7 +9137,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 47. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 47
+      "executionTimeMs": 260
     },
     {
       "id": "TC_REG_S_048",
@@ -9155,7 +9155,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 48. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 262
+      "executionTimeMs": 175
     },
     {
       "id": "TC_REG_S_049",
@@ -9173,7 +9173,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 49. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 189
+      "executionTimeMs": 52
     },
     {
       "id": "TC_REG_S_050",
@@ -9191,7 +9191,7 @@
       "expectedResult": "Screen updates correctly, expected UI element displays without errors.",
       "actualResult": "Successfully completed Regression Suite verification step 50. Verified 100% expected response.",
       "status": "PASSED",
-      "executionTimeMs": 94
+      "executionTimeMs": 178
     }
   ]
 }
