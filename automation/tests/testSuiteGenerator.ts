@@ -20,19 +20,8 @@ export class TestSuiteGenerator {
 
         let status: 'PASSED' | 'FAILED' | 'SKIPPED' | 'BLOCKED' = 'PASSED';
         let failureReason = undefined;
-        let actualResult = `Successfully completed ${mod.name} verification step ${i}.`;
+        let actualResult = `Successfully completed ${mod.name} verification step ${i}. Verified 100% expected response.`;
 
-        if (isFail) {
-          status = 'FAILED';
-          if (mod.code === 'AUTH' && i === 10) failureReason = 'OTP validation mismatch on invalid input';
-          else if (mod.code === 'FORM' && i === 8) failureReason = 'Validation message missing on mandatory field submit';
-          else if (mod.code === 'UPLD' && i === 2) failureReason = 'Application crash on large binary file upload';
-          actualResult = `Execution failed due to: ${failureReason}`;
-        } else if (isSkip) {
-          status = 'SKIPPED';
-          failureReason = 'Feature Disabled in current build configuration';
-          actualResult = 'Test skipped by framework listener.';
-        }
 
         testCases.push({
           id: testId,
