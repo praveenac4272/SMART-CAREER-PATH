@@ -215,9 +215,13 @@ export class ExcelReporter {
     const resourcesDir = path.join(process.cwd(), 'resources');
     if (!fs.existsSync(resourcesDir)) fs.mkdirSync(resourcesDir, { recursive: true });
     await workbook.xlsx.writeFile(path.join(resourcesDir, '510_Executable_Test_Cases_Specification.xlsx'));
+    const vulnDir = path.join(process.cwd(), '..', 'Vulnerability Test Results');
+    if (!fs.existsSync(vulnDir)) fs.mkdirSync(vulnDir, { recursive: true });
+    await workbook.xlsx.writeFile(path.join(vulnDir, 'test-cases.xlsx'));
   }
 
   private static styleHeader(sheet: ExcelJS.Worksheet) {
+
     const headerRow = sheet.getRow(1);
     headerRow.font = { bold: true, color: { argb: 'FFFFFF' } };
     headerRow.fill = {
