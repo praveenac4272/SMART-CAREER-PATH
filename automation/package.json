@@ -1,0 +1,26 @@
+{
+  "name": "smart-career-path-automation",
+  "version": "1.0.0",
+  "description": "Enterprise Appium E2E Automation Framework for SMART CAREER PATH Android App",
+  "main": "runners/runTests.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "ts-node runners/runTests.ts",
+    "test:parallel": "ts-node runners/runTests.ts --parallel",
+    "report:generate": "ts-node reports/generateStandaloneReports.ts",
+    "clean": "rimraf dist \"Test Results\" screenshots logs"
+  },
+  "dependencies": {
+    "webdriverio": "^8.32.0",
+    "exceljs": "^4.4.0",
+    "fs-extra": "^11.2.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2",
+    "@types/node": "^20.11.0",
+    "@types/fs-extra": "^11.0.4",
+    "rimraf": "^5.0.5"
+  }
+}
