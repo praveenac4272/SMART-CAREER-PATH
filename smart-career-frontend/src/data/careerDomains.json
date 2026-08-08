@@ -1,0 +1,109 @@
+{
+  "IT & Technology": [
+    "Software Engineer",
+    "AI/ML Engineer",
+    "Data Scientist",
+    "Full Stack Developer",
+    "DevOps Engineer",
+    "Cybersecurity Analyst",
+    "UI/UX Designer"
+  ],
+  "Business & Commerce": [
+    "Chartered Accountant",
+    "MBA Graduate",
+    "Investment Banker",
+    "Financial Analyst",
+    "Marketing Manager",
+    "Business Consultant",
+    "Company Secretary"
+  ],
+  "Entrepreneurship": [
+    "Startup Founder",
+    "Tech Entrepreneur",
+    "Small Business Owner",
+    "E-commerce Owner",
+    "Franchise Owner",
+    "Consultant"
+  ],
+  "Influencer & Content Creation": [
+    "YouTuber",
+    "Instagram Influencer",
+    "Content Creator",
+    "Social Media Manager",
+    "Podcast Host",
+    "Vlogger"
+  ],
+  "Arts & Creativity": [
+    "Graphic Designer",
+    "Illustrator",
+    "Digital Artist",
+    "Fine Artist",
+    "Art Director",
+    "Tattoo Artist"
+  ],
+  "Anime & Animation": [
+    "Animator",
+    "3D Artist",
+    "Character Designer",
+    "Storyboard Artist",
+    "VFX Artist",
+    "Animation Director"
+  ],
+  "Gaming & Esports": [
+    "Esports Player",
+    "Game Streamer",
+    "Gaming Coach",
+    "Game Developer",
+    "Gaming Content Creator",
+    "Esports Commentator"
+  ],
+  "Acting & Entertainment": [
+    "Film Actor",
+    "Theater Artist",
+    "Voice Actor",
+    "TV Serial Actor",
+    "Stand-up Comedian"
+  ],
+  "Music Careers": [
+    "Playback Singer",
+    "Music Producer",
+    "Music Composer",
+    "DJ / Music Artist",
+    "Music Teacher",
+    "Sound Engineer"
+  ],
+  "Law Careers": [
+    "Lawyer",
+    "Corporate Lawyer",
+    "Judge",
+    "Legal Advisor",
+    "Public Prosecutor",
+    "Legal Analyst"
+  ],
+  "Government & Railway": [
+    "IAS Officer",
+    "IPS Officer",
+    "Railway Officer",
+    "Bank PO",
+    "SSC CGL",
+    "Forest Officer",
+    "Govt. Teacher"
+  ],
+  "Healthcare": [
+    "Doctor",
+    "Nurse",
+    "Physiotherapist",
+    "Pharmacist",
+    "Medical Lab Technician",
+    "Radiologist",
+    "Dentist"
+  ],
+  "Agriculture": [
+    "Agricultural Scientist",
+    "Agri-Business Manager",
+    "Horticulturist",
+    "Food Technologist",
+    "Agricultural Engineer",
+    "Organic Farmer"
+  ]
+}
