@@ -113,12 +113,15 @@ function SignUp() {
         studentId: response.user?.id ?? null,
         email: response.user?.email || values.email,
         fullName: response.user?.full_name || values.fullName,
+        age: response.user?.age || values.age,
+        phone: response.user?.phone_number || values.phone,
       });
 
       saveUserProfile({
         fullName: response.user?.full_name || values.fullName,
         email: response.user?.email || values.email,
         age: response.user?.age || values.age,
+        phone: response.user?.phone_number || values.phone,
       });
 
       navigate('/personal-details');

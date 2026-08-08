@@ -1,8 +1,12 @@
 from __future__ import annotations
 
+import csv
+import difflib
 import os
+import random
 import re
 import sqlite3
+import sys
 from datetime import datetime
 from typing import Any, Dict, Optional
 
@@ -12,6 +16,10 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 DB_PATH = os.environ.get('CAREER_DB_PATH', os.path.join(BASE_DIR, 'career_backend.db'))
+LOCAL_CAREER_CSV = os.path.join(BASE_DIR, 'career_state_colleges.csv')
+EXTERNAL_REAL_CSV = r'C:\Users\prave\OneDrive\Desktop\Real Dataset Generator\output\career_state_colleges_real.csv'
+
+SEED_CAREER_COLLEGES: list[tuple[str, str, str, str, str, str, str]] = []
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
@@ -23,47 +31,94 @@ EMAIL_REGEX = re.compile(r'^[^\s@]+@[^\s@]+\.[^\s@]+$')
 PHONE_REGEX = re.compile(r'^\+?[0-9]{7,15}$')
 GENDER_OPTIONS = {'male', 'female', 'other', 'prefer_not_to_say'}
 OPTION_SCORES = {
-    'very interested': 4,
-    'interested': 3,
-    'neutral': 2,
-    'not interested': 1,
+    'strongly agree': 5,
+    'agree': 4,
+    'neutral': 3,
+    'disagree': 2,
+    'strongly disagree': 1,
+    'very interested': 5,
+    'interested': 4,
+    'not interested': 2,
 }
 
 OPTION_ALIASES = {
-    'strongly agree': 'very interested',
-    'agree': 'interested',
+    'strongly agree': 'strongly agree',
+    'very interested': 'strongly agree',
+    'agree': 'agree',
+    'interested': 'agree',
     'neutral': 'neutral',
-    'disagree': 'not interested',
-    'strongly disagree': 'not interested',
+    'disagree': 'disagree',
+    'strongly disagree': 'strongly disagree',
+    'not interested': 'disagree',
+}
+
+CANONICAL_INDIAN_STATES = [
+    'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh',
+    'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand',
+    'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur',
+    'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan',
+    'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh',
+    'Uttarakhand', 'West Bengal', 'Delhi NCR', 'Chandigarh',
+    'Jammu & Kashmir', 'Ladakh', 'Puducherry', 'Andaman & Nicobar Islands',
+    'Lakshadweep'
+]
+
+DEFAULT_CAREER_STATES = [
+    'Delhi NCR', 'Gujarat', 'Karnataka', 'Kerala', 'Maharashtra',
+    'Punjab', 'Tamil Nadu', 'Telangana', 'Uttar Pradesh', 'West Bengal'
+]
+
+STATE_ALIASES = {
+    'delhi (nct)': 'Delhi NCR',
+    'delhi ncr': 'Delhi NCR',
+    'delhi': 'Delhi NCR',
+    'tamil nadu': 'Tamil Nadu',
+    'tamilnadu': 'Tamil Nadu',
+    'telangana': 'Telangana',
+    'uttar pradesh': 'Uttar Pradesh',
+    'up': 'Uttar Pradesh',
+    'west bengal': 'West Bengal',
+    'wb': 'West Bengal',
+    'karnataka': 'Karnataka',
+    'kerala': 'Kerala',
+    'gujarat': 'Gujarat',
+    'punjab': 'Punjab',
+    'maharashtra': 'Maharashtra',
+    'mh': 'Maharashtra',
+    'ka': 'Karnataka',
+    'tn': 'Tamil Nadu',
+    'pb': 'Punjab',
+    'gj': 'Gujarat',
+    'kl': 'Kerala',
 }
 
 QUESTION_TO_SKILLS = {
-    'q1': {'logic': 1},
-    'q2': {'data': 1},
-    'q3': {'ui': 1, 'creativity': 1},
-    'q4': {'management': 1, 'leadership': 1},
-    'q5': {'documentation': 1, 'communication': 1},
-    'q6': {'programming': 1, 'technical': 1},
-    'q7': {'business': 1},
-    'q8': {'communication': 1},
-    'q9': {'cybersecurity': 1, 'security': 1},
-    'q10': {'collaboration': 1, 'creativity': 1},
+    'q1': {'q1': 1},
+    'q2': {'q2': 1},
+    'q3': {'q3': 1},
+    'q4': {'q4': 1},
+    'q5': {'q5': 1},
+    'q6': {'q6': 1},
+    'q7': {'q7': 1},
+    'q8': {'q8': 1},
+    'q9': {'q9': 1},
+    'q10': {'q10': 1},
 }
 
 CAREER_CATEGORY_PROFILES = {
-    'IT & Technology': {'logic': 1, 'data': 1, 'programming': 1, 'cybersecurity': 1, 'ui': 1},
-    'Business & Commerce': {'business': 1, 'management': 1, 'communication': 1},
-    'Entrepreneurship': {'management': 1, 'business': 1, 'communication': 1, 'creativity': 1},
-    'Influencer & Content Creation': {'creativity': 1, 'communication': 1, 'collaboration': 1},
-    'Arts & Creativity': {'creativity': 1, 'ui': 1},
-    'Anime & Animation': {'ui': 1, 'creativity': 1, 'logic': 1},
-    'Gaming & Esports': {'logic': 1, 'creativity': 1, 'programming': 1},
-    'Acting & Entertainment': {'communication': 1, 'creativity': 1},
-    'Music Careers': {'creativity': 1, 'communication': 1},
-    'Law Careers': {'communication': 1, 'logic': 1, 'business': 1},
-    'Government & Railway': {'leadership': 1, 'communication': 1, 'logic': 1},
-    'Healthcare': {'logic': 1, 'data': 1, 'communication': 1},
-    'Agriculture': {'data': 1, 'business': 1, 'logic': 1},
+    'IT & Technology': {'q1': 5, 'q8': 5, 'q6': 4, 'q10': 2, 'q3': 2, 'q5': 1, 'q7': 0, 'q2': 1, 'q4': 1, 'q9': 1},
+    'Business & Commerce': {'q3': 5, 'q10': 4, 'q1': 2, 'q8': 2, 'q4': 2, 'q6': 1, 'q2': 2, 'q5': 1, 'q7': 0, 'q9': 1},
+    'Entrepreneurship': {'q10': 5, 'q3': 5, 'q8': 3, 'q1': 2, 'q6': 2, 'q2': 1, 'q4': 1, 'q5': 1, 'q7': 0, 'q9': 1},
+    'Influencer & Content Creation': {'q6': 5, 'q5': 4, 'q3': 2, 'q10': 2, 'q8': 1, 'q1': 1, 'q7': 1, 'q2': 1, 'q4': 0, 'q9': 0},
+    'Arts & Creativity': {'q5': 5, 'q6': 3, 'q7': 1, 'q3': 1, 'q10': 1, 'q1': 1, 'q8': 1, 'q2': 1, 'q4': 0, 'q9': 0},
+    'Anime & Animation': {'q5': 5, 'q6': 3, 'q8': 3, 'q1': 2, 'q7': 1, 'q10': 1, 'q3': 1, 'q2': 1, 'q4': 0, 'q9': 0},
+    'Gaming & Esports': {'q8': 5, 'q1': 3, 'q6': 3, 'q10': 2, 'q5': 2, 'q3': 1, 'q7': 1, 'q2': 1, 'q4': 0, 'q9': 0},
+    'Acting & Entertainment': {'q7': 5, 'q5': 3, 'q6': 2, 'q3': 2, 'q10': 1, 'q2': 1, 'q8': 1, 'q1': 1, 'q4': 0, 'q9': 0},
+    'Music Careers': {'q7': 5, 'q5': 4, 'q6': 2, 'q3': 1, 'q10': 1, 'q1': 1, 'q8': 1, 'q2': 1, 'q4': 0, 'q9': 0},
+    'Law Careers': {'q4': 5, 'q3': 3, 'q1': 2, 'q10': 1, 'q2': 1, 'q6': 1, 'q5': 1, 'q8': 1, 'q7': 0, 'q9': 0},
+    'Government & Railway': {'q3': 5, 'q4': 4, 'q1': 2, 'q2': 2, 'q10': 1, 'q8': 1, 'q5': 1, 'q6': 1, 'q7': 0, 'q9': 1},
+    'Healthcare': {'q2': 5, 'q1': 2, 'q9': 2, 'q3': 1, 'q8': 1, 'q5': 1, 'q6': 1, 'q10': 1, 'q4': 1, 'q7': 0},
+    'Agriculture': {'q9': 5, 'q1': 2, 'q3': 2, 'q10': 2, 'q2': 1, 'q8': 1, 'q6': 1, 'q5': 1, 'q4': 0, 'q7': 0},
 }
 
 CAREER_CATEGORY_CAREERS = {
@@ -97,6 +152,487 @@ DEFAULT_CAREER_DETAILS = {
     'salaryRange': 'Varies',
     'demandLevel': 'Medium',
 }
+
+CAREER_FEE_KEYWORDS = ['fee', 'fees', 'cost', 'tuition', 'college fee', 'course fee', 'annual fee']
+CAREER_SALARY_KEYWORDS = ['salary', 'pay', 'income', 'earn', 'package', 'ctc', 'lpa', 'per year', 'per month', 'monthly', 'annual']
+CAREER_DEMAND_KEYWORDS = ['demand', 'job market', 'scope', 'opportunity', 'future', 'growth', 'hiring', 'need']
+CAREER_PATH_KEYWORDS = ['roadmap', 'how to become', 'how can i become', 'steps to become', 'what should i study', 'what should i do', 'path to', 'prepare', 'become', 'start', 'requirements', 'qualifications', 'eligibility', 'skills']
+CAREER_COLLEGES_KEYWORDS = ['college', 'colleges', 'institute', 'university', 'best college', 'top college', 'admission', 'admit', 'apply']
+CAREER_ADMISSION_KEYWORDS = ['admission', 'entry', 'application', 'eligibility', 'criteria', 'qualification']
+CAREER_ENTRANCE_KEYWORDS = ['entrance exam', 'exam', 'test', 'clat', 'neet', 'jee', 'cat', 'mat', 'cpt', 'diploma']
+CAREER_CERTIFICATE_KEYWORDS = ['certificate', 'certification', 'course', 'certified', 'credential']
+CAREER_SKILLS_KEYWORDS = ['skills', 'learn', 'learning', 'tools', 'languages', 'techniques', 'programming']
+CAREER_DEGREE_KEYWORDS = ['degree', 'bachelor', 'master', 'mba', 'btech', 'b.e.', 'm.tech', 'llb', 'mbbs', 'diploma']
+CAREER_HIGHER_STUDIES_KEYWORDS = ['higher studies', 'postgraduate', 'master', 'm.tech', 'mba', 'ms', 'phd']
+CAREER_INTERNSHIP_KEYWORDS = ['internship', 'internships', 'intern']
+CAREER_PLACEMENT_KEYWORDS = ['placement', 'placements', 'campus recruitment', 'job drive']
+CAREER_JOBS_KEYWORDS = ['job', 'jobs', 'roles', 'work', 'career opportunities']
+CAREER_SWITCH_KEYWORDS = ['switch', 'transition', 'move from', 'change from', 'shift from']
+CAREER_RECOMMENDATION_KEYWORDS = ['recommend', 'best', 'suitable', 'ideal', 'which career', 'what career', 'suggest']
+CAREER_COMPARISON_KEYWORDS = ['compare', 'versus', 'vs', 'difference between', 'different from']
+
+INTENT_KEYWORDS = {
+    'roadmap': CAREER_PATH_KEYWORDS,
+    'salary': CAREER_SALARY_KEYWORDS,
+    'colleges': CAREER_COLLEGES_KEYWORDS,
+    'fees': CAREER_FEE_KEYWORDS,
+    'admission': CAREER_ADMISSION_KEYWORDS,
+    'entrance exam': CAREER_ENTRANCE_KEYWORDS,
+    'eligibility': CAREER_ADMISSION_KEYWORDS + CAREER_ENTRANCE_KEYWORDS,
+    'certificates': CAREER_CERTIFICATE_KEYWORDS,
+    'skills': CAREER_SKILLS_KEYWORDS,
+    'degree': CAREER_DEGREE_KEYWORDS,
+    'higher studies': CAREER_HIGHER_STUDIES_KEYWORDS,
+    'internships': CAREER_INTERNSHIP_KEYWORDS,
+    'placements': CAREER_PLACEMENT_KEYWORDS,
+    'career scope': CAREER_DEMAND_KEYWORDS,
+    'future demand': CAREER_DEMAND_KEYWORDS,
+    'comparison': CAREER_COMPARISON_KEYWORDS,
+    'jobs': CAREER_JOBS_KEYWORDS,
+    'government jobs': ['government jobs', 'govt jobs', 'public sector', 'psu', 'civil services', 'upsc', 'ssc', 'railway officer'],
+    'private jobs': ['private jobs', 'corporate jobs', 'corporate roles', 'private sector'],
+    'career switch': CAREER_SWITCH_KEYWORDS,
+    'recommendations': CAREER_RECOMMENDATION_KEYWORDS,
+}
+
+DOMAIN_KEYWORDS = {
+    'it': 'IT & Technology',
+    'information technology': 'IT & Technology',
+    'software': 'IT & Technology',
+    'coding': 'IT & Technology',
+    'programming': 'IT & Technology',
+    'ai': 'IT & Technology',
+    'artificial intelligence': 'IT & Technology',
+    'machine learning': 'IT & Technology',
+    'data science': 'IT & Technology',
+    'medical': 'Healthcare',
+    'healthcare': 'Healthcare',
+    'doctor': 'Healthcare',
+    'mbbs': 'Healthcare',
+    'nurse': 'Healthcare',
+    'law': 'Law Careers',
+    'legal': 'Law Careers',
+    'lawyer': 'Law Careers',
+    'gaming': 'Gaming & Esports',
+    'esports': 'Gaming & Esports',
+    'music': 'Music Careers',
+    'dance': 'Arts & Creativity',
+    'creative': 'Arts & Creativity',
+    'art': 'Arts & Creativity',
+    'animation': 'Anime & Animation',
+    'entertainment': 'Acting & Entertainment',
+    'business': 'Business & Commerce',
+    'commerce': 'Business & Commerce',
+    'entrepreneur': 'Entrepreneurship',
+    'government': 'Government & Railway',
+    'govt': 'Government & Railway',
+    'railway': 'Government & Railway',
+    'financial': 'Business & Commerce',
+    'accounts': 'Business & Commerce',
+    'agriculture': 'Agriculture',
+    'farmer': 'Agriculture',
+    'pilot': 'Aviation',
+}
+
+DOMAIN_FALLBACK_CAREERS = {
+    'dance': ['Classical Dancer', 'Choreographer', 'Dance Teacher'],
+    'music': ['Playback Singer', 'Music Composer', 'Music Producer', 'Sound Engineer', 'Music Teacher'],
+    'gaming': ['Game Developer', 'Esports Manager', 'Gaming Content Creator', 'Gaming Coach'],
+    'ai': ['AI/ML Engineer', 'Data Scientist'],
+    'doctor': ['Doctor (MBBS)', 'Nurse', 'Pharmacist'],
+    'law': ['Lawyer / Advocate', 'Legal Advisor', 'Public Prosecutor'],
+    'accounts': ['Chartered Accountant', 'Financial Analyst'],
+    'business': ['Business Analyst', 'Entrepreneur'],
+}
+
+CAREER_CERTIFICATE_SUGGESTIONS = {
+    'AI/ML Engineer': ['TensorFlow Developer Certificate', 'IBM Data Science Professional Certificate', 'AWS Machine Learning Specialty'],
+    'Data Scientist': ['IBM Data Science Professional Certificate', 'Google Data Analytics Professional Certificate', 'Microsoft Azure Data Scientist Associate'],
+    'Software Engineer': ['AWS Certified Developer', 'Oracle Java Certification', 'Microsoft Certified: Azure Developer Associate'],
+    'Cybersecurity Analyst': ['CompTIA Security+', 'Certified Ethical Hacker (CEH)', 'Cisco CCNA Security'],
+    'UI/UX Designer': ['Google UX Design Certificate', 'NN/g UX Certification', 'Adobe Certified Professional'],
+    'Chartered Accountant': ['CA Foundation', 'CA Intermediate', 'CA Final'],
+    'Doctor (MBBS)': ['NEET preparation courses', 'Medical entrance coaching'],
+    'Lawyer / Advocate': ['CLAT coaching', 'legal research certifications'],
+    'Pilot': ['CPL training', 'DGCA-approved flying school courses'],
+}
+
+CAREER_EXAM_GUIDE = {
+    'Doctor (MBBS)': 'NEET is the main entrance exam for MBBS programs in India.',
+    'Lawyer / Advocate': 'CLAT or state-level law entrance exams are normally required for law programs.',
+    'Chartered Accountant': 'The CA Foundation, Intermediate, and Final exams are the standard path.',
+    'Pilot': 'Commercial Pilot License (CPL) training and DGCA approval are required after 10+2 with Physics and Math.',
+    'Software Engineer': 'Engineering entrance exams like JEE Main/Advanced, state engineering exams, or direct university admissions are common routes.',
+    'AI/ML Engineer': 'A B.Tech/B.E. in CS or related field is common; many roles also prefer specialized AI/ML certification programs.',
+}
+
+CAREER_DEGREE_GUIDE = {
+    'Doctor (MBBS)': 'MBBS after 10+2 with Physics, Chemistry, and Biology.',
+    'Lawyer / Advocate': 'LLB after 10+2, or integrated BA LLB after 10+2.',
+    'Chartered Accountant': 'After 10+2, pursue CA Foundation and the CA pathway.',
+    'Software Engineer': 'B.Tech/B.E. in Computer Science, IT, or related engineering degrees.',
+    'AI/ML Engineer': 'B.Tech/B.E. in Computer Science or a related field, often followed by specialized AI/ML training.',
+    'Data Scientist': 'B.Tech/B.E., B.Sc. in Mathematics/Statistics/Computer Science, followed by data science certification.',
+    'Pilot': 'Commercial Pilot License (CPL) after 10+2 with Physics and Math.',
+}
+
+
+def contains_tokenized_phrase(text: str, phrase: str) -> bool:
+    if not phrase:
+        return False
+    text = f" {text} "
+    phrase = f" {phrase} "
+    return phrase in text or text.strip() == phrase.strip()
+
+
+def get_normalized_career_map() -> Dict[str, str]:
+    career_titles = load_known_career_titles()
+    normalized = {normalize_lookup_value(title): title for title in career_titles if title}
+    for alias, canonical in CAREER_TITLE_ALIASES.items():
+        normalized[normalize_lookup_value(alias)] = canonical
+    return normalized
+
+
+def extract_career_titles(message: str, max_results: int = 3) -> list[str]:
+    normalized_message = normalize_lookup_value(message)
+    if not normalized_message:
+        return []
+
+    career_map = get_normalized_career_map()
+    found: list[str] = []
+
+    for alias_norm, canonical in career_map.items():
+        if alias_norm and contains_tokenized_phrase(normalized_message, alias_norm) and canonical not in found:
+            found.append(canonical)
+            if len(found) >= max_results:
+                return found
+
+    if found:
+        return found
+
+    title_map = {normalize_lookup_value(title): title for title in load_known_career_titles()}
+    for title_norm, title in title_map.items():
+        if title_norm and contains_tokenized_phrase(normalized_message, title_norm) and title not in found:
+            found.append(title)
+            if len(found) >= max_results:
+                return found
+
+    tokens = normalized_message.split()
+    if not tokens:
+        return []
+
+    title_norms = list(title_map.keys())
+    for n in range(min(5, len(tokens)), 0, -1):
+        for i in range(len(tokens) - n + 1):
+            phrase = ' '.join(tokens[i:i+n])
+            matches = difflib.get_close_matches(phrase, title_norms, n=2, cutoff=0.78)
+            for match in matches:
+                title = title_map.get(match)
+                if title and title not in found:
+                    found.append(title)
+                    if len(found) >= max_results:
+                        return found
+
+    return found
+
+
+def detect_intents(message: str) -> list[str]:
+    normalized_message = normalize_lookup_value(message)
+    intents: list[str] = []
+
+    for intent, keywords in INTENT_KEYWORDS.items():
+        if any(keyword in normalized_message for keyword in keywords):
+            intents.append(intent)
+
+    if any(keyword in normalized_message for keyword in CAREER_COMPARISON_KEYWORDS):
+        if 'comparison' not in intents:
+            intents.insert(0, 'comparison')
+
+    if any(keyword in normalized_message for keyword in CAREER_SWITCH_KEYWORDS):
+        if 'career switch' not in intents:
+            intents.append('career switch')
+
+    if not intents and any(keyword in normalized_message for keyword in CAREER_RECOMMENDATION_KEYWORDS):
+        intents.append('recommendations')
+
+    return intents
+
+
+def detect_domains(message: str) -> list[str]:
+    normalized_message = normalize_lookup_value(message)
+    domains = []
+    for keyword, category in DOMAIN_KEYWORDS.items():
+        if keyword in normalized_message and category not in domains:
+            domains.append(category)
+    return domains
+
+
+def detect_related_domain(message: str) -> str:
+    normalized_message = normalize_lookup_value(message)
+    for keyword, careers in DOMAIN_FALLBACK_CAREERS.items():
+        if keyword in normalized_message:
+            return keyword
+    return ''
+
+
+def build_domain_response(domain: str) -> str:
+    careers = CAREER_CATEGORY_CAREERS.get(domain, [])
+    title = DOMAIN_DISPLAY_NAMES.get(domain, domain)
+    if not careers:
+        return f"Here are some related careers in {title}. Please choose one to learn more."
+    careers_list = '\n'.join(f"- {career}" for career in careers[:8])
+    return (
+        f"Possible careers in {title}:\n{careers_list}\n\n"
+        "Which career would you like to know more about?"
+    )
+
+
+def build_interest_response(keyword: str) -> str:
+    if keyword in DOMAIN_FALLBACK_CAREERS:
+        careers = DOMAIN_FALLBACK_CAREERS[keyword]
+        careers_list = '\n'.join(f"- {career}" for career in careers)
+        return (
+            f"Possible careers related to {keyword}:\n{careers_list}\n\n"
+            "Which of these would you like to explore further?"
+        )
+    return "Tell me what career or domain you are interested in, and I will suggest the best options."
+
+
+def format_list(items: list[str], limit: int = 5) -> str:
+    return ', '.join(items[:limit])
+
+
+def format_fee_samples(career_title: str) -> str:
+    rows = fetch_career_colleges(career_title)
+    fees = [format_annual_fee(row.get('annual_fee')) for row in rows if row.get('annual_fee')]
+    unique_fees = []
+    for fee in fees:
+        if fee not in unique_fees:
+            unique_fees.append(fee)
+        if len(unique_fees) >= 3:
+            break
+    return ', '.join(unique_fees) if unique_fees else ''
+
+
+def answer_colleges(career_title: str, message: str) -> str:
+    colleges = fetch_career_colleges(career_title)
+    if not colleges:
+        return f"I could not find college listings for {career_title}. Try another related career or explore the domain pages for options."
+    sample = []
+    for college in colleges[:4]:
+        sample.append(f"• {college['college_name']} ({college['state']}) — {college['college_type']} — {format_annual_fee(college['annual_fee'])}")
+    return (
+        f"Here are some colleges for {career_title}:\n" + '\n'.join(sample) +
+        "\n\nUse the app's college finder to explore more options and compare fees and specializations by state."
+    )
+
+
+def answer_fees(career_title: str) -> str:
+    sample_fees = format_fee_samples(career_title)
+    if sample_fees:
+        return (
+            f"Annual fees for {career_title} can vary widely by state and institution. Sample fees from the database include {sample_fees}. "
+            "Use the college finder to compare exact tuition and program costs for each institute."
+        )
+    return (
+        f"Fees for {career_title} vary by program and state. "
+        "Government colleges usually offer lower fees, while private and specialized programs tend to cost more."
+    )
+
+
+def answer_salary(career_title: str) -> str:
+    salary = CAREER_DETAILS.get(career_title, DEFAULT_CAREER_DETAILS)['salaryRange']
+    return (
+        f"A typical salary range for {career_title} is {salary}. "
+        "Actual pay depends on experience, location, company type, and your skills."
+    )
+
+
+def answer_roadmap(career_title: str) -> str:
+    details = CAREER_DETAILS.get(career_title, DEFAULT_CAREER_DETAILS)
+    roadmap = details.get('roadmap', DEFAULT_CAREER_DETAILS['roadmap'])
+    return (
+        f"A strong roadmap for {career_title} is: {', '.join(roadmap)}. "
+        "Start with the fundamentals, build projects, and look for internships or training opportunities."
+    )
+
+
+def answer_skills(career_title: str) -> str:
+    skills = CAREER_DETAILS.get(career_title, DEFAULT_CAREER_DETAILS)['skillsRequired']
+    return (
+        f"Key skills for {career_title} include {', '.join(skills)}. "
+        "Focus on practical experience and projects to build confidence in these areas."
+    )
+
+
+def answer_certificates(career_title: str) -> str:
+    certs = CAREER_CERTIFICATE_SUGGESTIONS.get(career_title)
+    if certs:
+        return (
+            f"Useful certifications for {career_title} include {', '.join(certs)}. "
+            "These can strengthen your resume and help you learn industry-relevant tools."
+        )
+    return (
+        f"Professional certificates can help with {career_title}. "
+        "Look for recognized programs in your domain to build practical skills and credibility."
+    )
+
+
+def answer_entrance_exam(career_title: str) -> str:
+    exam = CAREER_EXAM_GUIDE.get(career_title)
+    if exam:
+        return exam
+    return (
+        f"Entrance exam requirements for {career_title} depend on the program and institution. "
+        "Check the specific course admission guidelines or use the app's college finder for program-level details."
+    )
+
+
+def answer_degree(career_title: str) -> str:
+    degree = CAREER_DEGREE_GUIDE.get(career_title)
+    if degree:
+        return degree
+    return (
+        f"A relevant degree for {career_title} depends on the career path. "
+        "Look for related undergraduate and postgraduate programs in that field."
+    )
+
+
+def answer_eligibility(career_title: str) -> str:
+    return (
+        f"Eligibility for {career_title} usually includes the appropriate undergraduate program and the required entrance exam or qualifications. "
+        "Review the specific course or university requirements for exact details."
+    )
+
+
+def answer_future_demand(career_title: str) -> str:
+    demand = CAREER_DETAILS.get(career_title, DEFAULT_CAREER_DETAILS)['demandLevel']
+    return (
+        f"Future demand for {career_title} is generally {demand}. "
+        "Build strong domain skills and practical experience to stay competitive in this field."
+    )
+
+
+def answer_jobs(career_title: str) -> str:
+    description = CAREER_DESCRIPTIONS.get(career_title, '')
+    if description:
+        return f"{description} Many roles in this career include development, analysis, implementation, and project work depending on the employer."
+    return f"{career_title} opens roles in its domain; focus on skills, experience, and certifications to access job opportunities."
+
+
+def answer_government_jobs(career_title: str, domains: list[str]) -> str:
+    if 'Government & Railway' in domains or 'Government & Railway' in career_title:
+        return "Government careers include roles such as IAS, IPS, Railway Officer, Bank PO, and public sector positions. These typically require competitive exam preparation and strong general knowledge."
+    return "Government job opportunities depend on the career domain. For public sector roles, prepare for the relevant competitive exams and look for government-supported training programs."
+
+
+def answer_private_jobs(career_title: str, domains: list[str]) -> str:
+    return "Private sector roles are common across IT, business, healthcare, and creative domains. Focus on in-demand skills, certifications, and internships to improve your chances of landing a private job."
+
+
+def answer_career_switch(career_title: Optional[str], message: str) -> str:
+    if career_title:
+        return (
+            f"Switching into {career_title} is possible with the right preparation. "
+            "Build the key skills for the role, work on relevant projects, and look for internships or entry-level positions that bridge your current background to the new field."
+        )
+    return "Career switching is possible by learning the target domain's core skills, building projects, and seeking internships or entry-level roles in that field."
+
+
+def answer_comparison(career_titles: list[str]) -> str:
+    if len(career_titles) < 2:
+        return "Please tell me two careers you want to compare, such as AI Engineer and Data Scientist."
+
+    left, right = career_titles[:2]
+    left_details = CAREER_DETAILS.get(left, DEFAULT_CAREER_DETAILS)
+    right_details = CAREER_DETAILS.get(right, DEFAULT_CAREER_DETAILS)
+
+    left_skills = format_list(left_details.get('skillsRequired', DEFAULT_CAREER_DETAILS['skillsRequired']), 4)
+    right_skills = format_list(right_details.get('skillsRequired', DEFAULT_CAREER_DETAILS['skillsRequired']), 4)
+
+    return (
+        f"Comparison between {left} and {right}:\n"
+        f"- {left}: {CAREER_DESCRIPTIONS.get(left, '')} Salary range {left_details['salaryRange']}. Key skills include {left_skills}.\n"
+        f"- {right}: {CAREER_DESCRIPTIONS.get(right, '')} Salary range {right_details['salaryRange']}. Key skills include {right_skills}.\n"
+        f"{left} tends to focus more on building and deploying technical solutions, while {right} often emphasizes data analysis and insights."
+    )
+
+
+def summarize_details(career_title: str, intents: list[str], domains: list[str]) -> str:
+    parts: list[str] = []
+    if 'colleges' in intents:
+        parts.append(answer_colleges(career_title, ''))
+    if 'fees' in intents:
+        parts.append(answer_fees(career_title))
+    if 'salary' in intents:
+        parts.append(answer_salary(career_title))
+    if 'roadmap' in intents:
+        parts.append(answer_roadmap(career_title))
+    if 'skills' in intents:
+        parts.append(answer_skills(career_title))
+    if 'certificates' in intents:
+        parts.append(answer_certificates(career_title))
+    if 'entrance exam' in intents:
+        parts.append(answer_entrance_exam(career_title))
+    if 'degree' in intents or 'higher studies' in intents:
+        parts.append(answer_degree(career_title))
+    if 'eligibility' in intents:
+        parts.append(answer_eligibility(career_title))
+    if 'career scope' in intents or 'future demand' in intents:
+        parts.append(answer_future_demand(career_title))
+    if 'jobs' in intents:
+        parts.append(answer_jobs(career_title))
+    if 'government jobs' in intents:
+        parts.append(answer_government_jobs(career_title, domains))
+    if 'private jobs' in intents:
+        parts.append(answer_private_jobs(career_title, domains))
+    if 'career switch' in intents:
+        parts.append(answer_career_switch(career_title, ''))
+    if not parts:
+        parts.append(answer_roadmap(career_title))
+    return '\n\n'.join(parts)
+
+
+def find_known_career(message: str) -> Optional[str]:
+    careers = extract_career_titles(message, max_results=1)
+    return careers[0] if careers else None
+
+
+def build_career_response(career_title: str, message: str) -> str:
+    if not career_title:
+        return 'Please select a career to view details.'
+
+    if not message:
+        return answer_roadmap(career_title)
+
+    relevant_intents = detect_intents(message)
+    if 'skills' in relevant_intents:
+        return answer_skills(career_title)
+    if 'salary' in relevant_intents:
+        return answer_salary(career_title)
+    if 'roadmap' in relevant_intents:
+        return answer_roadmap(career_title)
+    if 'colleges' in relevant_intents:
+        return answer_colleges(career_title, message)
+    if 'fees' in relevant_intents:
+        return answer_fees(career_title)
+    if 'certificates' in relevant_intents:
+        return answer_certificates(career_title)
+    if 'entrance exam' in relevant_intents:
+        return answer_entrance_exam(career_title)
+    if 'degree' in relevant_intents or 'higher studies' in relevant_intents:
+        return answer_degree(career_title)
+    if 'eligibility' in relevant_intents:
+        return answer_eligibility(career_title)
+    if 'career scope' in relevant_intents or 'future demand' in relevant_intents:
+        return answer_future_demand(career_title)
+    if 'jobs' in relevant_intents:
+        return answer_jobs(career_title)
+    if 'government jobs' in relevant_intents:
+        return answer_government_jobs(career_title, detect_domains(message))
+    if 'private jobs' in relevant_intents:
+        return answer_private_jobs(career_title, detect_domains(message))
+    return answer_roadmap(career_title)
 
 DOMAIN_DISPLAY_NAMES = {
     'IT & Technology': 'IT & Technology Careers',
@@ -172,6 +708,38 @@ CAREER_DESCRIPTIONS = {
     'Vlogger': 'Creates video blogs and personal content.',
     'Podcast Host': 'Hosts audio shows and interviews.',
 }
+ALL_KNOWN_CAREER_TITLES = sorted(
+    set(title for titles in CAREER_CATEGORY_CAREERS.values() for title in titles)
+    | set(CAREER_DESCRIPTIONS.keys())
+    | set(CAREER_DETAILS.keys()),
+    key=lambda x: -len(x)
+)
+KNOWN_CAREER_TITLES: list[str] = []
+
+def load_known_career_titles() -> list[str]:
+    global KNOWN_CAREER_TITLES
+    if KNOWN_CAREER_TITLES:
+        return KNOWN_CAREER_TITLES
+
+    career_titles = set(ALL_KNOWN_CAREER_TITLES)
+    try:
+        for row in load_seed_career_rows_from_csv():
+            if row[0]:
+                career_titles.add(row[0].strip())
+    except Exception:
+        pass
+
+    try:
+        with get_db() as connection:
+            rows = connection.execute('SELECT DISTINCT career_title FROM career_colleges').fetchall()
+            for row in rows:
+                if row['career_title']:
+                    career_titles.add(row['career_title'].strip())
+    except Exception:
+        pass
+
+    KNOWN_CAREER_TITLES = sorted(career_titles, key=lambda x: -len(x))
+    return KNOWN_CAREER_TITLES
 
 TOP_DOMAIN_ALLOCATION = [5, 3, 2]
 
@@ -187,6 +755,508 @@ def now_iso() -> str:
     return datetime.utcnow().isoformat(timespec='seconds') + 'Z'
 
 
+def normalize_lookup_value(value: Optional[str]) -> str:
+    if value is None:
+        return ''
+    normalized = re.sub(r'[^a-z0-9]+', ' ', str(value).strip().lower())
+    return ' '.join(normalized.split())
+
+
+def canonicalize_state_name(state: Optional[str]) -> str:
+    if not state:
+        return ''
+    normalized = normalize_lookup_value(state)
+    canonical = STATE_ALIASES.get(normalized)
+    if canonical:
+        return canonical
+    for known_state in CANONICAL_INDIAN_STATES:
+        if normalize_lookup_value(known_state) == normalized:
+            return known_state
+    return ''
+
+
+def format_annual_fee(value: Optional[str]) -> str:
+    fee_text = (value or '').strip().replace('"', '').replace("'", '')
+    if not fee_text:
+        return '₹ 1,20,000'
+    if not fee_text.startswith('₹'):
+        fee_text = f'₹ {fee_text}'
+    return fee_text
+
+
+def infer_college_type(college_name: str, domain: Optional[str] = None) -> str:
+    normalized_name = normalize_lookup_value(college_name)
+    if any(keyword in normalized_name for keyword in [
+        'iit', 'nit', 'iiit', 'iisc', 'iim', 'nlu', 'national', 'central', 'government', 'state',
+        'kvs', 'navodaya', 'public', 'defence', 'army'
+    ]):
+        return 'Government'
+    if domain and normalize_lookup_value(domain) in {'information technology', 'engineering', 'business', 'healthcare', 'law', 'arts', 'animation'}:
+        return 'Government' if 'national' in normalize_lookup_value(domain) else 'Private'
+    return 'Private'
+
+
+def extract_college_location(college_name: str, default_state: str) -> str:
+    if ',' in college_name:
+        location = college_name.rsplit(',', 1)[-1].strip()
+        if location and normalize_lookup_value(location) != normalize_lookup_value(default_state):
+            return location
+    return default_state
+
+
+def get_career_speciality(career_title: str) -> str:
+    normalized = normalize_lookup_value(career_title)
+    mappings = {
+        'software': 'Computer Science & Engineering',
+        'full stack': 'Computer Science & Engineering',
+        'ai': 'Artificial Intelligence & Machine Learning',
+        'ml': 'Artificial Intelligence & Machine Learning',
+        'data scientist': 'Data Science',
+        'data': 'Data Science',
+        'cybersecurity': 'Cyber Security',
+        'cyber': 'Cyber Security',
+        'lawyer': 'Law',
+        'advocate': 'Law',
+        'judge': 'Law',
+        'doctor': 'Medical Sciences',
+        'nurse': 'Nursing',
+        'physiotherapist': 'Physiotherapy',
+        'pharmacist': 'Pharmacy',
+        'dentist': 'Dental Science',
+        'teacher': 'Education',
+        'manager': 'Management',
+        'business': 'Business Management',
+        'marketing': 'Marketing',
+        'accountant': 'Finance',
+        'chartered accountant': 'Finance',
+        'entrepreneur': 'Business Management',
+        'content creator': 'Media & Communications',
+        'influencer': 'Media & Communications',
+        'animator': 'Animation & Visual Effects',
+        'artist': 'Creative Arts',
+        'designer': 'Design',
+        'musician': 'Music',
+        'singer': 'Music',
+        'dj': 'Music & Audio',
+        'pilot': 'Aviation',
+        'aircraft': 'Aerospace Engineering',
+        'agricultur': 'Agricultural Science',
+        'forest officer': 'Environment & Forestry',
+        'bank po': 'Commerce & Banking',
+        'ssc cgl': 'Public Administration',
+        'govt': 'Public Administration',
+        'railway': 'Transportation',
+    }
+    for keyword, speciality in mappings.items():
+        if keyword in normalized:
+            return speciality
+    return 'Professional Studies'
+
+
+def format_number_with_commas(value: int) -> str:
+    return f'₹ {value:,}'
+
+
+def generate_college_name(career_title: str, state: str, index: int) -> str:
+    speciality = get_career_speciality(career_title)
+    subject = speciality.split('&')[0].strip()
+    patterns = [
+        f"{state} Institute of {subject}",
+        f"{state} College of {subject}",
+        f"{state} School of {subject}",
+        f"{state} Academy of {subject}",
+        f"National Institute of {subject} {state}",
+        f"{state} Centre for {subject}",
+    ]
+    name = patterns[index % len(patterns)]
+    if index >= len(patterns):
+        name = f"{state} {subject} Institute {index + 1}"
+    return name
+
+
+def generate_annual_fee(career_title: str, index: int) -> str:
+    normalized = normalize_lookup_value(career_title)
+    if any(keyword in normalized for keyword in ['doctor', 'nurse', 'pharmacist', 'dentist', 'physiotherapist', 'medical', 'lab technician']):
+        base = 180000
+    elif any(keyword in normalized for keyword in ['law', 'judge', 'advocate', 'legal']):
+        base = 150000
+    elif any(keyword in normalized for keyword in ['business', 'manager', 'entrepreneur', 'accountant', 'finance', 'marketing', 'consultant']):
+        base = 160000
+    elif any(keyword in normalized for keyword in ['art', 'design', 'music', 'photographer', 'fashion', 'creative', 'animator', 'artist']):
+        base = 140000
+    elif any(keyword in normalized for keyword in ['pilot', 'aircraft', 'aviation']):
+        base = 200000
+    else:
+        base = 130000
+    amount = base + ((index % 4) * 25000)
+    return format_number_with_commas(amount)
+
+
+def get_career_csv_path() -> str:
+    if os.path.exists(EXTERNAL_REAL_CSV):
+        return EXTERNAL_REAL_CSV
+
+    if os.path.exists(LOCAL_CAREER_CSV):
+        return LOCAL_CAREER_CSV
+
+    return LOCAL_CAREER_CSV
+
+
+def load_seed_career_rows_from_csv() -> list[tuple[str, str, str, str, str, str, str]]:
+    csv_path = get_career_csv_path()
+    if not os.path.exists(csv_path):
+        return []
+
+    rows: list[tuple[str, str, str, str, str, str, str]] = []
+    with open(csv_path, 'r', encoding='utf-8', newline='') as raw_csv:
+        reader = csv.DictReader(raw_csv)
+        for row in reader:
+            career_title = (row.get('Career') or '').strip()
+            if not career_title:
+                continue
+            state = canonicalize_state_name(row.get('State') or '')
+            if not state:
+                continue
+            college_name = (row.get('College Name') or '').strip()
+            if not college_name:
+                continue
+            speciality = (row.get('Speciality') or '').strip() or get_career_speciality(career_title)
+            annual_fee = format_annual_fee((row.get('Tuition Fee (INR)') or '').strip())
+            location = extract_college_location(college_name, state)
+            college_type = infer_college_type(college_name, row.get('Domain') or '')
+            rows.append((career_title, state, college_name, college_type, location, annual_fee, speciality))
+    return rows
+
+
+def generate_college_rows_for_career_state(career_title: str, state: str, count: int, existing_names: set[str]) -> list[tuple[str, str, str, str, str, str, str]]:
+    rows: list[tuple[str, str, str, str, str, str, str]] = []
+    career_clean = resolve_career_title(career_title)
+    for index in range(count * 2):
+        college_name = generate_college_name(career_clean, state, index)
+        if college_name in existing_names:
+            continue
+        existing_names.add(college_name)
+        college_type = infer_college_type(college_name)
+        location = extract_college_location(college_name, state)
+        annual_fee = generate_annual_fee(career_clean, index)
+        speciality = get_career_speciality(career_clean)
+        rows.append((career_clean, state, college_name, college_type, location, annual_fee, speciality))
+        if len(rows) >= count:
+            break
+    return rows
+
+
+def ensure_career_colleges_for_state(career_title: str, state: str, minimum_count: int = 10) -> None:
+    career_clean = resolve_career_title(career_title)
+    state_clean = canonicalize_state_name(state)
+    if not career_clean or not state_clean:
+        return
+
+    with get_db() as connection:
+        existing_rows = connection.execute(
+            '''
+            SELECT college_name
+            FROM career_colleges
+            WHERE LOWER(career_title) = LOWER(?)
+            AND LOWER(state) = LOWER(?)
+            ''',
+            (career_clean, state_clean),
+        ).fetchall()
+
+        existing_names = {row['college_name'] for row in existing_rows}
+        current_count = len(existing_names)
+        if current_count >= minimum_count:
+            return
+
+        rows_to_insert = generate_college_rows_for_career_state(career_clean, state_clean, minimum_count - current_count, existing_names)
+        if rows_to_insert:
+            timestamp = now_iso()
+            connection.executemany(
+                '''
+                INSERT OR IGNORE INTO career_colleges (
+                    career_title, state, college_name, college_type, location,
+                    annual_fee, speciality, created_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                ''',
+                [(career_clean, state_clean, college_name, college_type, location, annual_fee, speciality, timestamp)
+                 for (_, _, college_name, college_type, location, annual_fee, speciality) in rows_to_insert],
+            )
+
+
+CAREER_TITLE_ALIASES = {
+    'doctor': 'Doctor (MBBS)',
+    'doctor mbbs': 'Doctor (MBBS)',
+    'lawyer': 'Lawyer / Advocate',
+    'lawyer advocate': 'Lawyer / Advocate',
+    'advocate': 'Lawyer / Advocate',
+    'chartered accountant': 'Chartered Accountant',
+    'ca': 'Chartered Accountant',
+    'cybersecurity analyst': 'Cyber Security Analyst',
+    'dentist': 'Dentist (BDS)',
+    'forest officer': 'IFS Officer',
+    'medical lab technician': 'Medical Laboratory Technician',
+    'instagram influencer': 'Brand Influencer',
+    'podcast host': 'Podcaster',
+    'professional dancer': 'Classical Dancer',
+    'small business owner': 'Business Owner',
+    'tech entrepreneur': 'Entrepreneur',
+    'business consultant': 'Business Analyst',
+    'animation director': 'Animator',
+    'theater artist': 'Theatre Artist',
+    'tv serial actor': 'TV Actor',
+    'vlogger': 'Blogger',
+    'dance content creator': 'Content Creator',
+    'gaming content creator': 'Content Creator',
+    'fashion photographer': 'Fashion Designer',
+    'franchise owner': 'Business Owner',
+    'esports player': 'Esports Manager',
+    'esports commentator': 'Esports Manager',
+    'aircraft engineer': 'Aircraft Maintenance Engineer',
+    'commercial pilot': 'Pilot',
+    'agricultural scientist': 'Agricultural Engineer',
+    'organic farmer': 'Agricultural Engineer',
+    'agri-business manager': 'Agricultural Engineer',
+    'ai engineer': 'AI/ML Engineer',
+    'ml engineer': 'AI/ML Engineer',
+}
+
+def resolve_career_title(career_title: Optional[str]) -> str:
+    normalized = normalize_lookup_value(career_title)
+    return CAREER_TITLE_ALIASES.get(normalized, career_title or '')
+
+
+RELATED_SPECIALIZATION_KEYWORDS = {
+    'content creator': ['digital media', 'mass communication', 'journalism', 'multimedia', 'social media'],
+    'youtube': ['digital media', 'mass communication', 'journalism', 'multimedia', 'video production'],
+    'influencer': ['digital media', 'mass communication', 'journalism', 'branding'],
+    'podcaster': ['journalism', 'mass communication', 'broadcast', 'audio production'],
+    'fashion photographer': ['photography', 'visual arts', 'fashion design', 'media'],
+    'photographer': ['photography', 'visual arts', 'film', 'media'],
+    'game developer': ['game design', 'computer science', 'software engineering', 'animation'],
+    'animator': ['animation', 'multimedia', 'visual effects', 'graphic design'],
+    'ui ux designer': ['ui design', 'ux design', 'product design', 'interaction design'],
+    'digital marketer': ['digital marketing', 'marketing', 'advertising', 'communications'],
+    'ethical hacker': ['cyber security', 'information security', 'computer networks', 'computer science'],
+    'cloud engineer': ['cloud computing', 'information technology', 'computer science', 'devops'],
+    'ai engineer': ['artificial intelligence', 'machine learning', 'computer science', 'data science'],
+    'data scientist': ['data science', 'machine learning', 'computer science', 'analytics'],
+    'cyber security analyst': ['cyber security', 'information security', 'network security', 'computer science'],
+    'film director': ['film making', 'cinema', 'media studies', 'broadcast'],
+    'music producer': ['music technology', 'performing arts', 'audio engineering', 'music'],
+    'singer': ['performing arts', 'music', 'vocal performance', 'audio'],
+    'dancer': ['performing arts', 'dance', 'choreography', 'theater'],
+    'chef': ['culinary arts', 'hospitality', 'hotel management', 'food technology'],
+    'hotel manager': ['hospitality', 'hotel management', 'tourism', 'business management'],
+    'travel blogger': ['tourism', 'travel and hospitality', 'journalism', 'media'],
+    'journalist': ['journalism', 'mass communication', 'media studies', 'broadcast'],
+    'sports analyst': ['sports management', 'analytics', 'data science', 'business management'],
+    'event manager': ['event management', 'hospitality', 'business management', 'marketing'],
+    'fashion designer': ['fashion design', 'apparel design', 'textile design', 'visual arts'],
+    'interior designer': ['interior design', 'architecture', 'visual arts', 'product design'],
+}
+
+
+def find_best_career_title_match(career_title: str) -> str:
+    career_clean = (career_title or '').strip()
+    if not career_clean:
+        return ''
+
+    normalized = normalize_lookup_value(career_clean)
+    known_titles = load_known_career_titles()
+    lookup = {normalize_lookup_value(title): title for title in known_titles}
+
+    if normalized in lookup:
+        return lookup[normalized]
+
+    close_matches = difflib.get_close_matches(normalized, list(lookup.keys()), n=1, cutoff=0.75)
+    if close_matches:
+        return lookup[close_matches[0]]
+
+    return career_clean
+
+
+def get_related_specialization_keywords(career_title: str) -> list[str]:
+    normalized = normalize_lookup_value(career_title)
+    if not normalized:
+        return []
+
+    for key, keywords in RELATED_SPECIALIZATION_KEYWORDS.items():
+        if key in normalized:
+            return keywords
+
+    if 'design' in normalized or 'ux' in normalized or 'ui' in normalized:
+        return ['design', 'visual arts', 'product design']
+    if 'media' in normalized or 'content' in normalized or 'influencer' in normalized or 'podcast' in normalized or 'youtube' in normalized:
+        return ['digital media', 'mass communication', 'journalism', 'media studies']
+    if 'music' in normalized or 'singer' in normalized or 'producer' in normalized:
+        return ['music', 'performing arts', 'audio engineering']
+    if 'film' in normalized or 'director' in normalized or 'cinema' in normalized:
+        return ['film making', 'cinema', 'media studies']
+    if 'dance' in normalized:
+        return ['dance', 'performing arts', 'choreography']
+    if 'chef' in normalized or 'hotel' in normalized or 'travel' in normalized or 'hospitality' in normalized:
+        return ['hospitality', 'culinary arts', 'tourism', 'hotel management']
+    if 'data' in normalized or 'ai' in normalized or 'ml' in normalized or 'cloud' in normalized or 'cyber' in normalized:
+        return ['computer science', 'data science', 'information technology', 'machine learning']
+
+    speciality = normalize_lookup_value(get_career_speciality(career_title))
+    return [speciality] if speciality else []
+
+
+def query_career_colleges_from_db(career_title: str, state: Optional[str] = None, limit: Optional[int] = None) -> list[Dict[str, Any]]:
+    career_title = (career_title or '').strip()
+    if not career_title:
+        return []
+
+    with get_db() as connection:
+        params = [career_title]
+        sql = '''
+            SELECT career_title, state, college_name, college_type, location, annual_fee, speciality
+            FROM career_colleges
+            WHERE LOWER(career_title) = LOWER(?)
+        '''
+        if state:
+            sql += ' AND LOWER(state) = LOWER(?)'
+            params.append(state)
+        sql += ' ORDER BY college_name'
+        if limit:
+            sql += ' LIMIT ?'
+            params.append(limit)
+        rows = connection.execute(sql, tuple(params)).fetchall()
+        if rows:
+            return [dict(r) for r in rows]
+
+        if state:
+            params = [f'%{career_title}%', state]
+            sql = '''
+                SELECT career_title, state, college_name, college_type, location, annual_fee, speciality
+                FROM career_colleges
+                WHERE LOWER(career_title) LIKE LOWER(?)
+                AND LOWER(state) = LOWER(?)
+                ORDER BY college_name
+            '''
+        else:
+            params = [f'%{career_title}%']
+            sql = '''
+                SELECT career_title, state, college_name, college_type, location, annual_fee, speciality
+                FROM career_colleges
+                WHERE LOWER(career_title) LIKE LOWER(?)
+                ORDER BY state, college_name
+            '''
+        if limit:
+            sql += ' LIMIT ?'
+            params.append(limit)
+        rows = connection.execute(sql, tuple(params)).fetchall()
+        return [dict(r) for r in rows]
+
+
+def fetch_related_specialization_colleges(career_title: str, state: Optional[str] = None, exclude_names: Optional[set[str]] = None, limit: int = 10) -> list[Dict[str, Any]]:
+    keywords = get_related_specialization_keywords(career_title)
+    if not keywords:
+        return []
+
+    exclude_names = exclude_names or set()
+    state_clean = canonicalize_state_name(state) if state else ''
+    with get_db() as connection:
+        conditions = []
+        params: list[str] = []
+        for keyword in keywords:
+            conditions.append('(LOWER(speciality) LIKE LOWER(?) OR LOWER(career_title) LIKE LOWER(?))')
+            params.extend([f'%{keyword}%', f'%{keyword}%'])
+
+        sql = '''
+            SELECT career_title, state, college_name, college_type, location, annual_fee, speciality
+            FROM career_colleges
+        '''
+        if state_clean:
+            sql += ' WHERE LOWER(state) = LOWER(?) AND (' + ' OR '.join(conditions) + ')' 
+            params = [state_clean] + params
+        else:
+            sql += ' WHERE ' + ' OR '.join(conditions)
+        sql += ' ORDER BY college_name'
+        sql += ' LIMIT ?'
+        params.append(limit * 3)
+
+        rows = connection.execute(sql, tuple(params)).fetchall()
+        result: list[Dict[str, Any]] = []
+        for row in rows:
+            if row['college_name'] in exclude_names:
+                continue
+            result.append(dict(row))
+            if len(result) >= limit:
+                break
+        return result
+
+
+def fetch_career_colleges(career_title: str, state: Optional[str] = None) -> list[Dict[str, Any]]:
+    career_clean = resolve_career_title((career_title or '').strip())
+    raw_state = (state or '').strip()
+    state_clean = canonicalize_state_name(raw_state)
+
+    if not career_clean:
+        return []
+
+    if raw_state and not state_clean:
+        return []
+
+    career_match = find_best_career_title_match(career_clean)
+    rows = query_career_colleges_from_db(career_match, state_clean, limit=10 if state_clean else None)
+
+    if rows:
+        if state_clean and len(rows) < 10:
+            existing_names = {row['college_name'] for row in rows}
+            extra = fetch_related_specialization_colleges(career_match, state_clean, existing_names, 10 - len(rows))
+            rows.extend(extra)
+        return rows
+
+    if state_clean:
+        rows = fetch_related_specialization_colleges(career_match, state_clean, set(), 10)
+        return rows
+
+    return fetch_related_specialization_colleges(career_match, None, set(), 10)
+
+
+def fetch_colleges_for_career_state(career_id: Optional[str], state: Optional[str]) -> list[Dict[str, Any]]:
+    return fetch_career_colleges(career_id or '', state)
+
+
+def ensure_career_colleges_for_state(career_title: str, state: str, minimum_count: int = 10) -> None:
+    career_clean = resolve_career_title(career_title)
+    state_clean = canonicalize_state_name(state)
+    if not career_clean or not state_clean:
+        return
+
+    with get_db() as connection:
+        existing_rows = connection.execute(
+            '''
+            SELECT college_name
+            FROM career_colleges
+            WHERE LOWER(career_title) = LOWER(?)
+            AND LOWER(state) = LOWER(?)
+            ''',
+            (career_clean, state_clean),
+        ).fetchall()
+
+        existing_names = {row['college_name'] for row in existing_rows}
+        current_count = len(existing_names)
+        if current_count >= minimum_count:
+            return
+
+        rows_to_insert = generate_college_rows_for_career_state(career_clean, state_clean, minimum_count - current_count, existing_names)
+        if rows_to_insert:
+            timestamp = now_iso()
+            connection.executemany(
+                '''
+                INSERT OR IGNORE INTO career_colleges (
+                    career_title, state, college_name, college_type, location,
+                    annual_fee, speciality, created_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                ''',
+                [(career_title, state_clean, college_name, college_type, location, annual_fee, speciality, timestamp)
+                 for (career_title, state_clean, college_name, college_type, location, annual_fee, speciality) in rows_to_insert],
+            )
+
+
 def json_error(message: str, status_code: int, errors: Optional[Dict[str, Any]] = None):
     payload: Dict[str, Any] = {'success': False, 'message': message}
     if errors:
@@ -197,6 +1267,35 @@ def json_error(message: str, status_code: int, errors: Optional[Dict[str, Any]] 
 def get_request_data() -> Dict[str, Any]:
     data = request.get_json(silent=True)
     return data if isinstance(data, dict) else {}
+
+
+def fetch_colleges_for_career_state(career_id: Optional[str], state: Optional[str]) -> list[Dict[str, Any]]:
+    return fetch_career_colleges(career_id or '', state)
+
+
+def fetch_available_career_states(career_title: str) -> list[str]:
+    career_clean = resolve_career_title((career_title or '').strip())
+    if not career_clean:
+        return []
+
+    with get_db() as connection:
+        rows = connection.execute(
+            '''
+            SELECT DISTINCT state
+            FROM career_colleges
+            WHERE LOWER(career_title) = LOWER(?) OR LOWER(career_title) LIKE LOWER(?)
+            ORDER BY state
+            ''',
+            (career_clean, f'%{career_clean}%'),
+        ).fetchall()
+
+    if rows:
+        return [row[0] for row in rows]
+
+    if career_clean in load_known_career_titles():
+        return CANONICAL_INDIAN_STATES.copy()
+
+    return [state for state in DEFAULT_CAREER_STATES if state]
 
 
 def normalize_email(value: Optional[str]) -> Optional[str]:
@@ -219,9 +1318,126 @@ def ensure_column(connection: sqlite3.Connection, table_name: str, column_sql: s
         connection.execute(f'ALTER TABLE {table_name} ADD COLUMN {column_sql}')
 
 
+def ensure_career_colleges_seeded() -> None:
+    try:
+        with get_db() as connection:
+            connection.execute(
+                '''
+                CREATE TABLE IF NOT EXISTS career_colleges (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    career_title TEXT NOT NULL,
+                    state TEXT NOT NULL,
+                    college_name TEXT NOT NULL,
+                    college_type TEXT NOT NULL,
+                    location TEXT NOT NULL,
+                    annual_fee TEXT NOT NULL,
+                    speciality TEXT NOT NULL,
+                    created_at TEXT NOT NULL,
+                    UNIQUE(career_title, state, college_name)
+                )
+                '''
+            )
+            existing_count = connection.execute('SELECT COUNT(*) FROM career_colleges').fetchone()[0]
+            if existing_count > 0:
+                return
+
+            rows = load_seed_career_rows_from_csv()
+            if not rows:
+                return
+
+            timestamp = now_iso()
+            connection.executemany(
+                '''
+                INSERT OR IGNORE INTO career_colleges (
+                    career_title, state, college_name, college_type, location,
+                    annual_fee, speciality, created_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                ''',
+                [(career_title, state, college_name, college_type, location, annual_fee, speciality, timestamp)
+                 for (career_title, state, college_name, college_type, location, annual_fee, speciality) in rows],
+            )
+    except Exception:
+        pass
+
+
+def repair_renamed_user_foreign_keys(connection: sqlite3.Connection) -> None:
+    connection.execute('DROP TABLE IF EXISTS users_old')
+
+    table_definitions = {
+        'personal_details': '''
+            CREATE TABLE personal_details (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id INTEGER NOT NULL UNIQUE,
+                date_of_birth TEXT NOT NULL,
+                gender TEXT NOT NULL,
+                phone_number TEXT NOT NULL,
+                city TEXT NOT NULL,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL,
+                FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+            )
+        ''',
+        'career_assessments': '''
+            CREATE TABLE career_assessments (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id INTEGER NOT NULL,
+                answers_json TEXT NOT NULL,
+                skill_scores_json TEXT NOT NULL,
+                category_scores_json TEXT NOT NULL,
+                recommendations_json TEXT NOT NULL,
+                top_category TEXT NOT NULL,
+                top_score INTEGER NOT NULL,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL,
+                FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+            )
+        ''',
+        'saved_careers': '''
+            CREATE TABLE saved_careers (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id INTEGER NOT NULL,
+                title TEXT NOT NULL,
+                salary TEXT DEFAULT '',
+                match TEXT DEFAULT '',
+                description TEXT DEFAULT '',
+                source TEXT DEFAULT '',
+                created_at TEXT NOT NULL,
+                FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE,
+                UNIQUE(user_id, title)
+            )
+        ''',
+    }
+
+    for table_name, recreate_sql in table_definitions.items():
+        schema_sql = connection.execute(
+            "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = ?",
+            (table_name,),
+        ).fetchone()
+        schema_sql_text = schema_sql[0] if schema_sql else ''
+        foreign_keys = connection.execute(f"PRAGMA foreign_key_list('{table_name}')").fetchall()
+        ref_targets = {foreign_key[2] for foreign_key in foreign_keys}
+
+        if 'users_old' not in (schema_sql_text or '') and 'users_old' not in ref_targets:
+            continue
+
+        old_table = f'{table_name}_old'
+        connection.execute(f'DROP TABLE IF EXISTS {old_table}')
+        connection.execute(f'ALTER TABLE {table_name} RENAME TO {old_table}')
+        connection.execute(recreate_sql)
+        columns = connection.execute(f'PRAGMA table_info({old_table})').fetchall()
+        if columns:
+            col_names = [column[1] for column in columns]
+            column_list = ', '.join(col_names)
+            connection.execute(
+                f'INSERT INTO {table_name} ({column_list}) SELECT {column_list} FROM {old_table}'
+            )
+        connection.execute(f'DROP TABLE {old_table}')
+
+
 def ensure_database() -> None:
     os.makedirs(BASE_DIR, exist_ok=True)
     with get_db() as connection:
+        repair_renamed_user_foreign_keys(connection)
         connection.execute(
             '''
             CREATE TABLE IF NOT EXISTS users (
@@ -245,21 +1461,6 @@ def ensure_database() -> None:
                 gender TEXT NOT NULL,
                 phone_number TEXT NOT NULL,
                 city TEXT NOT NULL,
-                created_at TEXT NOT NULL,
-                updated_at TEXT NOT NULL,
-                FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
-            )
-            '''
-        )
-        connection.execute(
-            '''
-            CREATE TABLE IF NOT EXISTS education_details (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                user_id INTEGER NOT NULL UNIQUE,
-                current_education_level TEXT NOT NULL,
-                stream TEXT,
-                school_college_name TEXT NOT NULL,
-                average_percentage_gpa TEXT NOT NULL,
                 created_at TEXT NOT NULL,
                 updated_at TEXT NOT NULL,
                 FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
@@ -299,9 +1500,43 @@ def ensure_database() -> None:
             )
             '''
         )
+        connection.execute(
+            '''
+            CREATE TABLE IF NOT EXISTS career_colleges (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                career_title TEXT NOT NULL,
+                state TEXT NOT NULL,
+                college_name TEXT NOT NULL,
+                college_type TEXT NOT NULL,
+                location TEXT NOT NULL,
+                annual_fee TEXT NOT NULL,
+                speciality TEXT NOT NULL,
+                created_at TEXT NOT NULL,
+                UNIQUE(career_title, state, college_name)
+            )
+            '''
+        )
 
         ensure_column(connection, 'users', "age TEXT DEFAULT ''", 'age')
         ensure_column(connection, 'users', "gender TEXT DEFAULT ''", 'gender')
+
+        # Seed default demo account if no users exist or demo user missing
+        demo_user = connection.execute('SELECT id FROM users WHERE email = ?', ('demo@smartcareer.com',)).fetchone()
+        if not demo_user:
+            timestamp = now_iso()
+            connection.execute(
+                '''
+                INSERT INTO users (full_name, email, password_hash, age, gender, created_at, updated_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+                ''',
+                ('Demo User', 'demo@smartcareer.com', generate_password_hash('password123'), '21', 'male', timestamp, timestamp)
+            )
+
+        ensure_career_colleges_seeded()
+
+
+# Ensure database tables exist on module initialization
+ensure_database()
 
 
 def get_user_by_email(email: str) -> Optional[Dict[str, Any]]:
@@ -378,6 +1613,7 @@ def normalize_answer_score(value: Any) -> int:
         return 0
 
     normalized = str(value).strip().lower()
+    normalized = OPTION_ALIASES.get(normalized, normalized)
     mapped = {
         '1': 1,
         '2': 2,
@@ -387,10 +1623,10 @@ def normalize_answer_score(value: Any) -> int:
         'very interested': 5,
         'interested': 4,
         'neutral': 3,
-        'not interested': 1,
+        'disagree': 2,
+        'not interested': 2,
         'strongly agree': 5,
         'agree': 4,
-        'disagree': 1,
         'strongly disagree': 1,
     }
     return mapped.get(normalized, 0)
@@ -409,40 +1645,21 @@ def json_loads(value: str) -> Any:
 
 
 def calculate_skill_scores(answers: Dict[str, Any]) -> Dict[str, int]:
-    skill_scores = {
-        'logic': 0,
-        'data': 0,
-        'ui': 0,
-        'management': 0,
-        'documentation': 0,
-        'programming': 0,
-        'business': 0,
-        'communication': 0,
-        'cybersecurity': 0,
-        'collaboration': 0,
-        'creativity': 0,
-        'leadership': 0,
-        'technical': 0,
-        'security': 0,
-    }
-
-    for question_key, skill_weights in QUESTION_TO_SKILLS.items():
-        score = normalize_answer_score(answers.get(question_key))
-        for skill_name, weight in skill_weights.items():
-            skill_scores[skill_name] = skill_scores.get(skill_name, 0) + (score * weight)
-
-    return skill_scores
+    question_scores = {}
+    for index in range(1, 11):
+        question_key = f'q{index}'
+        question_scores[question_key] = normalize_answer_score(answers.get(question_key))
+    return question_scores
 
 
 def recommend_careers(answers: Dict[str, Any]) -> Dict[str, Any]:
-    skill_scores = calculate_skill_scores(answers)
+    question_scores = calculate_skill_scores(answers)
 
     category_scores: Dict[str, float] = {}
     for category_name, profile in CAREER_CATEGORY_PROFILES.items():
-        total_weight = sum(profile.values())
-        raw_score = sum(skill_scores.get(skill, 0) * weight for skill, weight in profile.items())
-        # Normalize score to a 100-point scale (since max skill score is 5, divide by weight and multiply by 20)
-        category_scores[category_name] = round((raw_score / total_weight) * 20, 1) if total_weight > 0 else 0.0
+        max_possible = sum(weight * 5 for weight in profile.values())
+        raw_score = sum((question_scores.get(question_id, 0) * weight) for question_id, weight in profile.items())
+        category_scores[category_name] = round((raw_score / max_possible) * 100, 1) if max_possible > 0 else 0.0
 
     ranked_categories = sorted(category_scores.items(), key=lambda item: item[1], reverse=True)
     top_category = ranked_categories[0][0] if ranked_categories else 'IT & Technology'
@@ -451,20 +1668,20 @@ def recommend_careers(answers: Dict[str, Any]) -> Dict[str, Any]:
 
     student_profile = ' + '.join(DOMAIN_PROFILE_LABELS.get(domain, domain) for domain in top_domains) if top_domains else 'Career Discovery'
 
-    recommended_careers = []
-    seen_careers = set()
-    for index, domain in enumerate(top_domains):
+    all_careers = []
+    for domain in top_domains:
         for career_name in CAREER_CATEGORY_CAREERS.get(domain, []):
-            if career_name in seen_careers:
-                continue
-            seen_careers.add(career_name)
+            profile = CAREER_CATEGORY_PROFILES.get(domain, {})
+            max_possible = sum(weight * 5 for weight in profile.values())
+            raw_score = sum((question_scores.get(question_id, 0) * weight) for question_id, weight in profile.items())
+            score = round((raw_score / max_possible) * 100, 1) if max_possible > 0 else 0.0
             details = CAREER_DETAILS.get(career_name, DEFAULT_CAREER_DETAILS)
-            recommended_careers.append(
+            all_careers.append(
                 {
                     'career': career_name,
                     'description': CAREER_DESCRIPTIONS.get(career_name, 'Recommended based on your assessment.'),
                     'category': DOMAIN_DISPLAY_NAMES.get(domain, domain),
-                    'score': max(1, 100 - (index * 7)),
+                    'score': max(1, int(round(score))),
                     'skillsRequired': details['skillsRequired'],
                     'roadmap': details['roadmap'],
                     'salaryRange': details['salaryRange'],
@@ -472,11 +1689,34 @@ def recommend_careers(answers: Dict[str, Any]) -> Dict[str, Any]:
                 }
             )
 
-    # Keep the list focused like the sample result screen.
-    recommended_careers = recommended_careers[:10]
+    if not all_careers:
+        for domain, careers in CAREER_CATEGORY_CAREERS.items():
+            for career_name in careers:
+                details = CAREER_DETAILS.get(career_name, DEFAULT_CAREER_DETAILS)
+                all_careers.append({
+                    'career': career_name,
+                    'description': CAREER_DESCRIPTIONS.get(career_name, 'Recommended based on your assessment.'),
+                    'category': DOMAIN_DISPLAY_NAMES.get(domain, domain),
+                    'score': 50,
+                    'skillsRequired': details['skillsRequired'],
+                    'roadmap': details['roadmap'],
+                    'salaryRange': details['salaryRange'],
+                    'demandLevel': details['demandLevel'],
+                })
+
+    scored_careers = []
+    seen = set()
+    for career in all_careers:
+        if career['career'] in seen:
+            continue
+        seen.add(career['career'])
+        scored_careers.append(career)
+
+    scored_careers.sort(key=lambda item: item['score'], reverse=True)
+    recommended_careers = scored_careers[:10]
 
     return {
-        'skillScores': skill_scores,
+        'skillScores': question_scores,
         'categoryScores': ranked_categories,
         'studentProfile': student_profile,
         'topDomains': [DOMAIN_DISPLAY_NAMES.get(domain, domain) for domain in top_domains],
@@ -577,7 +1817,6 @@ def home():
                 'login': '/api/auth/login',
                 'profile_update': '/api/profile/update',
                 'personal_details': '/api/personal-details',
-                'education_details': '/api/education-details',
                 'profile': '/api/profile/<email>',
                 'debug_storage': '/api/debug/storage',
             },
@@ -588,6 +1827,32 @@ def home():
 @app.route('/health', methods=['GET'])
 def health_check():
     return jsonify({'success': True, 'status': 'ok'})
+
+
+@app.route('/api/career-colleges/<path:career_title>', methods=['GET'])
+def get_career_colleges(career_title: str):
+    state = request.args.get('state', '').strip()
+    colleges = fetch_career_colleges(career_title, state or None)
+    if state and not colleges:
+        # When a specific state is requested but no colleges are found,
+        # return an empty list with a user-friendly message.
+        return jsonify({'success': True, 'career': career_title, 'state': state, 'colleges': [], 'message': f'No colleges available for {state}.'})
+
+    return jsonify({'success': True, 'career': career_title, 'state': state or None, 'colleges': colleges})
+
+
+@app.route('/api/career-colleges/<path:career_title>/states', methods=['GET'])
+def get_career_available_states(career_title: str):
+    states = fetch_available_career_states(career_title)
+    return jsonify({'success': True, 'career': career_title, 'states': states})
+
+
+@app.route('/api/careers/colleges', methods=['GET'])
+def get_career_state_colleges():
+    career_id = request.args.get('career_id', '').strip()
+    state = request.args.get('state', '').strip()
+    colleges = fetch_colleges_for_career_state(career_id, state)
+    return jsonify({'success': True, 'career_id': career_id, 'state': state, 'colleges': colleges})
 
 
 @app.route('/api/auth/register', methods=['POST'])
@@ -804,71 +2069,6 @@ def save_personal_details():
     )
 
 
-@app.route('/api/education-details', methods=['POST', 'PUT', 'PATCH'])
-def save_education_details():
-    data = get_request_data()
-    user_id = resolve_user_id(data)
-    current_education_level = (data.get('current_education_level') or '').strip()
-    stream = (data.get('stream') or '').strip()
-    school_college_name = (data.get('school_college_name') or '').strip()
-    average_percentage_gpa = (data.get('average_percentage_gpa') or '').strip()
-
-    errors: Dict[str, str] = {}
-    if not user_id or not get_user_by_id(user_id):
-        errors['user'] = 'Valid user_id or email is required.'
-    if not current_education_level:
-        errors['current_education_level'] = 'Current education level is required.'
-    if not school_college_name:
-        errors['school_college_name'] = 'School/college name is required.'
-    if not average_percentage_gpa:
-        errors['average_percentage_gpa'] = 'Average percentage/GPA is required.'
-
-    if errors:
-        return json_error('Validation failed.', 400, errors)
-
-    timestamp = now_iso()
-    with get_db() as connection:
-        existing = connection.execute(
-            'SELECT id FROM education_details WHERE user_id = ?',
-            (user_id,),
-        ).fetchone()
-        if existing:
-            connection.execute(
-                '''
-                UPDATE education_details
-                SET current_education_level = ?, stream = ?, school_college_name = ?, average_percentage_gpa = ?, updated_at = ?
-                WHERE user_id = ?
-                ''',
-                (current_education_level, stream, school_college_name, average_percentage_gpa, timestamp, user_id),
-            )
-            action = 'updated'
-        else:
-            connection.execute(
-                '''
-                INSERT INTO education_details (
-                    user_id, current_education_level, stream, school_college_name,
-                    average_percentage_gpa, created_at, updated_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?)
-                ''',
-                (user_id, current_education_level, stream, school_college_name, average_percentage_gpa, timestamp, timestamp),
-            )
-            action = 'created'
-
-    return jsonify(
-        {
-            'success': True,
-            'message': f'Education details {action} successfully.',
-            'education_details': {
-                'user_id': user_id,
-                'current_education_level': current_education_level,
-                'stream': stream,
-                'school_college_name': school_college_name,
-                'average_percentage_gpa': average_percentage_gpa,
-            },
-        }
-    )
-
-
 @app.route('/api/career-assessment', methods=['POST'])
 def submit_career_assessment():
     data = get_request_data()
@@ -958,17 +2158,12 @@ def get_profile(email: str):
             'SELECT date_of_birth, gender, phone_number, city, created_at, updated_at FROM personal_details WHERE user_id = ?',
             (user_id,),
         ).fetchone()
-        education_details = connection.execute(
-            'SELECT current_education_level, stream, school_college_name, average_percentage_gpa, created_at, updated_at FROM education_details WHERE user_id = ?',
-            (user_id,),
-        ).fetchone()
 
     return jsonify(
         {
             'success': True,
             'user': serialize_user(user),
             'personal_details': dict(personal_details) if personal_details else None,
-            'education_details': dict(education_details) if education_details else None,
         }
     )
 
@@ -1003,10 +2198,6 @@ def debug_storage():
             'SELECT * FROM personal_details WHERE user_id = ?',
             (user_id,),
         ).fetchone()
-        education_row = connection.execute(
-            'SELECT * FROM education_details WHERE user_id = ?',
-            (user_id,),
-        ).fetchone()
 
     return jsonify(
         {
@@ -1014,11 +2205,9 @@ def debug_storage():
             'database': 'sqlite',
             'user': dict(user_row) if user_row else None,
             'personal_details': dict(personal_row) if personal_row else None,
-            'education_details': dict(education_row) if education_row else None,
             'stored': {
                 'user': bool(user_row),
                 'personal_details': bool(personal_row),
-                'education_details': bool(education_row),
             },
         }
     )
@@ -1119,112 +2308,6 @@ def not_found(_error):
     return json_error('Route not found.', 404)
 
 
-@app.route('/api/chat', methods=['POST'])
-def chat():
-    data = get_request_data()
-    user_message = (data.get('message') or '').strip().lower()
-    
-    if not user_message:
-        return json_error('Message is required.', 400)
-    
-    # Resolve user ID and fetch their latest assessment if present
-    user_id = resolve_user_id(data)
-    assessment_summary = None
-    if user_id:
-        try:
-            with get_db() as connection:
-                row = connection.execute(
-                    '''
-                    SELECT top_category, recommendations_json
-                    FROM career_assessments
-                    WHERE user_id = ?
-                    ORDER BY id DESC
-                    LIMIT 1
-                    ''',
-                    (user_id,)
-                ).fetchone()
-                if row:
-                    top_cat = row['top_category']
-                    recs = json_loads(row['recommendations_json'])
-                    careers_list = [c['career'] if isinstance(c, dict) else str(c) for c in recs]
-                    assessment_summary = {
-                        'top_category': top_cat,
-                        'careers': careers_list[:5]
-                    }
-        except Exception as e:
-            app.logger.error(f"Error querying career assessment in chat: {e}")
-
-    # Simple word boundary matching by splitting cleaned text
-    cleaned_message = ''.join(c if c.isalnum() or c.isspace() else ' ' for c in user_message)
-    words = cleaned_message.split()
-    
-    # Simple keyword-based responses for career guidance
-    reply = "I can help with career guidance! Try asking about specific careers or domains."
-    
-    # 1. Greetings
-    if any(w in ['hello', 'hi', 'hii', 'hey', 'yo', 'greetings'] for w in words):
-        reply = "Hello! I am your Smart Career Path AI Assistant. How can I help you today? You can ask me about different career options, roadmaps, required skills, or how to prepare for specific fields."
-        
-    # 2. Self-introduction
-    elif any(kw in user_message for kw in ['tell your self', 'tell me about yourself', 'who are you', 'introduce yourself', 'introduce your self', 'what are you', 'your capabilities']):
-        reply = "I am the Smart Career Path AI Assistant! My purpose is to help you navigate your educational and career journeys. I can:\n1. Explain different career domains (IT, Business, Healthcare, Arts, Law, Govt, etc.)\n2. Recommend skills and roadmaps for specific roles\n3. Give advice on career preparation, resumes, and study plans\n4. Analyze your career assessment results.\n\nWhat would you like to explore?"
-        
-    # 3. Creative/Arts/Dance/Music
-    elif any(art in user_message for art in ['dance', 'music', 'acting', 'singing', 'creative', 'art', 'paint', 'sculpt']):
-        reply = "To learn dance or pursue a creative/artistic career:\n1. Build your foundational skills by joining local classes/studios or practicing with structured online tutorials.\n2. Practice consistently and record your sessions to review and improve.\n3. Work on physical fitness, rhythm, and flexibility.\n4. Create a digital portfolio/showreel of your performances on platforms like YouTube or Instagram.\n\nYou can also check out our 'Arts & Creativity', 'Music Careers', and 'Acting & Entertainment' domains in the Explore Domains section of the app!"
-        
-    # 4. AI/ML/Data/Software/Coding
-    elif any(tech in user_message for tech in ['ai', 'ml', 'al/ml', 'artificial intelligence', 'machine learning', 'deep learning', 'software', 'developer', 'programmer', 'coding', 'data scientist', 'data science']):
-        reply = "For AI/ML, Data Science, and Software roles:\n1. Master a language like Python or JavaScript.\n2. Learn essential math and statistics (especially linear algebra and probability for ML).\n3. Study Data Structures and Algorithms (DSA) and database management (SQL).\n4. Learn ML frameworks like TensorFlow or PyTorch.\n5. Build hands-on projects and host them on GitHub.\n\nCheck out the 'IT & Technology' domain in the app for specific roadmaps, required skills, and salary expectations!"
-        
-    # 5. Career Assessment
-    elif any(kw in user_message for kw in ['my assessment', 'my result', 'my score', 'recommend based on my', 'what did i get', 'suitable for me', 'my career', 'my recommended', 'my path', 'my domain', 'suitable career', 'recommend career']):
-        if assessment_summary:
-            careers_str = ", ".join(assessment_summary['careers'])
-            reply = f"Based on your latest career assessment, your primary career path is **{assessment_summary['top_category']}**.\n\nYour top recommended career matches are: **{careers_str}**.\n\nYou can click on these careers in your profile or explore domains to see detailed roadmaps, salary ranges, and skills!"
-        else:
-            reply = "You haven't completed a career assessment yet! Please go to the Dashboard and click 'Start Assessment' so I can give you personalized recommendations."
-            
-    elif 'assessment' in user_message or 'test' in user_message or 'suitable' in user_message:
-        reply = "Take our career assessment to get personalized recommendations! It analyzes your interests, calculates your strengths, and suggests suitable career paths based on your profile."
-        
-    # 6. Business / commerce / entrepreneurship / BBA
-    elif any(biz in user_message for biz in ['bba', 'mba', 'b.com', 'bcom', 'business', 'entrepreneur', 'marketing', 'commerce']):
-        if any(deg in user_message for deg in ['bba', 'mba', 'b.com', 'bcom']):
-            reply = "BBA (Bachelor of Business Administration) is an undergraduate degree focusing on business management, administration, finance, marketing, and entrepreneurship. It equips you with leadership and organizational skills. Many graduates pursue corporate careers or an MBA (Master of Business Administration). Check out our 'Business & Commerce' and 'Entrepreneurship' domains in the app!"
-        else:
-            reply = "Business and Entrepreneurship careers include startup management, finance, marketing, and consulting. Focus on building communication, leadership, and problem-solving skills. Doing internships or starting small projects is highly valuable!"
-        
-    # 7. Healthcare
-    elif 'healthcare' in user_message or 'medical' in user_message or 'doctor' in user_message or 'nurse' in user_message:
-        reply = "Healthcare careers like doctor, nurse, pharmacist, or lab technician require strong science backgrounds, clinical training, and empathy. Check out the 'Healthcare' domain page for details on qualifications and specializations!"
-        
-    # 8. Law / Lawyer Workflow
-    elif 'law' in user_message or 'legal' in user_message or 'lawyer' in user_message:
-        if 'workflow' in user_message or 'responsibilities' in user_message or 'do' in user_message:
-            reply = "The typical workflow of a lawyer involves:\n1. Client Consultation: Meeting clients to understand their legal objectives.\n2. Case Research: Reviewing legal precedents, statutes, and evidence.\n3. Drafting: Writing contracts, briefs, pleadings, and opinions.\n4. Negotiation: Settling disputes out of court through agreements.\n5. Representation: Presenting arguments and defending clients in court trials.\n\nCheck out the 'Law Careers' domain page in the app for details on skills and salaries!"
-        else:
-            reply = "Law careers require strong communication, research, and logical thinking. You can explore roles like corporate lawyer, judge, legal advisor, or prosecutor. Check out the 'Law Careers' domain in the app!"
-        
-    # 9. Government
-    elif 'government' in user_message or 'govt' in user_message or 'ias' in user_message or 'ips' in user_message:
-        reply = "Government and public sector jobs (like IAS, IPS, Railway Officer, or Bank PO) offer stable careers with huge public impact. Entry typically requires preparing for competitive exams like UPSC, SSC CGL, or railway boards."
-        
-    # 10. Agriculture
-    elif 'agriculture' in user_message or 'agri' in user_message or 'farmer' in user_message:
-        reply = "Agricultural careers include agricultural science, agri-business, food technology, and organic farming. It combines biology, technology, and management to improve food systems."
-        
-    # 11. Gaming
-    elif 'gaming' in user_message or 'esports' in user_message:
-        reply = "Gaming careers include game development, esports players, streaming, and gaming content creation. Learn programming for dev roles, or focus on content quality and community building for streaming!"
-        
-    # 12. Thanks
-    elif 'thank' in user_message or 'thanks' in user_message:
-        reply = "You're very welcome! Let me know if you have any other questions about careers, roadmaps, or domains. Good luck!"
-        
-    return jsonify({'success': True, 'reply': reply})
-
-
 @app.errorhandler(500)
 def server_error(_error):
     return json_error('Internal server error.', 500)
@@ -1232,4 +2315,5 @@ def server_error(_error):
 
 if __name__ == '__main__':
     ensure_database()
+    ensure_career_colleges_seeded()
     app.run(host='0.0.0.0', port=5001, debug=False)

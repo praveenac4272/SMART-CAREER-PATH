@@ -1,4 +1,4 @@
-const NAME_REGEX = /^[A-Z][a-z]*$/;
+const NAME_REGEX = /^[A-Za-z][A-Za-z .'-]*$/;
 const EMAIL_REGEX = /^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 const AGE_REGEX = /^\d+$/;
 const PHONE_REGEX = /^\d{10}$/;
@@ -9,7 +9,12 @@ function isRequired(value) {
 }
 
 export function isValidName(name) {
-  return NAME_REGEX.test(String(name ?? ''));
+  const value = String(name ?? '').trim();
+  if (!value) {
+    return false;
+  }
+
+  return NAME_REGEX.test(value);
 }
 
 export function isValidEmail(email) {
@@ -48,7 +53,7 @@ export function getNameError(name) {
   }
 
   if (!isValidName(name)) {
-    return 'Name must start with one uppercase letter and contain only lowercase letters.';
+    return 'Name must start with a letter and can contain spaces, hyphens, apostrophes, or periods.';
   }
 
   return '';

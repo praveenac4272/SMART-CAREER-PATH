@@ -3,32 +3,32 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { saveCareersBulk } from '../services/savedCareers';
 
 const QUESTION_TO_SKILLS = {
-  q1: { logic: 1 },
-  q2: { data: 1 },
-  q3: { ui: 1, creativity: 1 },
-  q4: { management: 1, leadership: 1 },
-  q5: { documentation: 1, communication: 1 },
-  q6: { programming: 1, technical: 1 },
-  q7: { business: 1 },
-  q8: { communication: 1 },
-  q9: { cybersecurity: 1, security: 1 },
-  q10: { collaboration: 1, creativity: 1 },
+  q1: { q1: 1 },
+  q2: { q2: 1 },
+  q3: { q3: 1 },
+  q4: { q4: 1 },
+  q5: { q5: 1 },
+  q6: { q6: 1 },
+  q7: { q7: 1 },
+  q8: { q8: 1 },
+  q9: { q9: 1 },
+  q10: { q10: 1 },
 };
 
 const CAREER_CATEGORY_PROFILES = {
-  'IT & Technology': { logic: 1, data: 1, programming: 1, cybersecurity: 1, ui: 1 },
-  'Business & Commerce': { business: 1, management: 1, communication: 1 },
-  'Entrepreneurship': { management: 1, business: 1, communication: 1, creativity: 1 },
-  'Influencer & Content Creation': { creativity: 1, communication: 1, collaboration: 1 },
-  'Arts & Creativity': { creativity: 1, ui: 1 },
-  'Anime & Animation': { ui: 1, creativity: 1, logic: 1 },
-  'Gaming & Esports': { logic: 1, creativity: 1, programming: 1 },
-  'Acting & Entertainment': { communication: 1, creativity: 1 },
-  'Music Careers': { creativity: 1, communication: 1 },
-  'Law Careers': { communication: 1, logic: 1, business: 1 },
-  'Government & Railway': { leadership: 1, communication: 1, logic: 1 },
-  'Healthcare': { logic: 1, data: 1, communication: 1 },
-  'Agriculture': { data: 1, business: 1, logic: 1 },
+  'IT & Technology': { q1: 5, q8: 5, q6: 4, q10: 2, q3: 2, q5: 1, q7: 0, q2: 1, q4: 1, q9: 1 },
+  'Business & Commerce': { q3: 5, q10: 4, q1: 2, q8: 2, q4: 2, q6: 1, q2: 2, q5: 1, q7: 0, q9: 1 },
+  'Entrepreneurship': { q10: 5, q3: 5, q8: 3, q1: 2, q6: 2, q2: 1, q4: 1, q5: 1, q7: 0, q9: 1 },
+  'Influencer & Content Creation': { q6: 5, q5: 4, q3: 2, q10: 2, q8: 1, q1: 1, q7: 1, q2: 1, q4: 0, q9: 0 },
+  'Arts & Creativity': { q5: 5, q6: 3, q7: 1, q3: 1, q10: 1, q1: 1, q8: 1, q2: 1, q4: 0, q9: 0 },
+  'Anime & Animation': { q5: 5, q6: 3, q8: 3, q1: 2, q7: 1, q10: 1, q3: 1, q2: 1, q4: 0, q9: 0 },
+  'Gaming & Esports': { q8: 5, q1: 3, q6: 3, q10: 2, q5: 2, q3: 1, q7: 1, q2: 1, q4: 0, q9: 0 },
+  'Acting & Entertainment': { q7: 5, q5: 3, q6: 2, q3: 2, q10: 1, q2: 1, q8: 1, q1: 1, q4: 0, q9: 0 },
+  'Music Careers': { q7: 5, q5: 4, q6: 2, q3: 1, q10: 1, q1: 1, q8: 1, q2: 1, q4: 0, q9: 0 },
+  'Law Careers': { q4: 5, q3: 3, q1: 2, q10: 1, q2: 1, q6: 1, q5: 1, q8: 1, q7: 0, q9: 0 },
+  'Government & Railway': { q3: 5, q4: 4, q1: 2, q2: 2, q10: 1, q8: 1, q5: 1, q6: 1, q7: 0, q9: 1 },
+  'Healthcare': { q2: 5, q1: 2, q9: 2, q3: 1, q8: 1, q5: 1, q6: 1, q10: 1, q4: 1, q7: 0 },
+  'Agriculture': { q9: 5, q1: 2, q3: 2, q10: 2, q2: 1, q8: 1, q6: 1, q5: 1, q4: 0, q7: 0 },
 };
 
 const CAREER_CATEGORY_CAREERS = {
@@ -113,13 +113,13 @@ function computeAssessmentResult(answers) {
     collaboration: 0, creativity: 0, leadership: 0, technical: 0, security: 0
   };
 
-  const optionScores = { 0: 5, 1: 4, 2: 3, 3: 1, 4: 1 };
+  const optionScores = { 0: 5, 1: 4, 2: 3, 3: 2, 4: 1 };
 
   Object.entries(QUESTION_TO_SKILLS).forEach(([questionKey, weights]) => {
     const questionIndex = Number(questionKey.slice(1)) - 1;
     const answerIndex = answers[questionIndex];
     const score = answerIndex !== null && answerIndex !== undefined ? (optionScores[answerIndex] || 0) : 0;
-    
+
     Object.entries(weights).forEach(([skill, weight]) => {
       skillScores[skill] = (skillScores[skill] || 0) + (score * weight);
     });
@@ -182,6 +182,10 @@ export default function CareerRecommendation() {
     } catch (error) {}
     return [];
   }, [state]);
+
+  const attemptCount = useMemo(() => {
+    return Number(localStorage.getItem('assessmentAttempts') || '0');
+  }, []);
 
   const result = useMemo(() => {
     if (assessment) {
@@ -246,8 +250,14 @@ export default function CareerRecommendation() {
           </section>
         </div>
 
-        <div style={{ marginTop: 28 }}>
+        <div style={{ display: 'grid', gap: 12, marginTop: 28 }}>
+          <button onClick={() => navigate('/assessment')} style={{ width: '100%', padding: '14px', borderRadius: 12, background: '#fff', color: '#8a3fe8', border: '1px solid #8a3fe8', fontWeight: 700 }}>Retake Assessment</button>
           <button onClick={() => navigate('/dashboard')} style={{ width: '100%', padding: '14px', borderRadius: 12, background: 'linear-gradient(90deg,#8a3fe8,#d946ef)', color: 'white', border: 'none', fontWeight: 700 }}>Return to Home</button>
+          {attemptCount > 0 ? (
+            <p style={{ margin: 0, fontSize: 14, color: '#6b7280', textAlign: 'center' }}>
+              Assessment attempts: {attemptCount}
+            </p>
+          ) : null}
         </div>
       </main>
     </div>

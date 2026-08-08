@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getProfile, updateProfile, savePersonalDetails, saveEducationDetails } from '../services/api';
+import { getProfile, updateProfile, savePersonalDetails } from '../services/api';
 import { getAuthSession, saveAuthSession } from '../services/authSession';
 import { getUserProfile, saveUserProfile } from '../services/userProfile';
 
@@ -17,12 +17,6 @@ function ProfileInfo() {
     phone_number: '',
     city: '',
     user_id: null,
-  });
-  const [educationDetails, setEducationDetails] = useState({
-    current_education_level: '',
-    stream: '',
-    school_college_name: '',
-    average_percentage_gpa: '',
   });
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
@@ -44,7 +38,6 @@ function ProfileInfo() {
 
         const user = response?.user || {};
         const details = response?.personal_details || {};
-        const education = response?.education_details || {};
 
         setProfile({
           fullName: user.full_name || session.fullName || '',
@@ -57,12 +50,6 @@ function ProfileInfo() {
           phone_number: details.phone_number || '',
           city: details.city || '',
           user_id: user.id || session.userId || null,
-        });
-        setEducationDetails({
-          current_education_level: education.current_education_level || '',
-          stream: education.stream || '',
-          school_college_name: education.school_college_name || '',
-          average_percentage_gpa: education.average_percentage_gpa || '',
         });
       } catch {
         if (!isMounted) return;
@@ -83,18 +70,7 @@ function ProfileInfo() {
           }
         } catch {}
 
-        try {
-          const rawEducation = localStorage.getItem('careerEducationDetails');
-          if (rawEducation) {
-            const parsed = JSON.parse(rawEducation);
-            setEducationDetails({
-              current_education_level: parsed.current_education_level || parsed.level || '',
-              stream: parsed.stream || '',
-              school_college_name: parsed.school_college_name || parsed.institution || '',
-              average_percentage_gpa: parsed.average_percentage_gpa || parsed.gpa || '',
-            });
-          }
-        } catch {}
+        // No education details fallback needed after removing the education details screen.
       }
     };
 
@@ -140,20 +116,11 @@ function ProfileInfo() {
           phone_number: personalDetails.phone_number,
           city: personalDetails.city,
         });
-
-        await saveEducationDetails({
-          user_id: personalDetails.user_id,
-          email: updatedProfile.email,
-          current_education_level: educationDetails.current_education_level,
-          stream: educationDetails.stream,
-          school_college_name: educationDetails.school_college_name,
-          average_percentage_gpa: educationDetails.average_percentage_gpa,
-        });
       }
 
       setSuccessMessage('Profile saved successfully.');
       setTimeout(() => {
-        navigate('/profile');
+        navigate('/profile', { replace: true });
       }, 800);
     } catch (err) {
       setError(err.message || 'Could not save profile changes');
@@ -295,48 +262,6 @@ function ProfileInfo() {
               value={personalDetails.city}
               onChange={(e) => setPersonalDetails({ ...personalDetails, city: e.target.value })}
               placeholder="Enter your city"
-              style={inputStyle}
-            />
-          </label>
-
-          <div style={{ margin: '24px 0 12px', fontWeight: 800, fontSize: 18, borderBottom: '2px solid #f3f4f6', paddingBottom: 6 }}>Education Details</div>
-
-          <label style={{ display: 'block', marginBottom: 16 }}>
-            <span style={{ display: 'block', fontWeight: 700, marginBottom: 8 }}>Current Education Level</span>
-            <input
-              value={educationDetails.current_education_level}
-              onChange={(e) => setEducationDetails({ ...educationDetails, current_education_level: e.target.value })}
-              placeholder="Select or enter your education level"
-              style={inputStyle}
-            />
-          </label>
-
-          <label style={{ display: 'block', marginBottom: 16 }}>
-            <span style={{ display: 'block', fontWeight: 700, marginBottom: 8 }}>Stream</span>
-            <input
-              value={educationDetails.stream}
-              onChange={(e) => setEducationDetails({ ...educationDetails, stream: e.target.value })}
-              placeholder="Enter your stream (e.g. Science, Commerce)"
-              style={inputStyle}
-            />
-          </label>
-
-          <label style={{ display: 'block', marginBottom: 16 }}>
-            <span style={{ display: 'block', fontWeight: 700, marginBottom: 8 }}>School/College Name</span>
-            <input
-              value={educationDetails.school_college_name}
-              onChange={(e) => setEducationDetails({ ...educationDetails, school_college_name: e.target.value })}
-              placeholder="Enter your school/college name"
-              style={inputStyle}
-            />
-          </label>
-
-          <label style={{ display: 'block', marginBottom: 16 }}>
-            <span style={{ display: 'block', fontWeight: 700, marginBottom: 8 }}>Average Percentage/GPA</span>
-            <input
-              value={educationDetails.average_percentage_gpa}
-              onChange={(e) => setEducationDetails({ ...educationDetails, average_percentage_gpa: e.target.value })}
-              placeholder="e.g. 85% or 9.0 GPA"
               style={inputStyle}
             />
           </label>

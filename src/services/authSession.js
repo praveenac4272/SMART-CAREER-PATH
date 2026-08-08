@@ -5,6 +5,8 @@ const defaultSession = {
   studentId: null,
   email: '',
   fullName: '',
+  age: '',
+  phone: '',
 };
 
 export function getAuthSession() {

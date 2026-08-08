@@ -1,0 +1,291 @@
+[
+  {
+    "title": "Software Engineer",
+    "domain": "IT & Technology",
+    "summary": "Master coding fundamentals, build production projects, and prepare for software engineering roles.",
+    "tasks": [
+      { "id": "software_engineer_01", "label": "Learn programming fundamentals", "detail": "Choose a primary language (Python/Java/JS) and practice basics: control flow, data types, and functions." },
+      { "id": "software_engineer_02", "label": "Understand data structures & algorithms", "detail": "Study arrays, lists, trees, graphs, sorting, and complexity analysis for interview success." },
+      { "id": "software_engineer_03", "label": "Build 3+ real projects", "detail": "Create and deploy small apps that demonstrate front-end, back-end or full-stack skills." },
+      { "id": "software_engineer_04", "label": "Use version control", "detail": "Master Git workflows: branches, pull requests, rebasing, and collaborative development on GitHub." },
+      { "id": "software_engineer_05", "label": "Learn testing & debugging", "detail": "Write unit and integration tests and use debuggers/logging to troubleshoot issues." },
+      { "id": "software_engineer_06", "label": "Practice system design basics", "detail": "Study components, APIs, databases, caching and scaling concepts for mid-level roles." },
+      { "id": "software_engineer_07", "label": "Complete internships or freelance work", "detail": "Gain real-world experience through internships, part-time jobs, or freelance projects." },
+      { "id": "software_engineer_08", "label": "Prepare for technical interviews", "detail": "Solve timed coding problems and rehearse behavioral interview answers." },
+      { "id": "software_engineer_09", "label": "Polish your portfolio and resume", "detail": "Document project case studies, architecture decisions, and code links for recruiters." },
+      { "id": "software_engineer_10", "label": "Apply and negotiate offers", "detail": "Apply broadly, practice interview feedback, and evaluate compensation and growth opportunities." }
+    ]
+  },
+  {
+    "title": "AI/ML Engineer",
+    "domain": "IT & Technology",
+    "summary": "Develop practical machine learning skills, build ML projects, and prepare for ML engineering roles.",
+    "tasks": [
+      { "id": "ai_ml_engineer_01", "label": "Strengthen math & statistics fundamentals", "detail": "Master linear algebra, calculus basics, probability, and statistics for model understanding." },
+      { "id": "ai_ml_engineer_02", "label": "Master Python for ML", "detail": "Learn NumPy, pandas, scikit-learn, and workflow patterns for experimentation." },
+      { "id": "ai_ml_engineer_03", "label": "Study core ML algorithms", "detail": "Understand supervised/unsupervised algorithms, evaluation metrics and model selection." },
+      { "id": "ai_ml_engineer_04", "label": "Learn deep learning basics", "detail": "Work with neural networks using frameworks like TensorFlow or PyTorch for applied tasks." },
+      { "id": "ai_ml_engineer_05", "label": "Build reproducible ML projects", "detail": "Ship end-to-end pipelines: data ingestion, training, evaluation and deployment." },
+      { "id": "ai_ml_engineer_06", "label": "Learn deployment & MLOps basics", "detail": "Understand model serving, scaling, CI/CD for ML, and model monitoring." },
+      { "id": "ai_ml_engineer_07", "label": "Participate in competitions & datasets", "detail": "Solve problems on Kaggle or public datasets to sharpen modeling instincts." },
+      { "id": "ai_ml_engineer_08", "label": "Publish a project with reproducible code", "detail": "Open-source a notebook or repo with clear instructions and results." },
+      { "id": "ai_ml_engineer_09", "label": "Complete internships or research experience", "detail": "Gain practical exposure through internships, co-ops or university research." },
+      { "id": "ai_ml_engineer_10", "label": "Prepare ML interview topics", "detail": "Study model tradeoffs, system design for ML, and ML-specific coding questions." }
+    ]
+  },
+  {
+    "title": "Data Scientist",
+    "domain": "IT & Technology",
+    "summary": "Analyze data, build models, and communicate insights to drive decisions.",
+    "tasks": [
+      { "id": "data_scientist_01", "label": "Master statistics and EDA", "detail": "Perform exploratory data analysis and learn hypothesis testing and sampling." },
+      { "id": "data_scientist_02", "label": "Learn Python & data libraries", "detail": "Use pandas, NumPy, matplotlib/seaborn and data cleaning patterns effectively." },
+      { "id": "data_scientist_03", "label": "Practice SQL for analytics", "detail": "Write complex queries, joins and window functions to extract business data." },
+      { "id": "data_scientist_04", "label": "Model building and evaluation", "detail": "Train models, validate with cross-validation, and interpret performance metrics." },
+      { "id": "data_scientist_05", "label": "Build storytelling dashboards", "detail": "Create dashboards and visual narratives that explain impact to stakeholders." },
+      { "id": "data_scientist_06", "label": "Work on domain-specific datasets", "detail": "Practice with industry datasets and tailor features to business problems." },
+      { "id": "data_scientist_07", "label": "Create reproducible analyses", "detail": "Package analyses with notebooks, scripts and README for reproducibility." },
+      { "id": "data_scientist_08", "label": "Gain practical experience", "detail": "Intern or consult on data projects that deliver measurable outcomes." },
+      { "id": "data_scientist_09", "label": "Publish a portfolio project", "detail": "Share a case study with code, data pipeline and visualization for hiring." },
+      { "id": "data_scientist_10", "label": "Prepare analytics interviews", "detail": "Practice SQL, statistics, product-sense questions and presentation skills." }
+    ]
+  },
+  {
+    "title": "Full Stack Developer",
+    "domain": "IT & Technology",
+    "summary": "Deliver end-to-end applications by mastering both frontend and backend development.",
+    "tasks": [
+      { "id": "full_stack_01", "label": "Learn frontend fundamentals", "detail": "Understand HTML, CSS, and JavaScript and responsive UI patterns." },
+      { "id": "full_stack_02", "label": "Master a frontend framework", "detail": "Build interfaces using React, Vue, or Angular with state management." },
+      { "id": "full_stack_03", "label": "Learn backend basics", "detail": "Understand RESTful APIs, routing, authentication and database interactions." },
+      { "id": "full_stack_04", "label": "Work with databases", "detail": "Design schemas and write efficient queries for SQL or NoSQL databases." },
+      { "id": "full_stack_05", "label": "Build full-stack projects", "detail": "Ship at least 2 end-to-end apps with deployment and CI/CD." },
+      { "id": "full_stack_06", "label": "Use version control and collaboration", "detail": "Collaborate using Git, code reviews and feature branching." },
+      { "id": "full_stack_07", "label": "Implement authentication & security", "detail": "Add secure auth, input validation, and protect sensitive data." },
+      { "id": "full_stack_08", "label": "Optimize performance", "detail": "Profile apps, reduce bundle size, and add caching where needed." },
+      { "id": "full_stack_09", "label": "Deploy and monitor apps", "detail": "Use cloud or container platforms to deploy and monitor application health." },
+      { "id": "full_stack_10", "label": "Prepare for interviews and land a role", "detail": "Showcase projects, practice system design and solve coding challenges." }
+    ]
+  },
+  {
+    "title": "DevOps Engineer",
+    "domain": "IT & Technology",
+    "summary": "Automate infrastructure, CI/CD pipelines and ensure reliable deployments.",
+    "tasks": [
+      { "id": "devops_01", "label": "Learn Linux and networking basics", "detail": "Understand OS fundamentals, networking, firewalls and SSH." },
+      { "id": "devops_02", "label": "Master containers and orchestration", "detail": "Use Docker and Kubernetes for packaging and scaling services." },
+      { "id": "devops_03", "label": "Understand CI/CD pipelines", "detail": "Implement automated builds, tests and deployments with a pipeline tool." },
+      { "id": "devops_04", "label": "Work with cloud providers", "detail": "Deploy and manage services on AWS, GCP or Azure and learn cost considerations." },
+      { "id": "devops_05", "label": "Learn IaC (Infrastructure as Code)", "detail": "Use Terraform or CloudFormation to declare, version and apply infrastructure." },
+      { "id": "devops_06", "label": "Implement monitoring and alerts", "detail": "Integrate observability stacks (logs, metrics, tracing) for production systems." },
+      { "id": "devops_07", "label": "Automate repetitive tasks", "detail": "Use scripting and tooling to reduce manual operations and increase reliability." },
+      { "id": "devops_08", "label": "Practice incident response", "detail": "Simulate incidents and learn post-mortem and remediation practices." },
+      { "id": "devops_09", "label": "Gain practical experience via projects", "detail": "Build and operate a small production-like environment for learning." },
+      { "id": "devops_10", "label": "Prepare for role-specific interviews", "detail": "Review system architecture, deployment patterns and troubleshooting scenarios." }
+    ]
+  },
+  {
+    "title": "Cybersecurity Analyst",
+    "domain": "IT & Technology",
+    "summary": "Protect systems by learning security fundamentals, monitoring threats, and responding to incidents.",
+    "tasks": [
+      { "id": "cybersec_01", "label": "Learn security fundamentals", "detail": "Understand confidentiality, integrity, availability and basic cryptography." },
+      { "id": "cybersec_02", "label": "Master networking and OS concepts", "detail": "Study TCP/IP, common services and vulnerabilities in OSs and networks." },
+      { "id": "cybersec_03", "label": "Familiarize with security tools", "detail": "Use tools like Wireshark, Nmap, and basic SIEM platforms for analysis." },
+      { "id": "cybersec_04", "label": "Practice threat detection", "detail": "Set up simple detection rules and learn to investigate suspicious activity." },
+      { "id": "cybersec_05", "label": "Complete labs or CTFs", "detail": "Participate in capture-the-flag events or online labs to build practical skills." },
+      { "id": "cybersec_06", "label": "Study incident response", "detail": "Practice triage, containment, eradication and recovery steps." },
+      { "id": "cybersec_07", "label": "Gain certifications if needed", "detail": "Consider entry-level certs like CompTIA Security+ or vendor certs depending on goals." },
+      { "id": "cybersec_08", "label": "Get hands-on experience", "detail": "Intern with security teams or contribute to security tooling projects." },
+      { "id": "cybersec_09", "label": "Document and communicate findings", "detail": "Write clear incident reports and remediation steps for stakeholders." },
+      { "id": "cybersec_10", "label": "Prepare for security role interviews", "detail": "Study common attack patterns, defense techniques and case studies." }
+    ]
+  },
+  {
+    "title": "UI/UX Designer",
+    "domain": "IT & Technology",
+    "summary": "Design user experiences by learning research, wireframing, prototyping and usability testing.",
+    "tasks": [
+      { "id": "uiux_01", "label": "Learn design fundamentals", "detail": "Study layout, color, typography and visual hierarchy principles." },
+      { "id": "uiux_02", "label": "Practice user research", "detail": "Conduct simple interviews, surveys and synthesize findings into insights." },
+      { "id": "uiux_03", "label": "Create wireframes and flows", "detail": "Sketch user journeys and low-fidelity screens for product ideas." },
+      { "id": "uiux_04", "label": "Master a prototyping tool", "detail": "Use Figma or similar tools to create interactive prototypes and handoffs." },
+      { "id": "uiux_05", "label": "Perform usability testing", "detail": "Test prototypes with users and iterate based on feedback." },
+      { "id": "uiux_06", "label": "Build case-study portfolio", "detail": "Document problem, constraints, design process and outcome for each project." },
+      { "id": "uiux_07", "label": "Collaborate with engineers", "detail": "Practice clear handoffs and use design systems for consistent implementations." },
+      { "id": "uiux_08", "label": "Learn accessibility basics", "detail": "Ensure designs support keyboard navigation, contrast and assistive tech where possible." },
+      { "id": "uiux_09", "label": "Collect feedback and iterate", "detail": "Use analytics and user feedback to refine product experiences." },
+      { "id": "uiux_10", "label": "Publish your portfolio and apply", "detail": "Share polished case studies and apply for internships or junior roles." }
+    ]
+  },
+  {
+    "title": "Chartered Accountant",
+    "domain": "Business & Commerce",
+    "summary": "Become proficient in accounting, taxation, auditing and professional practice.",
+    "tasks": [
+      { "id": "ca_01", "label": "Learn accounting fundamentals", "detail": "Master journal entries, ledgers, financial statements and basics of bookkeeping." },
+      { "id": "ca_02", "label": "Study taxation", "detail": "Understand direct and indirect tax laws, returns and compliance basics." },
+      { "id": "ca_03", "label": "Practice auditing principles", "detail": "Learn about internal controls, evidence and audit procedures." },
+      { "id": "ca_04", "label": "Complete required articleship", "detail": "Gain hands-on experience under a practicing CA through articleship training." },
+      { "id": "ca_05", "label": "Prepare for professional exams", "detail": "Study and practice past papers for CA exams with disciplined revision." },
+      { "id": "ca_06", "label": "Work on case studies", "detail": "Solve practical accounting and taxation problems to improve application skills." },
+      { "id": "ca_07", "label": "Build client communication skills", "detail": "Practice explaining financial concepts and compliance requirements to clients." },
+      { "id": "ca_08", "label": "Learn accounting software", "detail": "Use Tally, QuickBooks or other tools commonly used in practice." },
+      { "id": "ca_09", "label": "Network professionally", "detail": "Connect with firms and mentors to find growth opportunities and guidance." },
+      { "id": "ca_10", "label": "Plan continuous professional development", "detail": "Identify post-qualification specializations like tax, forensic accounting, or advisory." }
+    ]
+  },
+  {
+    "title": "MBA Graduate",
+    "domain": "Business & Commerce",
+    "summary": "Gain strategic business knowledge, leadership skills and placement readiness through an MBA." ,
+    "tasks": [
+      { "id": "mba_01", "label": "Understand MBA specializations", "detail": "Explore specializations (finance, marketing, operations) and choose a focus area." },
+      { "id": "mba_02", "label": "Develop quantitative skills", "detail": "Practice finance, statistics and Excel skills commonly used in business analysis." },
+      { "id": "mba_03", "label": "Work on case studies", "detail": "Solve real business cases to build problem-solving and presentation skills." },
+      { "id": "mba_04", "label": "Build leadership and teamwork skills", "detail": "Lead projects and collaborate across cross-functional teams during the program." },
+      { "id": "mba_05", "label": "Intern during program", "detail": "Secure a summer internship to gain corporate exposure and practical skills." },
+      { "id": "mba_06", "label": "Network with alumni and recruiters", "detail": "Attend industry events and leverage alumni networks for placements." },
+      { "id": "mba_07", "label": "Create CVs and interview practice", "detail": "Prepare resume, mock interviews and placement prep for campus recruitment." },
+      { "id": "mba_08", "label": "Develop domain expertise", "detail": "Undertake projects that demonstrate functional depth in your chosen area." },
+      { "id": "mba_09", "label": "Learn data-driven decision making", "detail": "Use analytics and business intelligence tools for strategic insights." },
+      { "id": "mba_10", "label": "Secure placement or entrepreneurial plan", "detail": "Decide between placements, internships or launching a venture; prepare accordingly." }
+    ]
+  },
+  {
+    "title": "Investment Banker",
+    "domain": "Business & Commerce",
+    "summary": "Build finance modeling, valuation and deal execution skills for investment banking roles.",
+    "tasks": [
+      { "id": "ib_01", "label": "Learn corporate finance fundamentals", "detail": "Understand valuation, discounted cash flow, and financial statement analysis." },
+      { "id": "ib_02", "label": "Master Excel and modeling", "detail": "Build financial models and practice sensitivity analysis and scenario planning." },
+      { "id": "ib_03", "label": "Study valuation techniques", "detail": "Practice comparable company and precedent transaction analysis." },
+      { "id": "ib_04", "label": "Complete internships in finance", "detail": "Gain experience through internships at banks or advisory firms." },
+      { "id": "ib_05", "label": "Build case studies and pitchbooks", "detail": "Document transaction case studies and prepare client pitch materials." },
+      { "id": "ib_06", "label": "Network and attend industry events", "detail": "Connect with professionals, recruiters and attend finance meetups." },
+      { "id": "ib_07", "label": "Prepare technical and fit interviews", "detail": "Practice financial questions, market awareness and behavioral interviews." },
+      { "id": "ib_08", "label": "Understand regulatory environment", "detail": "Learn about compliance, RBI/SEBI regulations, and reporting standards." },
+      { "id": "ib_09", "label": "Polish communication and presentation skills", "detail": "Deliver clear recommendations and present analyses with conviction." },
+      { "id": "ib_10", "label": "Evaluate offers and career path", "detail": "Assess role fit, compensation and progression in investment banking." }
+    ]
+  },
+  {
+    "title": "Financial Analyst",
+    "domain": "Business & Commerce",
+    "summary": "Analyze financial performance, build models and support decision-making in businesses.",
+    "tasks": [
+      { "id": "fa_01", "label": "Understand financial statements", "detail": "Learn balance sheets, income statements and cash flow analysis." },
+      { "id": "fa_02", "label": "Practice Excel and modeling", "detail": "Use spreadsheets for forecasting, budgeting and variance analysis." },
+      { "id": "fa_03", "label": "Learn accounting ratios and KPIs", "detail": "Calculate and interpret metrics that drive business performance." },
+      { "id": "fa_04", "label": "Work on business case studies", "detail": "Analyze company performance and propose improvement plans." },
+      { "id": "fa_05", "label": "Gain internship or analyst experience", "detail": "Secure an internship in finance, consulting or analytics to apply skills." },
+      { "id": "fa_06", "label": "Learn visualization and reporting", "detail": "Create dashboards and concise reports for stakeholders." },
+      { "id": "fa_07", "label": "Study industry and market trends", "detail": "Build domain knowledge for better forecasting and recommendations." },
+      { "id": "fa_08", "label": "Polish presentation skills", "detail": "Present findings clearly and recommend data-driven actions." },
+      { "id": "fa_09", "label": "Obtain relevant certifications", "detail": "Consider CFA/FRM or domain-specific certifications as needed." },
+      { "id": "fa_10", "label": "Apply for analyst roles", "detail": "Refine CV, network and prepare for interviews focused on cases and modeling." }
+    ]
+  },
+  {
+    "title": "Marketing Manager",
+    "domain": "Business & Commerce",
+    "summary": "Design marketing strategies, run campaigns and measure impact to grow brands.",
+    "tasks": [
+      { "id": "mm_01", "label": "Learn marketing fundamentals", "detail": "Study 4Ps, customer segments, targeting and positioning concepts." },
+      { "id": "mm_02", "label": "Understand digital marketing channels", "detail": "Learn SEO, SEM, social media, email and content strategies." },
+      { "id": "mm_03", "label": "Work on campaign case studies", "detail": "Plan end-to-end campaigns and measure KPIs like CAC and LTV." },
+      { "id": "mm_04", "label": "Use analytics and tracking tools", "detail": "Leverage Google Analytics, ads platforms and attribution models." },
+      { "id": "mm_05", "label": "Develop creative and messaging skills", "detail": "Write briefs, collaborate with creatives and iterate on messaging." },
+      { "id": "mm_06", "label": "Run experiments and A/B tests", "detail": "Design tests to measure impact and iterate on learnings." },
+      { "id": "mm_07", "label": "Complete internships or projects", "detail": "Gain practical exposure with brand or performance marketing projects." },
+      { "id": "mm_08", "label": "Build a marketing portfolio", "detail": "Collect campaign case studies showing strategy, execution and results." },
+      { "id": "mm_09", "label": "Network and learn from mentors", "detail": "Attend marketing meetups and study successful brand campaigns." },
+      { "id": "mm_10", "label": "Prepare for interviews and leadership roles", "detail": "Practice problem-solving, strategy and cross-functional collaboration scenarios." }
+    ]
+  },
+  {
+    "title": "Business Consultant",
+    "domain": "Business & Commerce",
+    "summary": "Solve client business problems using structured thinking, analysis and presentation skills.",
+    "tasks": [
+      { "id": "bc_01", "label": "Learn structured problem solving", "detail": "Practice frameworks for disaggregation, hypothesis-driven analysis and synthesis." },
+      { "id": "bc_02", "label": "Master Excel and modeling", "detail": "Build quick models, scenario analyses and financial projections." },
+      { "id": "bc_03", "label": "Develop presentation and storytelling", "detail": "Create clear slide decks and communicate recommendations convincingly." },
+      { "id": "bc_04", "label": "Study case interviews", "detail": "Practice consulting case formats and frameworks with peers or mentors." },
+      { "id": "bc_05", "label": "Gain consulting experience", "detail": "Intern at consultancies or work on client-facing projects to apply skills." },
+      { "id": "bc_06", "label": "Build domain expertise", "detail": "Acquire depth in an industry (healthcare, tech, finance) to add value." },
+      { "id": "bc_07", "label": "Network with professionals", "detail": "Connect with consultants, managers and recruitment channels for roles." },
+      { "id": "bc_08", "label": "Collect project case studies", "detail": "Document client problems, analysis and outcomes for your portfolio." },
+      { "id": "bc_09", "label": "Polish client management skills", "detail": "Practice stakeholder communication, scoping and delivering on time." },
+      { "id": "bc_10", "label": "Prepare for consulting interviews", "detail": "Practice cases, fit interviews and business judgment questions." }
+    ]
+  },
+  {
+    "title": "Company Secretary",
+    "domain": "Business & Commerce",
+    "summary": "Manage corporate governance, compliance and regulatory filings for organizations.",
+    "tasks": [
+      { "id": "cs_01", "label": "Understand corporate law and governance", "detail": "Study regulations, board responsibilities and legal compliance basics." },
+      { "id": "cs_02", "label": "Learn statutory filings and compliance", "detail": "Practice company filings, minutes and regulatory submissions." },
+      { "id": "cs_03", "label": "Develop documentation skills", "detail": "Draft minutes, resolutions and legal documents accurately." },
+      { "id": "cs_04", "label": "Gain internship experience with firms", "detail": "Work with company secretarial departments or legal teams for exposure." },
+      { "id": "cs_05", "label": "Master stakeholder communication", "detail": "Coordinate with boards, auditors and regulators professionally." },
+      { "id": "cs_06", "label": "Prepare for professional exams", "detail": "Study for Company Secretary certification and related assessments." },
+      { "id": "cs_07", "label": "Learn compliance systems", "detail": "Use software and checklists to manage ongoing compliance tasks." },
+      { "id": "cs_08", "label": "Build attention to detail", "detail": "Practice accuracy in record keeping and regulatory submissions." },
+      { "id": "cs_09", "label": "Network with legal and finance teams", "detail": "Collaborate cross-functionally for better corporate processes." },
+      { "id": "cs_10", "label": "Plan continuous updates and CPD", "detail": "Keep updated on law changes and professional development requirements." }
+    ]
+  },
+  {
+    "title": "Startup Founder",
+    "domain": "Entrepreneurship",
+    "summary": "Validate ideas, build a minimum viable product, find early customers and iterate rapidly.",
+    "tasks": [
+      { "id": "sf_01", "label": "Validate the problem and market", "detail": "Talk to potential customers and confirm real pain points and willingness to pay." },
+      { "id": "sf_02", "label": "Define your value proposition", "detail": "Clarify how your product solves the problem uniquely and who it serves." },
+      { "id": "sf_03", "label": "Build an MVP", "detail": "Ship a minimal product that solves a core use-case and measure engagement." },
+      { "id": "sf_04", "label": "Acquire first users/customers", "detail": "Use outreach, partnerships or paid channels to get feedback from early adopters." },
+      { "id": "sf_05", "label": "Measure key metrics", "detail": "Track acquisition, activation, retention and revenue to guide decisions." },
+      { "id": "sf_06", "label": "Iterate fast on feedback", "detail": "Prioritize changes that improve retention and demonstrate product-market fit." },
+      { "id": "sf_07", "label": "Plan basic financials and runway", "detail": "Create simple budgets and forecast cash needs for the next 6–12 months." },
+      { "id": "sf_08", "label": "Network with mentors and investors", "detail": "Seek advisors and early-stage investor feedback to refine strategy." },
+      { "id": "sf_09", "label": "Prepare a clear pitch and deck", "detail": "Create a concise investor deck that explains problem, solution, model and traction." },
+      { "id": "sf_10", "label": "Decide next step: grow or pivot", "detail": "Make data-driven decisions to scale, seek funding, or iterate on the model." }
+    ]
+  },
+  {
+    "title": "Tech Entrepreneur",
+    "domain": "Entrepreneurship",
+    "summary": "Leverage technology and product thinking to build and scale a tech business.",
+    "tasks": [
+      { "id": "te_01", "label": "Identify technical differentiators", "detail": "Find technical solutions that deliver unique or scalable advantages." },
+      { "id": "te_02", "label": "Prototype a technical solution", "detail": "Build a working prototype to validate feasibility and user value." },
+      { "id": "te_03", "label": "Establish a small technical team", "detail": "Form a founding team or early hires to accelerate product development." },
+      { "id": "te_04", "label": "Plan product-market fit experiments", "detail": "Run targeted experiments to test features and retention improvements." },
+      { "id": "te_05", "label": "Set up scalable architecture", "detail": "Choose infrastructure that can grow with user demand; plan for monitoring." },
+      { "id": "te_06", "label": "Secure first customers or pilots", "detail": "Partner with early customers to refine product-market fit and revenue model." },
+      { "id": "te_07", "label": "Measure technical KPIs", "detail": "Track performance, errors, latency and system capacity as you scale." },
+      { "id": "te_08", "label": "Prepare IP and legal basics", "detail": "Consider patents or trademarks where applicable and set up corporate structure." },
+      { "id": "te_09", "label": "Fund development and growth", "detail": "Plan seed funding or revenue strategies to sustain product development." },
+      { "id": "te_10", "label": "Iterate and scale the team", "detail": "Hire key roles, define culture and scale operations to support growth." }
+    ]
+  },
+  {
+    "title": "Small Business Owner",
+    "domain": "Entrepreneurship",
+    "summary": "Run operations, manage finances, and grow a small business with customer focus.",
+    "tasks": [
+      { "id": "sbo_01", "label": "Define your offering and customers", "detail": "Clearly describe the product/service and target customer segment." },
+      { "id": "sbo_02", "label": "Validate the business model", "detail": "Test pricing, margins and demand through small pilots or pop-ups." },
+      { "id": "sbo_03", "label": "Set up basic operations", "detail": "Establish supply chain, accounting and simple operational processes." },
+      { "id": "sbo_04", "label": "Manage finances and cash flow", "detail": "Track revenue, costs and ensure positive cash flow for sustainability." },
+      { "id": "sbo_05", "label": "Deliver excellent customer service", "detail": "Prioritize customer feedback and repeat business through quality." },
+      { "id": "sbo_06", "label": "Market locally and digitally", "detail": "Use local marketing, social media and small ads to attract customers." },
+      { "id": "sbo_07", "label": "Formalize legal and tax compliance", "detail": "Register the business, file taxes and maintain required documentation." },
+      { "id": "sbo_08", "label": "Hire and train staff", "detail": "Onboard reliable staff and train them to uphold service standards." },
+      { "id": "sbo_09", "label": "Scale cautiously based on demand", "detail": "Expand offerings or locations only when demand and margins support growth." },
+      { "id": "sbo_10", "label": "Plan for continuity and resilience", "detail": "Prepare contingency plans, financial buffers and supplier alternatives." }
+    ]
+  }
+]

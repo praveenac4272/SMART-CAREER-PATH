@@ -4,15 +4,15 @@ function NonTraditionalDomains() {
   const navigate = useNavigate();
 
   const items = [
-    { icon: "🎭", label: "Acting & Entertainment" },
-    { icon: "👗", label: "Fashion & Modeling" },
-    { icon: "🎵", label: "Music" },
-    { icon: "💃", label: "Dance" },
-    { icon: "🎨", label: "Arts & Creativity" },
-    { icon: "🎮", label: "Gaming & Esports" },
-    { icon: "📱", label: "Influencer & Content" },
-    { icon: "🚀", label: "Entrepreneurship" },
-    { icon: "🎬", label: "Anime & Animation" },
+    { icon: "🎭", label: "Acting & Entertainment", path: "/domain/acting-entertainment" },
+    { icon: "👗", label: "Fashion & Modeling", path: "/domain/fashion-modeling" },
+    { icon: "🎵", label: "Music", path: "/domain/music" },
+    { icon: "💃", label: "Dance", path: "/domain/dance" },
+    { icon: "🎨", label: "Arts & Creativity", path: "/domain/arts-creativity" },
+    { icon: "🎮", label: "Gaming & Esports", path: "/domain/gaming-esports" },
+    { icon: "📱", label: "Influencer & Content", path: "/domain/influencer-content" },
+    { icon: "🚀", label: "Entrepreneurship", path: "/domain/entrepreneurship" },
+    { icon: "🎬", label: "Anime & Animation", path: "/domain/anime-animation" },
   ];
 
   return (
@@ -88,7 +88,7 @@ function NonTraditionalDomains() {
                   boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
                   cursor: "pointer",
                 }}
-                onClick={() => alert(it.label)}
+                onClick={() => navigate(it.path)}
               >
                 <div style={{ fontSize: 28, marginBottom: 12 }}>{it.icon}</div>
                 <div style={{ fontWeight: 700, color: "#0f172a", textAlign: "center" }}>{it.label}</div>

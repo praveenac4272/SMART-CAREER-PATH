@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getSavedCareers, saveCareer } from '../services/savedCareers';
 import { getUserProfile } from '../services/userProfile';
-import ChatBot from '../components/ChatBot';
 import { getAuthSession } from '../services/authSession';
 import { getCareerAssessmentFromDb } from '../services/api';
 
@@ -10,8 +9,8 @@ function Dashboard() {
   const navigate = useNavigate();
   const [userName, setUserName] = useState('Rahul Kumar');
   const [savedTitles, setSavedTitles] = useState([]);
-  const [showChat, setShowChat] = useState(false);
   const [hasAssessment, setHasAssessment] = useState(false);
+  const [assessmentAttempts, setAssessmentAttempts] = useState(0);
 
   const careerMatches = [
     { title: 'AI/ML Engineer', salary: '₹15-25 LPA', match: '95%' },
@@ -62,6 +61,7 @@ function Dashboard() {
       }
 
       const assessment = localStorage.getItem('careerAssessmentResult');
+      setAssessmentAttempts(Number(localStorage.getItem('assessmentAttempts') || '0'));
       if (assessment) {
         try {
           const parsed = JSON.parse(assessment);
@@ -86,8 +86,8 @@ function Dashboard() {
 
   const features = [
     { icon: '⊙', title: 'Explore Domains', color: '#e0f2fe' },
+    { icon: '✅', title: 'Career Progress Checklist', color: '#ede9fe' },
     { icon: '🔖', title: `Saved Careers${savedTitles.length > 0 ? ` (${savedTitles.length})` : ''}`, color: '#fce7f3' },
-    { icon: '🤖', title: 'AI Career Assistant', color: '#ede9fe' },
   ];
 
   return (
@@ -110,27 +110,6 @@ function Dashboard() {
         }}
       >
         {/* Status Bar (time removed) */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: '20px',
-            fontSize: '14px',
-          }}
-        >
-          <div style={{ width: '24px' }} />
-          <div
-            style={{
-              width: '24px',
-              height: '12px',
-              border: '1.5px solid white',
-              borderRadius: '2px',
-              backgroundColor: 'white',
-            }}
-          />
-        </div>
-
         {/* Top Nav Bar */}
         <div
           style={{
@@ -207,62 +186,6 @@ function Dashboard() {
         
       </div>
 
-        <button
-          type="button"
-          onClick={() => setShowChat((current) => !current)}
-          style={{
-            position: 'fixed',
-            right: '20px',
-            bottom: '20px',
-            zIndex: 50,
-            display: 'flex',
-            alignItems: 'center',
-            gap: '10px',
-            border: 'none',
-            borderRadius: '999px',
-            padding: '14px 18px',
-            background: 'linear-gradient(90deg, #2563eb 0%, #7c3aed 60%)',
-            color: 'white',
-            fontWeight: 700,
-            boxShadow: '0 12px 28px rgba(37, 99, 235, 0.28)',
-            cursor: 'pointer',
-          }}
-        >
-          <span>AI Career Assistant</span>
-        </button>
-
-        {showChat && (
-          <div
-            style={{
-              position: 'fixed',
-              right: '20px',
-              bottom: '84px',
-              zIndex: 50,
-              width: 'min(92vw, 420px)',
-              maxHeight: '80vh',
-              background: 'white',
-              borderRadius: '20px',
-              boxShadow: '0 18px 42px rgba(15, 23, 42, 0.2)',
-              overflow: 'hidden',
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', background: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #ec4899 100%)', color: 'white' }}>
-              <strong>Career AI Chatbot</strong>
-              <button
-                type="button"
-                onClick={() => setShowChat(false)}
-                style={{ background: 'transparent', border: 'none', color: 'white', fontSize: 18, cursor: 'pointer' }}
-                aria-label="close chat"
-              >
-                ✕
-              </button>
-            </div>
-            <div style={{ padding: 16, maxHeight: 'calc(80vh - 52px)', overflowY: 'auto' }}>
-              <ChatBot />
-            </div>
-          </div>
-        )}
-
       {/* Main Content */}
       <div style={{ padding: '24px 16px', maxWidth: '700px', margin: '0 auto' }}>
         {/* AI Career Match Card */}
@@ -286,7 +209,7 @@ function Dashboard() {
             }}
           >
             <h3 style={{ margin: '0', fontSize: '24px', fontWeight: '600' }}>
-              {hasAssessment ? "Your Career Match is Ready!" : "AI Career Match Ready!"}
+              {hasAssessment ? "Your Career Match is Ready!" : "Career Match Ready!"}
             </h3>
             <span style={{ fontSize: '32px' }}>✨</span>
           </div>
@@ -303,43 +226,70 @@ function Dashboard() {
               : "Take our assessment to discover your perfect career path"
             }
           </p>
-          <button
-            onClick={() => navigate(hasAssessment ? '/recommendation' : '/assessment')}
-            style={{
-              backgroundColor: 'white',
-              color: '#d946ef',
-              border: 'none',
-              padding: '12px 28px',
-              borderRadius: '12px',
-              fontWeight: '600',
-              fontSize: '16px',
-              cursor: 'pointer',
-              transition: 'transform 0.2s ease',
-            }}
-            onMouseOver={(e) => {
-              e.target.style.transform = 'translateY(-2px)';
-            }}
-            onMouseOut={(e) => {
-              e.target.style.transform = 'translateY(0)';
-            }}
-          >
-            {hasAssessment ? "View Results" : "Start Assessment"}
-          </button>
+          <div style={{ display: 'grid', gap: 10 }}>
+            <button
+              onClick={() => navigate(hasAssessment ? '/recommendation' : '/assessment')}
+              style={{
+                backgroundColor: 'white',
+                color: '#d946ef',
+                border: 'none',
+                padding: '12px 28px',
+                borderRadius: '12px',
+                fontWeight: '600',
+                fontSize: '16px',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease',
+              }}
+              onMouseOver={(e) => {
+                e.target.style.transform = 'translateY(-2px)';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.transform = 'translateY(0)';
+              }}
+            >
+              {hasAssessment ? "View Results" : "Start Assessment"}
+            </button>
+            {hasAssessment ? (
+              <button
+                onClick={() => navigate('/assessment')}
+                style={{
+                  backgroundColor: 'transparent',
+                  color: 'white',
+                  border: '1px solid rgba(255,255,255,0.7)',
+                  padding: '12px 28px',
+                  borderRadius: '12px',
+                  fontWeight: '600',
+                  fontSize: '16px',
+                  cursor: 'pointer',
+                }}
+              >
+                Retake Assessment
+              </button>
+            ) : null}
+          </div>
+          {hasAssessment && assessmentAttempts > 0 ? (
+            <p style={{ marginTop: 12, color: 'rgba(255,255,255,0.92)', fontSize: 14, opacity: 0.95 }}>
+              You can retake the assessment anytime. Attempts so far: {assessmentAttempts}
+            </p>
+          ) : null}
         </div>
 
-        {/* Feature Cards Grid */}
+        {/* Feature Cards Row */}
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
+            display: 'flex',
             gap: '16px',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
             marginBottom: '32px',
           }}
         >
           {features.map((feature, index) => (
-          <div
+            <div
               key={index}
               style={{
+                flex: '1 1 220px',
+                minWidth: '220px',
                 backgroundColor: 'white',
                 borderRadius: '16px',
                 padding: '24px 16px',
@@ -348,7 +298,7 @@ function Dashboard() {
                 transition: 'transform 0.2s ease, box-shadow 0.2s ease',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
               }}
-            onMouseOver={(e) => {
+              onMouseOver={(e) => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
                 e.currentTarget.style.boxShadow =
                   '0 8px 16px rgba(0, 0, 0, 0.12)';
@@ -358,22 +308,23 @@ function Dashboard() {
                 e.currentTarget.style.boxShadow =
                   '0 2px 8px rgba(0, 0, 0, 0.08)';
               }}
-            onClick={() => {
-              if (feature.title === 'Explore Domains') {
-                navigate('/explore');
-              } else if (feature.title.startsWith('Saved Careers')) {
-                navigate('/saved-careers');
-              } else if (feature.title === 'AI Career Assistant') {
-                navigate('/chatbot');
-              }
-            }}
+              onClick={() => {
+                if (feature.title === 'Explore Domains') {
+                  navigate('/explore');
+                } else if (feature.title === 'Career Progress Checklist') {
+                  navigate('/career-progress-checklist');
+                } else if (feature.title.startsWith('Saved Careers')) {
+                  navigate('/saved-careers');
+                }
+              }}
             >
               {feature.icon ? (
                 <div
                   style={{
                     width: '56px',
                     height: '56px',
-                    backgroundColor: feature.color,
+                    backgroundColor: '#eef2ff',
+                    color: '#2563eb',
                     borderRadius: '12px',
                     display: 'flex',
                     justifyContent: 'center',

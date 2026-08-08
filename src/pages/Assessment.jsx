@@ -17,11 +17,11 @@ const questions = [
 ];
 
 const options = [
-	{ label: 'Strongly Agree', value: 'Very Interested' },
-	{ label: 'Agree', value: 'Interested' },
+	{ label: 'Strongly Agree', value: 'Strongly Agree' },
+	{ label: 'Agree', value: 'Agree' },
 	{ label: 'Neutral', value: 'Neutral' },
-	{ label: 'Disagree', value: 'Not Interested' },
-	{ label: 'Strongly Disagree', value: 'Not Interested' },
+	{ label: 'Disagree', value: 'Disagree' },
+	{ label: 'Strongly Disagree', value: 'Strongly Disagree' },
 ];
 
 export default function Assessment() {
@@ -68,6 +68,9 @@ export default function Assessment() {
 				if (!assessment) {
 					throw new Error('Assessment saved, but no recommendation data was returned.');
 				}
+
+				const newAttemptCount = Number(localStorage.getItem('assessmentAttempts') || '0') + 1;
+				localStorage.setItem('assessmentAttempts', String(newAttemptCount));
 				localStorage.setItem('assessmentAnswers', JSON.stringify({ answers }));
 				localStorage.setItem('careerAssessmentResult', JSON.stringify(assessment));
 				navigate('/recommendation', { state: { assessment, answers } });

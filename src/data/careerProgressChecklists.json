@@ -1,0 +1,167 @@
+[
+  {
+    "title": "Software Engineer",
+    "domain": "IT & Technology",
+    "summary": "Build a coding foundation, ship projects, and grow toward product development roles.",
+    "tasks": [
+      { "id": "foundation", "label": "Learn programming fundamentals", "detail": "Practice logic, variables, loops, and functions with Python or JavaScript." },
+      { "id": "dsa", "label": "Strengthen data structures", "detail": "Solve arrays, strings, stacks, and queues regularly." },
+      { "id": "projects", "label": "Build a portfolio project", "detail": "Create a personal app or website and deploy it online." },
+      { "id": "collab", "label": "Use version control", "detail": "Practice commits, branches, and pull requests on GitHub." }
+    ]
+  },
+  {
+    "title": "AI/ML Engineer",
+    "domain": "IT & Technology",
+    "summary": "Develop strong math, Python, and machine learning skills for data-driven roles.",
+    "tasks": [
+      { "id": "python", "label": "Master Python for analytics", "detail": "Work with NumPy, pandas, and visualization tools." },
+      { "id": "stats", "label": "Learn statistics and probability", "detail": "Study distributions, sampling, and hypothesis testing." },
+      { "id": "ml", "label": "Study core ML concepts", "detail": "Practice supervised and unsupervised learning models." },
+      { "id": "build", "label": "Create an AI project", "detail": "Train a small model and explain the results clearly." }
+    ]
+  },
+  {
+    "title": "Data Scientist",
+    "domain": "IT & Technology",
+    "summary": "Turn datasets into business insights and polished analytical stories.",
+    "tasks": [
+      { "id": "sql", "label": "Practice SQL", "detail": "Write joins, aggregations, and window functions confidently." },
+      { "id": "analysis", "label": "Explore real datasets", "detail": "Clean and analyze public datasets from Kaggle or government portals." },
+      { "id": "visuals", "label": "Create dashboards", "detail": "Use charts and storytelling to explain findings." },
+      { "id": "communicate", "label": "Present insights clearly", "detail": "Summarize what matters to non-technical stakeholders." }
+    ]
+  },
+  {
+    "title": "Doctor",
+    "domain": "Healthcare",
+    "summary": "Stay focused on science, patient care, and long-term professional growth.",
+    "tasks": [
+      { "id": "study", "label": "Build strong science fundamentals", "detail": "Keep biology, chemistry, and physiology revision regular." },
+      { "id": "ethics", "label": "Practice patient communication", "detail": "Learn empathy, listening, and clear explanations." },
+      { "id": "internship", "label": "Gain clinical exposure", "detail": "Observe patient care, examinations, and hospital routines." },
+      { "id": "update", "label": "Follow medical updates", "detail": "Track new treatments and public health developments." }
+    ]
+  },
+  {
+    "title": "Nurse",
+    "domain": "Healthcare",
+    "summary": "Focus on bedside care, teamwork, and practical patient support skills.",
+    "tasks": [
+      { "id": "care", "label": "Strengthen core care skills", "detail": "Practice patient monitoring, hygiene, and basic procedures." },
+      { "id": "communication", "label": "Improve communication", "detail": "Learn to explain care steps and reassure patients." },
+      { "id": "teamwork", "label": "Build teamwork habits", "detail": "Coordinate well with doctors, technicians, and families." },
+      { "id": "cert", "label": "Keep certifications current", "detail": "Stay updated with required training and safety modules." }
+    ]
+  },
+  {
+    "title": "Lawyer",
+    "domain": "Law Careers",
+    "summary": "Develop strong legal reasoning, research, and professional discipline.",
+    "tasks": [
+      { "id": "reading", "label": "Read legal fundamentals", "detail": "Study constitutional, civil, and criminal law basics." },
+      { "id": "research", "label": "Practice legal research", "detail": "Learn to find case law and summarize arguments effectively." },
+      { "id": "writing", "label": "Improve drafting", "detail": "Write notes, letters, and briefs with accuracy." },
+      { "id": "ethics", "label": "Build ethical habits", "detail": "Practice confidentiality, professionalism, and integrity." }
+    ]
+  },
+  {
+    "title": "IAS Officer",
+    "domain": "Government & Railway",
+    "summary": "Prepare for public service by building leadership, policy understanding, and discipline.",
+    "tasks": [
+      { "id": "current", "label": "Follow current affairs", "detail": "Read national and international updates daily." },
+      { "id": "policy", "label": "Study governance basics", "detail": "Learn administrative systems, budgeting, and public policy." },
+      { "id": "writing", "label": "Practice answer writing", "detail": "Work on structured, clear responses for exams." },
+      { "id": "discipline", "label": "Build consistency", "detail": "Maintain a study routine and review progress weekly." }
+    ]
+  },
+  {
+    "title": "Chartered Accountant",
+    "domain": "Business & Commerce",
+    "summary": "Stay disciplined with finance, taxation, and analytical problem solving.",
+    "tasks": [
+      { "id": "accounts", "label": "Master accounting basics", "detail": "Review journal entries, ledgers, and financial statements." },
+      { "id": "tax", "label": "Study taxation", "detail": "Learn direct and indirect tax concepts clearly." },
+      { "id": "audit", "label": "Practice audit thinking", "detail": "Understand controls, evidence, and compliance checks." },
+      { "id": "revision", "label": "Revise regularly", "detail": "Keep mock tests and summaries part of your routine." }
+    ]
+  },
+  {
+    "title": "Graphic Designer",
+    "domain": "Arts & Creativity",
+    "summary": "Create visual ideas, sharpen design thinking, and build a strong portfolio.",
+    "tasks": [
+      { "id": "design", "label": "Learn design principles", "detail": "Study color, typography, layout, and spacing." },
+      { "id": "tools", "label": "Practice design tools", "detail": "Build comfort with Figma, Illustrator, or Photoshop." },
+      { "id": "portfolio", "label": "Create portfolio pieces", "detail": "Make sample posters, branding, and social media visuals." },
+      { "id": "feedback", "label": "Seek feedback", "detail": "Improve work through critique and revision." }
+    ]
+  },
+  {
+    "title": "Animator",
+    "domain": "Anime & Animation",
+    "summary": "Develop storytelling, motion skills, and a polished animation workflow.",
+    "tasks": [
+      { "id": "story", "label": "Study storyboarding", "detail": "Plan scenes and camera movement before animating." },
+      { "id": "motion", "label": "Practice animation basics", "detail": "Work on timing, easing, and movement principles." },
+      { "id": "software", "label": "Learn animation software", "detail": "Use Blender, Adobe Animate, or similar tools." },
+      { "id": "reel", "label": "Build an animation reel", "detail": "Compile short samples that show your style and skill." }
+    ]
+  },
+  {
+    "title": "Esports Player",
+    "domain": "Gaming & Esports",
+    "summary": "Combine practice, teamwork, and performance planning for competitive play.",
+    "tasks": [
+      { "id": "practice", "label": "Improve daily practice", "detail": "Set focused sessions for mechanics, strategy, and reflexes." },
+      { "id": "team", "label": "Build team communication", "detail": "Work on callouts, roles, and coordinated play." },
+      { "id": "review", "label": "Review matches", "detail": "Study wins, losses, and key decision points." },
+      { "id": "health", "label": "Maintain performance habits", "detail": "Focus on sleep, fitness, and mental sharpness." }
+    ]
+  },
+  {
+    "title": "Film Actor",
+    "domain": "Acting & Entertainment",
+    "summary": "Practice expression, confidence, and screen presence for performance roles.",
+    "tasks": [
+      { "id": "voice", "label": "Improve voice and diction", "detail": "Work on clarity, pace, and emotional tone." },
+      { "id": "body", "label": "Train movement and posture", "detail": "Build stage and camera confidence through practice." },
+      { "id": "audition", "label": "Prepare audition material", "detail": "Choose strong monologues and performance samples." },
+      { "id": "network", "label": "Create a professional profile", "detail": "Keep headshots, reels, and contact details ready." }
+    ]
+  },
+  {
+    "title": "Playback Singer",
+    "domain": "Music Careers",
+    "summary": "Develop your voice, style, and recording routine for musical growth.",
+    "tasks": [
+      { "id": "voice", "label": "Train your voice", "detail": "Practice breath control, pitch, and range regularly." },
+      { "id": "tech", "label": "Learn recording basics", "detail": "Understand mic technique, tuning, and editing workflows." },
+      { "id": "repertoire", "label": "Build a repertoire", "detail": "Prepare songs that show your strongest style." },
+      { "id": "perform", "label": "Perform for feedback", "detail": "Share recordings or live sets for improvement." }
+    ]
+  },
+  {
+    "title": "Startup Founder",
+    "domain": "Entrepreneurship",
+    "summary": "Turn ideas into a practical business plan with customer focus and execution.",
+    "tasks": [
+      { "id": "idea", "label": "Refine your idea", "detail": "Test the problem and explain the offer clearly." },
+      { "id": "market", "label": "Study your audience", "detail": "Learn customer pain points and buying behavior." },
+      { "id": "model", "label": "Create a simple business model", "detail": "Plan how you will earn, serve, and grow." },
+      { "id": "launch", "label": "Prepare a launch plan", "detail": "Outline your first marketing and sales steps." }
+    ]
+  },
+  {
+    "title": "Agricultural Scientist",
+    "domain": "Agriculture",
+    "summary": "Blend science, sustainability, and field knowledge for meaningful growth in agriculture.",
+    "tasks": [
+      { "id": "science", "label": "Strengthen science basics", "detail": "Review biology, soil science, and crop systems." },
+      { "id": "tech", "label": "Learn modern agriculture tools", "detail": "Explore data, sensors, and precision farming methods." },
+      { "id": "research", "label": "Read recent studies", "detail": "Follow sustainable methods and new crop innovations." },
+      { "id": "network", "label": "Connect with practitioners", "detail": "Learn from farms, labs, and extension programs." }
+    ]
+  }
+]

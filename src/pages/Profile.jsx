@@ -1,8 +1,16 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { clearAuthSession } from '../services/authSession';
+import { getUserProfile } from '../services/userProfile';
 
 function Profile() {
   const navigate = useNavigate();
+  const [userName, setUserName] = useState('');
+
+  useEffect(() => {
+    const profile = getUserProfile();
+    setUserName(profile.fullName || '');
+  }, []);
 
   const handleLogout = () => {
     clearAuthSession();
@@ -11,8 +19,6 @@ function Profile() {
 
   const profileItems = [
     { title: 'Profile Information', subtitle: 'Edit your details', icon: 'ℹ️' },
-    { title: 'Notifications', subtitle: 'Manage alerts', icon: '🔔' },
-    { title: 'Help & Support', subtitle: 'Contact us', icon: '❓' },
   ];
 
   return (
@@ -27,7 +33,7 @@ function Profile() {
         }}
       >
         <button
-          onClick={() => navigate(-1)}
+          onClick={() => navigate('/dashboard')}
           style={{
             border: 'none',
             background: 'rgba(255,255,255,0.16)',
@@ -52,32 +58,16 @@ function Profile() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              position: 'relative',
             }}
           >
             <span style={{ fontSize: 36 }}>👤</span>
-            <div
-              style={{
-                position: 'absolute',
-                right: 0,
-                bottom: 0,
-                width: 30,
-                height: 30,
-                borderRadius: '50%',
-                background: '#ffffff',
-                display: 'grid',
-                placeItems: 'center',
-                border: '3px solid #4f46e5',
-                color: '#4f46e5',
-                fontSize: 14,
-              }}
-            >
-              📷
-            </div>
           </div>
           <div>
             <p style={{ margin: 0, opacity: 0.9, fontSize: 14 }}>Account</p>
             <h1 style={{ margin: '8px 0 0', fontSize: 32, fontWeight: 700 }}>Profile</h1>
+            {userName ? (
+              <p style={{ margin: '6px 0 0', fontSize: 16, color: '#d1d5db' }}>{userName}</p>
+            ) : null}
           </div>
         </div>
       </div>
@@ -97,8 +87,6 @@ function Profile() {
               onClick={() => {
                 if (item.title === 'Profile Information') {
                   navigate('/profile-info');
-                } else {
-                  alert(`${item.title} tapped`);
                 }
               }}
               style={{
