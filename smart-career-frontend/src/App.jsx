@@ -40,7 +40,7 @@ import CareerProgressChecklist from "./pages/CareerProgressChecklist";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<SplashScreen />} />
         <Route path="/intro-1" element={<IntroScreenOne />} />
