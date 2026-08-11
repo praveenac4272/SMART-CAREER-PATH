@@ -3,15 +3,29 @@ const AUTH_USERS_STORAGE_KEY = 'careerAuthUsers';
 const PERSONAL_DETAILS_STORAGE_KEY = 'careerPersonalDetails';
 const ASSESSMENT_STORAGE_KEY = 'careerAssessmentResult';
 
+const DEMO_USER = {
+  id: 1,
+  full_name: 'Demo Student',
+  email: 'demo@example.com',
+  password: 'password123',
+  age: '20',
+  gender: 'Other',
+  phone_number: '9876543210',
+};
+
 function getStoredAuthUsers() {
-  if (typeof window === 'undefined') return [];
+  if (typeof window === 'undefined') return [DEMO_USER];
 
   try {
     const stored = window.localStorage.getItem(AUTH_USERS_STORAGE_KEY);
-    const parsed = stored ? JSON.parse(stored) : [];
-    return Array.isArray(parsed) ? parsed : [];
+    if (!stored) {
+      window.localStorage.setItem(AUTH_USERS_STORAGE_KEY, JSON.stringify([DEMO_USER]));
+      return [DEMO_USER];
+    }
+    const parsed = JSON.parse(stored);
+    return Array.isArray(parsed) && parsed.length > 0 ? parsed : [DEMO_USER];
   } catch {
-    return [];
+    return [DEMO_USER];
   }
 }
 
@@ -69,7 +83,7 @@ function loginUserLocally(payload) {
   );
 
   if (!user) {
-    throw new Error('Invalid email or password.');
+    throw new Error('Invalid email or password. Please Sign Up first or log in with demo@example.com / password123');
   }
 
   return {
