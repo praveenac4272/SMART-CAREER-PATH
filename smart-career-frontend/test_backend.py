@@ -1,7 +1,12 @@
+import os
 import sys
-sys.path.insert(0, 'backend')
-from app import app
 import json
+
+backend_dir = os.path.join(os.path.dirname(__file__), 'backend')
+if backend_dir not in sys.path:
+    sys.path.insert(0, backend_dir)
+
+from app import app
 
 client = app.test_client()
 response = client.post('/api/auth/register', 

@@ -1,0 +1,11 @@
+{
+  "name": "smart-career-path-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix smart-career-frontend run dev",
+    "build": "npm --prefix smart-career-frontend run build",
+    "preview": "npm --prefix smart-career-frontend run preview",
+    "test": "npm --prefix smart-career-frontend test"
+  }
+}

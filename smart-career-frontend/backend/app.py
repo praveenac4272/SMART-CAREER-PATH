@@ -1520,7 +1520,7 @@ def ensure_database() -> None:
         ensure_column(connection, 'users', "age TEXT DEFAULT ''", 'age')
         ensure_column(connection, 'users', "gender TEXT DEFAULT ''", 'gender')
 
-        # Seed default demo account if no users exist or demo user missing
+        # Seed default demo accounts if missing
         demo_user = connection.execute('SELECT id FROM users WHERE email = ?', ('demo@smartcareer.com',)).fetchone()
         if not demo_user:
             timestamp = now_iso()
@@ -1530,6 +1530,17 @@ def ensure_database() -> None:
                 VALUES (?, ?, ?, ?, ?, ?, ?)
                 ''',
                 ('Demo User', 'demo@smartcareer.com', generate_password_hash('password123'), '21', 'male', timestamp, timestamp)
+            )
+
+        demo_user_ex = connection.execute('SELECT id FROM users WHERE email = ?', ('demo@example.com',)).fetchone()
+        if not demo_user_ex:
+            timestamp = now_iso()
+            connection.execute(
+                '''
+                INSERT INTO users (full_name, email, password_hash, age, gender, created_at, updated_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+                ''',
+                ('Demo Student', 'demo@example.com', generate_password_hash('password123'), '20', 'other', timestamp, timestamp)
             )
 
         ensure_career_colleges_seeded()

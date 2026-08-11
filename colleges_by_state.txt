@@ -1,0 +1,599 @@
+[Andhra Pradesh] 42 colleges
+ - ANITS
+ - Acharya NG Ranga Agricultural University
+ - Aditya Engineering College
+ - Andhra Medical College
+ - Andhra University
+ - Andhra University College of Engineering
+ - Andhra University College of Law
+ - Andhra University College of Pharmaceutical Sciences
+ - Andhra University Department of Communication and Journalism
+ - Aviation Academy of India
+ - Damodaram Sanjivayya National Law University
+ - GITAM School of Law
+ - GMR Institute of Technology
+ - Guntur Medical College
+ - IIIT Sri City
+ - Indian Institute of Technology Tirupati
+ - Indira Gandhi Rashtriya Uran Akademi
+ - JNTU College of Engineering, Kakinada
+ - Jawaharlal Nehru Architecture and Fine Arts University
+ - KL University
+ - KLEF School of Law
+ - MIT Institute of Design
+ - Madhya Pradesh Flying Club
+ - NIFT Kangra
+ - NIT Warangal
+ - NRI Institute of Medical Sciences
+ - NTR University of Health Sciences
+ - National Flying Training Institute
+ - National Institute of Fashion Technology, Hyderabad
+ - Nigerian College?
+ - Pragati Engineering College
+ - Rangaraya Medical College
+ - SRKR Engineering College
+ - SVU College of Engineering
+ - School of Planning and Architecture, Vijayawada
+ - Sri Venkateswara Medical College
+ - VIT-AP School of Law
+ - VIT-AP University
+ - VNR Vignana Jyothi Institute of Engineering and Technology
+ - Vellore Institute of Technology
+ - Vignan Pharmacy College
+ - Vignan's Foundation for Science, Technology & Research
+
+[Assam] 10 colleges
+ - Assam Down Town University
+ - Assam Engineering College (AEC)
+ - Bineswar Brahma Engineering College (BBEC)
+ - Girijananda Chowdhury Institute of Management & Technology (GIMT)
+ - Indian Institute of Technology (IIT) Guwahati
+ - Jorhat Engineering College (JEC)
+ - Jorhat Institute of Science & Technology (JIST)
+ - Kaziranga University
+ - National Institute of Technology (NIT) Silchar
+ - Royal Global University
+
+[Bihar] 10 colleges
+ - Bhagalpur College of Engineering (BCE)
+ - Bihar Engineering University (affiliated government colleges)
+ - Chandigarh University, Bihar Campus
+ - Dr. A.P.J. Abdul Kalam Women's Institute of Technology
+ - Gaya College of Engineering
+ - Indian Institute of Technology (IIT) Patna
+ - Muzaffarpur Institute of Technology (MIT)
+ - Nalanda College of Engineering
+ - National Institute of Technology (NIT) Patna
+ - Netaji Subhas Institute of Technology (NSIT) Bihta
+
+[Chhattisgarh] 10 colleges
+ - CSIT (Chhatrapati Shivaji Institute of Technology)
+ - Chhattisgarh Swami Vivekanand Technical University (University Teaching Department)
+ - Columbia Institute of Engineering & Technology
+ - Government Engineering College, Bilaspur
+ - Government Engineering College, Jagdalpur
+ - Government Engineering College, Raipur
+ - Kalinga University
+ - National Institute of Technology (NIT) Raipur
+ - Rungta College of Engineering & Technology
+ - Shri Shankaracharya Technical Campus
+
+[Delhi (NCT)] 46 colleges
+ - AIIMS Delhi
+ - Aero India Flight Academy
+ - Amity Law School, Delhi
+ - Amity University, Noida
+ - Aviation Academy of India
+ - Bhagwan Parshuram Institute of Technology (BPIT)
+ - Bharati Vidyapeeth's College of Engineering
+ - Campus Law Centre, University of Delhi
+ - DTU
+ - Delhi Flying Club
+ - Delhi Institute of Pharmaceutical Sciences and Research
+ - Delhi Technological University
+ - Delhi Technological University (DTU)
+ - Delhi University
+ - Faculty of Law, Jamia Millia Islamia
+ - Flt. Lt. Rajan Bhalerao Aviation Academy
+ - Guru Gobind Singh Indraprastha University
+ - Guru Tegh Bahadur Institute of Technology (GTBIT)
+ - IIIT Delhi
+ - IIT Delhi
+ - Indian Institute of Art and Design
+ - Indian Institute of Technology Delhi (IIT Delhi)
+ - Indira Gandhi Delhi Technical University for Women (IGDTUW)
+ - Indira Gandhi Institute of Aeronautics
+ - Indraprastha College for Women
+ - Indraprastha Institute of Information Technology Delhi
+ - Indraprastha Institute of Information Technology Delhi (IIIT-Delhi)
+ - JD Institute of Fashion Technology
+ - Jamia Hamdard College of Nursing
+ - Jamia Hamdard Faculty of Pharmacy
+ - Jamia Millia Islamia
+ - Lady Hardinge Medical College
+ - Maharaja Agrasen Institute of Technology
+ - Maharaja Agrasen Institute of Technology (MAIT)
+ - Maulana Azad Medical College
+ - NSUT
+ - National Institute of Fashion Technology, Delhi
+ - National Law University, Delhi
+ - Netaji Subhas University of Technology (NSUT)
+ - Pearl Academy
+ - Rufaida College of Nursing
+ - School of Planning and Architecture, New Delhi
+ - Skyline Aviation Academy
+ - University College of Medical Sciences
+ - University School of Information, Communication & Technology (USICT), GGSIPU
+ - VMMC & Safdarjung Hospital
+
+[Gujarat] 38 colleges
+ - Aero Training Academy
+ - Ahmedabad Flying Club
+ - Apeejay Institute of Design
+ - Aviation Academy of India
+ - BJ Medical College Ahmedabad
+ - Baroda Flying Club
+ - CEPT University
+ - CHARUSAT
+ - CHARUSAT (Charotar University of Science and Technology)
+ - CSPIT, Charusat
+ - Dharmsinh Desai University (DDU)
+ - GMERS Medical College and Hospital
+ - GMERS Medical College, Sola
+ - Government Engineering College, Gandhinagar
+ - Government Law College, Ahmedabad
+ - Government Medical College, Surat
+ - Government Nursing College, Ahmedabad
+ - Gujarat National Law University
+ - IIT Gandhinagar
+ - Indus University
+ - Institute of Technology, Nirma University
+ - L. M. College of Pharmacy
+ - LD College of Engineering
+ - M P Shah Medical College
+ - M. S. University of Baroda
+ - Maharaja Sayajirao University Faculty of Law
+ - NHL Municipal Medical College
+ - NID Ahmedabad
+ - NIT Surat
+ - National Institute of Fashion Technology, Gandhinagar
+ - Nirma University
+ - Nirma University Institute of Pharmacy
+ - PDPU Gandhinagar
+ - Pandit Deendayal Energy University (PDEU)
+ - Parul University
+ - Parul University Faculty of Law
+ - SLS, Pandit Deendayal Energy University
+ - Sardar Vallabhbhai Patel Institute of Aeronautical Engineering
+
+[Haryana] 10 colleges
+ - Amity University Haryana
+ - Chaudhary Devi Lal State Institute of Engineering & Technology (CDLSIET)
+ - Deenbandhu Chhotu Ram University of Science & Technology (DCRUST)
+ - Guru Jambheshwar University of Science & Technology (GJUST)
+ - Maharishi Markandeshwar (MMU)
+ - Manav Rachna International Institute of Research & Studies
+ - National Institute of Technology (NIT) Kurukshetra
+ - SRM University Delhi-NCR
+ - The NorthCap University
+ - YMCA University of Science & Technology (J.C. Bose University)
+
+[Himachal Pradesh] 10 colleges
+ - Abhilashi University
+ - Arni University
+ - Bahra University
+ - Government Engineering College, Hamirpur
+ - Government Hydro Engineering College
+ - Himachal Pradesh Technical University (HPTU)
+ - Indian Institute of Technology (IIT) Mandi
+ - Jaypee University of Information Technology (JUIT)
+ - National Institute of Technology (NIT) Hamirpur
+ - Shoolini University
+
+[Jammu & Kashmir] 10 colleges
+ - Baba Ghulam Shah Badshah University (BGSBU)
+ - Government College of Engineering & Technology (GCET) Jammu
+ - Government College of Engineering & Technology (GCET) Safapora
+ - Indian Institute of Technology (IIT) Jammu
+ - Institute of Technology, University of Kashmir
+ - Islamic University of Science & Technology (IUST)
+ - Model Institute of Engineering & Technology (MIET)
+ - National Institute of Technology (NIT) Srinagar
+ - Shri Mata Vaishno Devi University (SMVDU)
+ - University Institute of Engineering & Technology (UIET), University of Jammu
+
+[Jharkhand] 10 colleges
+ - Birla Institute of Technology (BIT Mesra)
+ - Birsa Institute of Technology, Sindri
+ - Cambridge Institute of Technology
+ - Indian Institute of Technology (IIT) (ISM) Dhanbad
+ - National Institute of Technology (NIT) Jamshedpur
+ - Netaji Subhas University
+ - RTC Institute of Technology
+ - Ramgarh Engineering College
+ - University College of Engineering & Technology (UCET), Vinoba Bhave University
+ - YBN University
+
+[Karnataka] 48 colleges
+ - Aerospace Aviation Academy
+ - Alliance School of Law
+ - BMS College of Engineering
+ - Bangalore Medical College and Research Institute
+ - Bangalore University
+ - Bangalore University Department of Mass Communication
+ - Bharat Flying Training Institute
+ - Bharathiar University Department of Fashion Designing
+ - CMR Institute of Technology
+ - Christ University
+ - Christ University School of Law
+ - Dayananda Sagar College of Engineering
+ - Government Flying Training School
+ - IIIT Bangalore
+ - IIIT Dharwad
+ - IIM Bangalore
+ - IIT Dharwad
+ - IMS Design and Innovation Academy
+ - Indian Institute of Management Bangalore
+ - Indian Institute of Science
+ - JD Institute of Fashion Technology
+ - JSS College of Pharmacy
+ - JSS Medical College
+ - Karnataka State Law University
+ - Kasturba Medical College, Manipal
+ - Kempegowda Institute of Medical Sciences
+ - MS Ramaiah Institute of Technology
+ - Mangalore Aviation Club
+ - Manipal College of Nursing
+ - Manipal College of Pharmaceutical Sciences
+ - Manipal School of Architecture and Planning
+ - Mysore Medical College and Research Institute
+ - NIMHANS College of Nursing
+ - NIT Surathkal
+ - National Flying Training Institute
+ - National Institute of Fashion Technology, Bengaluru
+ - National Institute of Technology Karnataka
+ - National Law School of India University
+ - PES University
+ - Pearl Academy
+ - RV College of Engineering
+ - RV College of Law
+ - School of Planning and Architecture, Bhopal
+ - UVCE
+ - University of Agricultural Sciences
+ - University of Agricultural Sciences, Bengaluru
+ - University of Horticultural Sciences, Bagalkot
+ - University of Mysore
+
+[Kerala] 43 colleges
+ - Aero India Training Academy
+ - Amal Jyothi College of Engineering
+ - Amal Jyothi College of Law
+ - Amala Institute of Medical Sciences
+ - Amrita College of Nursing
+ - Amrita School of Pharmacy
+ - Amrita Vishwa Vidyapeetham
+ - Apeejay Institute of Design
+ - Aviation Training Academy Kerala
+ - Cochin International Aviation Academy
+ - Cochin University College of Law
+ - Cochin University of Science and Technology
+ - College of Engineering Trivandrum
+ - College of Engineering Trivandrum (CET)
+ - College of Pharmaceutical Sciences, Thiruvananthapuram
+ - Government College of Nursing, Thiruvananthapuram
+ - Government Engineering College Thrissur
+ - Government Engineering College, Barton Hill
+ - Government Engineering College, Thrissur (GEC Thrissur)
+ - Government Law College, Ernakulam
+ - Government Law College, Thiruvananthapuram
+ - Government Medical College, Kozhikode
+ - Government Medical College, Thiruvananthapuram
+ - Indian Aviation Academy
+ - Jubilee Mission Medical College
+ - LBS Centre for Science and Technology
+ - Maharaja's Government Law College
+ - Model Engineering College
+ - Model Engineering College (MEC)
+ - NIT Calicut
+ - National Institute of Fashion Technology, Kannur
+ - National Institute of Technology Calicut
+ - National Institute of Technology Calicut (NIT Calicut)
+ - Rajagiri College of Social Sciences
+ - Rajiv Gandhi Institute of Technology (RIT)
+ - SCMS School of Engineering
+ - SCMS School of Engineering & Technology
+ - Saintgits College of Engineering
+ - Skyline Aviation Academy
+ - Sree Gokulam Medical College
+ - St. Teresa's College
+ - TKM College of Engineering
+ - University of Kerala Department of Communication and Journalism
+
+[Madhya Pradesh] 10 colleges
+ - Acropolis Institute of Technology & Research
+ - IIT Indore
+ - Indian Institute of Information Technology (IIITM) Gwalior
+ - Jabalpur Engineering College (JEC)
+ - Lakshmi Narain College of Technology (LNCT)
+ - Maulana Azad National Institute of Technology (MANIT)
+ - Medi-Caps University
+ - Oriental Institute of Science & Technology (OIST)
+ - SGSITS (Shri Govindram Seksaria Institute of Technology & Science)
+ - University Institute of Technology (UIT-RGPV)
+
+[Maharashtra] 47 colleges
+ - Air India Training Academy
+ - Aviation Academy of India
+ - BJ Medical College
+ - Bombay College of Pharmacy
+ - CEPT University
+ - College of Engineering Pune
+ - College of Engineering Pune (COEP Technological University)
+ - Dr. Babasaheb Ambedkar College of Law
+ - Dr. D. Y. Patil College of Pharmacy
+ - Dr. DY Patil Medical College
+ - Dwarkadas J. Sanghvi College of Engineering (DJSCE)
+ - Government College of Engineering, Amravati
+ - Government Law College, Mumbai
+ - Grant Medical College
+ - IIT Bombay
+ - ILS Law College
+ - Indian Institute of Technology Bombay
+ - Institute of Aviation Studies
+ - Institute of Chemical Technology
+ - KEM Hospital College of Nursing
+ - King Edward Memorial Hospital
+ - MIT Institute of Design
+ - Maharashtra Flying Club
+ - Mahatma Phule Krishi Vidyapeeth
+ - NMIMS
+ - NMIMS Mumbai
+ - NMIMS School of Law
+ - National Institute of Design, Mumbai
+ - National Institute of Fashion Technology, Mumbai
+ - Pearl Academy
+ - Pimpri Chinchwad College of Engineering (PCCOE)
+ - Pune Aviation Academy
+ - SNDT Women's University
+ - SPIT Mumbai
+ - Sardar Patel Institute of Technology (SPIT)
+ - Seth GS Medical College
+ - Sir JJ College of Architecture
+ - Smt. Radhikabai Meghe Memorial College of Nursing
+ - Symbiosis Institute of Media and Communication
+ - Symbiosis Law School, Pune
+ - University of Mumbai
+ - University of Mumbai Department of Communication and Journalism
+ - VJTI Mumbai
+ - Veermata Jijabai Technological Institute (VJTI)
+ - Vishwakarma Institute of Technology (VIT Pune)
+ - Visvesvaraya National Institute of Technology (VNIT)
+ - Walchand College of Engineering
+
+[Odisha] 10 colleges
+ - CV Raman Global University
+ - Gandhi Institute for Technology (GIFT)
+ - Government College of Engineering (GCE) Keonjhar
+ - IIT Bhubaneswar
+ - KIIT (Kalinga Institute of Industrial Technology)
+ - National Institute of Technology (NIT) Rourkela
+ - Odisha University of Technology and Research (Formerly CET Bhubaneswar)
+ - Siksha 'O' Anusandhan (SOA University)
+ - Silicon Institute of Technology
+ - Veer Surendra Sai University of Technology (VSSUT)
+
+[Punjab] 10 colleges
+ - CGC Landran (Chandigarh Group of Colleges)
+ - Chandigarh University
+ - Chitkara University Punjab
+ - Dr. B.R. Ambedkar National Institute of Technology (NIT Jalandhar)
+ - Guru Nanak Dev Engineering College (GNDEC)
+ - I.K. Gujral Punjab Technical University (Main Campus)
+ - Lovely Professional University (LPU)
+ - Punjab Agricultural University – College of Agricultural Engineering & Technology
+ - Punjab Engineering College (PEC)
+ - Thapar Institute of Engineering & Technology
+
+[Rajasthan] 10 colleges
+ - BITS Pilani
+ - College of Technology and Engineering (CTAE), MPUAT
+ - Government Engineering College, Ajmer
+ - JECRC University
+ - MBM University
+ - Malaviya National Institute of Technology (MNIT) Jaipur
+ - Manipal University Jaipur
+ - Poornima College of Engineering
+ - Rajasthan Technical University (University Teaching Department)
+ - SKIT (Swami Keshvanand Institute of Technology)
+
+[Tamil Nadu] 47 colleges
+ - AeroSphere Aviation Academy
+ - Alagappa Chettiar Government College of Engineering & Technology
+ - Anna University
+ - Anna University CEG
+ - Anna University School of Architecture and Planning
+ - Anna University – College of Engineering, Guindy (CEG)
+ - Christian Medical College
+ - Coimbatore Medical College
+ - College of Arts & Crafts
+ - Forest College and Research Institute
+ - IIIT Chennai
+ - IIT Madras
+ - Indian Aviation Academy
+ - Indian Institute of Technology Madras
+ - Kilpauk Medical College
+ - Loyola College
+ - Madras Christian College
+ - Madras Flying Club
+ - Madras Medical College
+ - Madras Medical College Pharmacy
+ - Mettupalayam Flying Club
+ - NIT Tiruchirappalli
+ - National Institute of Fashion Technology, Chennai
+ - National Institute of Technology Tiruchirappalli
+ - Nehru College of Aeronautics
+ - PSG College of Technology
+ - SASTRA Deemed University
+ - SRM College of Pharmacy
+ - SRM Institute of Science and Technology
+ - SRM School of Law
+ - SRM University
+ - SSN College of Engineering
+ - Sathyabama Institute of Science and Technology
+ - Saveetha College of Nursing
+ - Saveetha School of Law
+ - School of Planning and Architecture, Vijayawada
+ - Stanley Medical College
+ - Tamil Nadu Agricultural University
+ - Tamil Nadu National Law University
+ - The Tamil Nadu Dr. Ambedkar Law University
+ - Thiagarajar College of Engineering
+ - University of Madras
+ - University of Madras Department of Journalism
+ - VIT School of Law
+ - VIT Vellore
+ - Vellore Institute of Technology (VIT)
+ - Vogue Institute of Art & Design
+
+[Telangana] 46 colleges
+ - Aerospace and Aviation Academy
+ - Anurag University School of Pharmacy
+ - Aviation Institute of India
+ - BITS Pilani Hyderabad
+ - CBIT Hyderabad
+ - Chaitanya Bharathi Institute of Technology (CBIT)
+ - Flytech Aviation Academy
+ - Gandhi Medical College
+ - Gokaraju Rangaraju Institute of Engineering & Technology (GRIET)
+ - ICFAI Business School
+ - ICFAI Law School
+ - ICFAI University
+ - ICFAI University Hyderabad
+ - IIIT Hyderabad
+ - IIT Hyderabad
+ - Indian Institute of Technology Hyderabad
+ - Indian School of Design and Innovation
+ - JNTU College of Engineering, Hyderabad (JNTUH)
+ - Jawaharlal Nehru Architecture and Fine Arts University
+ - Kakatiya Medical College
+ - Maharashtra Flying Club
+ - Mahatma Gandhi National Institute of Rural Energy and Development
+ - Mahindra University
+ - Mahindra University School of Law
+ - Mediciti Institute of Medical Sciences
+ - NALSAR University of Law
+ - NIMS College of Nursing
+ - NIT Warangal
+ - National Institute of Fashion Technology, Hyderabad
+ - Nizam's Institute of Medical Sciences
+ - Osmania College of Nursing
+ - Osmania Medical College
+ - Osmania University
+ - Osmania University College of Engineering
+ - Osmania University College of Law
+ - Osmania University, College of Fine Arts
+ - Rajiv Gandhi Aviation Academy
+ - School of Planning and Architecture, Vijayawada
+ - Symbiosis Law School, Hyderabad
+ - University College of Engineering, Kakatiya University
+ - University College of Engineering, Osmania University
+ - University College of Fashion and Design
+ - University College of Pharmaceutical Sciences, Osmania University
+ - University of Hyderabad
+ - VNR Vignana Jyothi Institute of Engineering & Technology
+ - Vasavi College of Engineering
+
+[Uttar Pradesh] 42 colleges
+ - Aero Training Academy
+ - All India Flying School
+ - Amity Institute of Pharmacy
+ - Amity Law School, Noida
+ - Amity School of Fashion Design
+ - Amity University Noida
+ - Apeejay Stya University
+ - Aviation Academy of India
+ - BHU Faculty of Law
+ - Banaras Hindu University
+ - Dr. Ram Manohar Lohiya National Law University
+ - Era University College of Nursing
+ - Era's Lucknow Medical College
+ - Faculty of Law, University of Lucknow
+ - GLA University
+ - GSVM Medical College
+ - Galgotias University
+ - HBTU Kanpur
+ - Harcourt Butler Technical University (HBTU)
+ - IIIT Allahabad
+ - IIT BHU
+ - IIT Kanpur
+ - Indian Institute of Technology Roorkee
+ - Indira Gandhi Rashtriya Uran Akademi
+ - Institute of Engineering & Technology (IET), Lucknow
+ - Institute of Pharmacy, Bundelkhand University
+ - JIIT Noida
+ - Jaypee Institute of Information Technology (JIIT)
+ - King George's Medical University
+ - King George's Medical University College of Nursing
+ - LLRM Medical College
+ - MNNIT Allahabad
+ - Madan Mohan Malaviya University of Technology (MMMUT)
+ - Motilal Nehru National Institute of Technology (MNNIT) Allahabad
+ - National Institute of Design, Uttar Pradesh
+ - National Institute of Fashion Technology, Raebareli
+ - Noida Flying Club
+ - SN Medical College
+ - School of Planning and Architecture, New Delhi
+ - Shiv Nadar University
+ - University of Allahabad, Department of Law
+ - University of Lucknow
+
+[Uttarakhand] 10 colleges
+ - DIT University
+ - Dev Bhoomi Uttarakhand University
+ - Govind Ballabh Pant Institute of Engineering & Technology (GBPIET)
+ - Graphic Era (Deemed to be University)
+ - Indian Institute of Technology (IIT) Roorkee
+ - National Institute of Technology (NIT) Uttarakhand
+ - Tula's Institute
+ - University of Petroleum & Energy Studies (UPES)
+ - Veer Madho Singh Bhandari Uttarakhand Technical University (UIT Campus)
+ - Women Institute of Technology (WIT)
+
+[West Bengal] 37 colleges
+ - Aero Flight School
+ - Amity University Kolkata
+ - Amity University Kolkata, Department of Law
+ - Aviation Academy of India
+ - Bankura Sammilani Medical College
+ - Brainware University School of Law
+ - College of Medicine and Sagore Dutta Hospital
+ - College of Nursing, Kolkata
+ - Eastern Aviation Academy
+ - Government College of Art & Craft
+ - Government College of Engineering & Ceramic Technology (GCECT)
+ - Government Law College, Kolkata
+ - Haldia Institute of Technology
+ - Heritage Institute of Technology
+ - IIEST Shibpur
+ - IIT Kharagpur
+ - IPGMER and SSKM Hospital
+ - Indian Institute of Engineering Science and Technology
+ - Institute of Design, Peace Institute
+ - Institute of Engineering & Management
+ - Institute of Engineering & Management (IEM)
+ - JD Institute of Fashion Technology
+ - Jadavpur University
+ - Jadavpur University Department of Pharmacy
+ - NIT Durgapur
+ - NRS Medical College
+ - NSHM Knowledge Campus
+ - National Institute of Fashion Technology, Kolkata
+ - R.G. Kar Medical College and Hospital
+ - RG Kar Medical College
+ - Skyline Aviation Academy
+ - St. Xavier's University
+ - Techno Main Salt Lake
+ - University of Calcutta – Rajabazar Science College
+ - University of Calcutta, Department of Law
+ - West Bengal Flying Club
+ - West Bengal National University of Juridical Sciences
