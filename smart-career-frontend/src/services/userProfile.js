@@ -1,10 +1,10 @@
 const PROFILE_STORAGE_KEY = 'userProfile';
 
 const defaultProfile = {
-  fullName: 'Rahul Kumar',
-  email: 'rahul.kumar@example.com',
-  age: '24',
-  gender: 'Male',
+  fullName: 'Student User',
+  email: 'student@example.com',
+  age: '20',
+  gender: 'Other',
 };
 
 export function getUserProfile() {
@@ -28,6 +28,12 @@ export function saveUserProfile(profile) {
     gender: profile?.gender ?? defaultProfile.gender,
   };
 
-  window.localStorage.setItem(PROFILE_STORAGE_KEY, JSON.stringify(updated));
+  try {
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem(PROFILE_STORAGE_KEY, JSON.stringify(updated));
+    }
+  } catch {
+    // Ignore storage write errors
+  }
   return updated;
 }

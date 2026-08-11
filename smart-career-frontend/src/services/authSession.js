@@ -22,12 +22,24 @@ export function getAuthSession() {
 
 export function saveAuthSession(session) {
   const updated = { ...getAuthSession(), ...session };
-  window.localStorage.setItem(AUTH_SESSION_KEY, JSON.stringify(updated));
+  try {
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem(AUTH_SESSION_KEY, JSON.stringify(updated));
+    }
+  } catch {
+    // Ignore storage write errors
+  }
   return updated;
 }
 
 export function clearAuthSession() {
-  window.localStorage.removeItem(AUTH_SESSION_KEY);
-  window.localStorage.removeItem('careerAssessmentResult');
-  window.localStorage.removeItem('assessmentAnswers');
+  try {
+    if (typeof window !== 'undefined') {
+      window.localStorage.removeItem(AUTH_SESSION_KEY);
+      window.localStorage.removeItem('careerAssessmentResult');
+      window.localStorage.removeItem('assessmentAnswers');
+    }
+  } catch {
+    // Ignore storage remove errors
+  }
 }

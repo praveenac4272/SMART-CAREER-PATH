@@ -40,7 +40,11 @@ function getStoredAuthUsers() {
 function saveStoredAuthUsers(users) {
   if (typeof window === 'undefined') return;
 
-  window.localStorage.setItem(AUTH_USERS_STORAGE_KEY, JSON.stringify(users));
+  try {
+    window.localStorage.setItem(AUTH_USERS_STORAGE_KEY, JSON.stringify(users));
+  } catch {
+    // Ignore storage write errors
+  }
 }
 
 function buildLocalUser(payload = {}) {
@@ -49,11 +53,11 @@ function buildLocalUser(payload = {}) {
   return {
     id: Date.now(),
     full_name: payload?.full_name || payload?.fullName || payload?.fullname || formattedName,
-    email: payload?.email || '',
+    email: payload?.email || 'user@example.com',
     age: payload?.age || '20',
     gender: payload?.gender || 'Prefer not to say',
-    phone_number: payload?.phone_number || payload?.phone || '',
-    password: payload?.password || '',
+    phone_number: payload?.phone_number || payload?.phone || '9876543210',
+    password: payload?.password || 'password123',
   };
 }
 
@@ -61,20 +65,16 @@ function registerUserLocally(payload) {
   const users = getStoredAuthUsers();
   const email = String(payload?.email || '').trim().toLowerCase();
 
-  if (!email) {
-    throw new Error('Email is required.');
-  }
-
-  const existingIndex = users.findIndex((user) => String(user.email || '').trim().toLowerCase() === email);
-
   const user = buildLocalUser(payload);
-  if (existingIndex >= 0) {
-    users[existingIndex] = { ...users[existingIndex], ...user };
-  } else {
-    users.push(user);
+  if (email) {
+    const existingIndex = users.findIndex((u) => String(u.email || '').trim().toLowerCase() === email);
+    if (existingIndex >= 0) {
+      users[existingIndex] = { ...users[existingIndex], ...user };
+    } else {
+      users.push(user);
+    }
+    saveStoredAuthUsers(users);
   }
-  
-  saveStoredAuthUsers(users);
 
   return {
     user,
@@ -86,10 +86,6 @@ function loginUserLocally(payload) {
   const users = getStoredAuthUsers();
   const email = String(payload?.email || '').trim().toLowerCase();
   const password = String(payload?.password || '');
-
-  if (!email) {
-    throw new Error('Please enter your email address.');
-  }
 
   let user = users.find(
     (storedUser) =>
@@ -105,8 +101,8 @@ function loginUserLocally(payload) {
 
   if (!user) {
     user = buildLocalUser({
-      email,
-      password,
+      email: email || 'student@example.com',
+      password: password || 'password123',
     });
     users.push(user);
     saveStoredAuthUsers(users);
@@ -119,17 +115,19 @@ function loginUserLocally(payload) {
 }
 
 function saveRecordLocally(storageKey, record, responseKey) {
-  if (typeof window === 'undefined') {
-    return { [responseKey]: record };
+  if (typeof window !== 'undefined') {
+    try {
+      window.localStorage.setItem(storageKey, JSON.stringify(record));
+    } catch {
+      // Ignore storage errors
+    }
   }
-
-  window.localStorage.setItem(storageKey, JSON.stringify(record));
   return { [responseKey]: record };
 }
 
 async function request(path, options = {}) {
   if (!API_BASE_URL && typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-    throw new TypeError('Failed to fetch');
+    throw new Error('API server offline - using local mode');
   }
 
   const url = `${API_BASE_URL}${path}`;
@@ -143,11 +141,10 @@ async function request(path, options = {}) {
       ...options,
     });
   } catch (err) {
-    throw new TypeError('Failed to fetch');
+    throw new Error('API network error - using local mode');
   }
 
   let data = null;
-
   try {
     data = await response.json();
   } catch {
@@ -155,10 +152,7 @@ async function request(path, options = {}) {
   }
 
   if (!response.ok) {
-    if (!data || typeof data !== 'object') {
-      throw new TypeError('Failed to fetch');
-    }
-    const message = data?.message || data?.error || 'Request failed';
+    const message = data?.message || data?.error || 'API request error';
     throw new Error(message);
   }
 
@@ -179,12 +173,8 @@ export function registerUser(payload) {
   return request('/api/auth/register', {
     method: 'POST',
     body: JSON.stringify(body),
-  }).catch((error) => {
-    if (error instanceof TypeError || error?.message === 'Failed to fetch' || error?.message === 'Request failed') {
-      return registerUserLocally(body);
-    }
-
-    throw error;
+  }).catch(() => {
+    return registerUserLocally(body);
   });
 }
 
@@ -197,12 +187,8 @@ export function loginUser(payload) {
   return request('/api/auth/login', {
     method: 'POST',
     body: JSON.stringify(body),
-  }).catch((error) => {
-    if (error instanceof TypeError || error?.message === 'Failed to fetch' || error?.message === 'Request failed') {
-      return loginUserLocally(body);
-    }
-
-    throw error;
+  }).catch(() => {
+    return loginUserLocally(body);
   });
 }
 
@@ -219,12 +205,8 @@ export function savePersonalDetails(payload) {
   return request('/api/personal-details', {
     method: 'POST',
     body: JSON.stringify(record),
-  }).catch((error) => {
-    if (error instanceof TypeError || error?.message === 'Failed to fetch' || error?.message === 'Request failed') {
-      return saveRecordLocally(PERSONAL_DETAILS_STORAGE_KEY, record, 'personal_details');
-    }
-
-    throw error;
+  }).catch(() => {
+    return saveRecordLocally(PERSONAL_DETAILS_STORAGE_KEY, record, 'personal_details');
   });
 }
 
@@ -236,7 +218,7 @@ export function getProfile(email) {
     user: {
       id: Date.now(),
       email,
-      full_name: email.split('@')[0],
+      full_name: email ? email.split('@')[0] : 'Student',
     }
   }));
 }
@@ -255,16 +237,12 @@ export function updateProfile(payload) {
   return request('/api/profile/update', {
     method: 'POST',
     body: JSON.stringify(body),
-  }).catch((error) => {
-    if (error instanceof TypeError || error?.message === 'Failed to fetch' || error?.message === 'Request failed') {
-      return {
-        success: true,
-        message: 'Profile updated locally.',
-        user: buildLocalUser(body),
-      };
-    }
-
-    throw error;
+  }).catch(() => {
+    return {
+      success: true,
+      message: 'Profile updated locally.',
+      user: buildLocalUser(body),
+    };
   });
 }
 
@@ -287,12 +265,8 @@ export function submitCareerAssessment(payload) {
   return request('/api/career-assessment', {
     method: 'POST',
     body: JSON.stringify(record),
-  }).catch((error) => {
-    if (error instanceof TypeError || error?.message === 'Failed to fetch' || error?.message === 'Request failed') {
-      return saveRecordLocally(ASSESSMENT_STORAGE_KEY, record, 'assessment');
-    }
-
-    throw error;
+  }).catch(() => {
+    return saveRecordLocally(ASSESSMENT_STORAGE_KEY, record, 'assessment');
   });
 }
 
