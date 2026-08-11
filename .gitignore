@@ -15,4 +15,11 @@
 local.properties
 node_modules/
 dist/
+.vite/
+.vscode/
+Lib/
+Scripts/
+tmp_*
+inspect_*.py
+
 

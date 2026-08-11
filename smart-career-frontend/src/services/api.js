@@ -1,4 +1,9 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+const API_BASE_URL = (
+  import.meta.env.VITE_API_URL ||
+  (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1'
+    ? `${window.location.protocol}//${window.location.hostname.replace('smart-career-frontend', 'smart-career-backend')}`
+    : 'http://localhost:5001')
+).replace(/\/$/, '');
 const AUTH_USERS_STORAGE_KEY = 'careerAuthUsers';
 const PERSONAL_DETAILS_STORAGE_KEY = 'careerPersonalDetails';
 const ASSESSMENT_STORAGE_KEY = 'careerAssessmentResult';

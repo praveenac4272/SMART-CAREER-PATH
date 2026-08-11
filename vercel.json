@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "smart-career-frontend/backend/app.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "smart-career-frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "smart-career-frontend/dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "smart-career-frontend/backend/app.py"
+    },
+    {
+      "src": "/health",
+      "dest": "smart-career-frontend/backend/app.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "smart-career-frontend/package.json"
+    }
+  ]
+}

@@ -24,8 +24,8 @@ SEED_CAREER_COLLEGES: list[tuple[str, str, str, str, str, str, str]] = []
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
-# Enable CORS for all routes
-CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=False)
+# Enable CORS for all routes and origins
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=False)
 
 EMAIL_REGEX = re.compile(r'^[^\s@]+@[^\s@]+\.[^\s@]+$')
 PHONE_REGEX = re.compile(r'^\+?[0-9]{7,15}$')
@@ -1824,9 +1824,11 @@ def home():
     )
 
 
+@app.route('/', methods=['GET'])
 @app.route('/health', methods=['GET'])
+@app.route('/api/health', methods=['GET'])
 def health_check():
-    return jsonify({'success': True, 'status': 'ok'})
+    return jsonify({'success': True, 'status': 'ok', 'message': 'Smart Career Path API is running.'})
 
 
 @app.route('/api/career-colleges/<path:career_title>', methods=['GET'])
@@ -2313,7 +2315,14 @@ def server_error(_error):
     return json_error('Internal server error.', 500)
 
 
+with app.app_context():
+    try:
+        ensure_database()
+        ensure_career_colleges_seeded()
+    except Exception as _exc:
+        pass
+
 if __name__ == '__main__':
-    ensure_database()
-    ensure_career_colleges_seeded()
-    app.run(host='0.0.0.0', port=5001, debug=False)
+    port = int(os.environ.get('PORT', 5001))
+    app.run(host='0.0.0.0', port=port, debug=False)
+
