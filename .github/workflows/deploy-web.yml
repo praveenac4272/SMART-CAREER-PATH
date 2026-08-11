@@ -27,6 +27,8 @@ jobs:
         working-directory: smart-career-frontend
 
       - name: Build
+        env:
+          VITE_BASE_PATH: '/SMART-CAREER-PATH/'
         run: |
           npm run build
           cp dist/index.html dist/404.html
